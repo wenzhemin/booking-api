@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AACA,OAAO,CAAC,2DAAI;AEDZ,AAAA,KAAK,CAAC;EACF,gBAAgB,EDDV,GAAG;ECET,KAAK,EDDG,KAAK;CCEhB",
+    "mappings": "AACA,OAAO,CAAC,2DAAI;AEDZ,AAAA,KAAK,CAAC;EACF,gBAAgB,EDDV,IAAI;ECEV,KAAK,EDDG,KAAK;CCEhB",
     "sources": [
         "app.scss",
         "_variables.scss",

@@ -15,10 +15,25 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/test">Test Sass</a></li>
+            <li><a href="/calendar">BookingCalendar</a></li>
             <li><a href="/bookings">Test Bookings</a></li>
         </ul>
         <div class="container">
                 @yield('content')
         </div>
+    
+    <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(".book").click(function(){
+            var timeslot=$(this).attr('data-timeslot');
+            $("#slot").html(timeslot);
+            $("#timeslot").val(timeslot);
+            $("#myModal").modal("show");
+    
+    })
+    </script>
+    </footer>
     </body>
 </html>
