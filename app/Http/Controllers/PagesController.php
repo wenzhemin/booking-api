@@ -18,5 +18,9 @@ class PagesController extends Controller
         return view('pages.test');
     }
 
+    public function cal() {
+        return view('pages.cal');
+    }
+
 
 }
