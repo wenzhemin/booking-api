@@ -18,12 +18,10 @@ class PagesController extends Controller
         return view('pages.test');
     }
 
-    public function calendar() {
-        return view('pages.calendar');
+
+    public function cal() {
+        return view('pages.cal');
     }
 
-    public function book() {
-        return view('pages.booki');
-    }
 
 }

@@ -13,8 +13,7 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/test', 'PagesController@test');
-Route::get('/calendar', 'PagesController@calendar');
-Route::get('/booking', 'PagesController@book');
+// Route::get('/test', 'PagesController@test');
+Route::get('/cal', 'PagesController@cal');
 
 Route::resource('bookings', 'BookingsController');

@@ -6,4 +6,5 @@
     <div class="test">
         This is a test. 
     </div>
+    {{-- {{$date}} --}}
 @endsection

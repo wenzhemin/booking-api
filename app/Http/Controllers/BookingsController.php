@@ -14,8 +14,9 @@ class BookingsController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
-        return view('bookings.index')->with('bookings', $bookings);
+        // $bookings = Booking::all();
+        // return view('bookings.index')->with('bookings', $bookings);
+        return view('pages.book');
     }
 
     /**
@@ -37,6 +38,30 @@ class BookingsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'date' => 'required',
+            'name_of_guest' => 'required',
+            'phone_no' => 'required',
+            'email' => 'required',
+            'no_of_guests' => 'required',
+            'location_id' => 'required',
+            'service_id' => 'required'
+        ]);
+
+        $businessId = 5;
+        // Create Booking
+        $booking = new Booking;
+        $booking->datetime = $request->input('date');
+        $booking->name_of_guest = $request->input('name_of_guest');
+        $booking->phone_no = $request->input('phone_no');
+        $booking->email = $request->input('email');
+        $booking->no_of_guests = $request->input('no_of_guests');
+        $booking->location_id = $request->input('location_id');
+        $booking->buniness_id = $businessId;
+        $booking->service_id = $request->input('service_id');
+        $booking->save();
+
+        return redirect('/');
     }
 
     /**
