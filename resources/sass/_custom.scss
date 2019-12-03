@@ -10,10 +10,7 @@
     /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
         display: block;
-
     }
-    
-    
 
     .empty {
         display: none;
@@ -101,3 +98,25 @@ Label the data
 .today{
     background:yellow;
 }
+
+
+/*****************/
+/*DASHBOARD STYLE*/
+
+@each $colorName, $colorValue in $colors {
+    .bg-#{$colorName} {
+        background-color: #{$colorValue};
+    }
+
+    .text-#{$colorName}{
+        color: #{$colorValue};
+    }
+}
+
+body {
+    @extend .bg-mattBlackDark;
+    @extend .text-mattGray;
+}
+
+/**DASHBOARD END**/
+/*****************/

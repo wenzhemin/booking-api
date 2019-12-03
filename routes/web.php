@@ -13,7 +13,9 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-// Route::get('/test', 'PagesController@test');
+Route::get('/test', 'PagesController@test');
 Route::get('/cal', 'PagesController@cal');
+Route::get('/frontpage', 'PagesController@frontpage');
+Route::get('/dashboard', 'PagesController@dashboard');
 
 Route::resource('bookings', 'BookingsController');

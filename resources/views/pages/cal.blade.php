@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <?php
 function build_calendar($month, $year) {
     
@@ -141,19 +142,21 @@ function build_calendar($month, $year) {
 
 }
 ?>
-<div class="row">
-    <div class="col-md-12">
-        <?php
-             $dateComponents = getdate();
-             if(isset($_GET['month']) && isset($_GET['year'])){
-                 $month = $_GET['month']; 			     
-                 $year = $_GET['year'];
-             }else{
-                 $month = $dateComponents['mon']; 			     
-                 $year = $dateComponents['year'];
-             }
-            echo build_calendar($month,$year);
-        ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <?php
+                $dateComponents = getdate();
+                if(isset($_GET['month']) && isset($_GET['year'])){
+                    $month = $_GET['month']; 			     
+                    $year = $_GET['year'];
+                }else{
+                    $month = $dateComponents['mon']; 			     
+                    $year = $dateComponents['year'];
+                }
+                echo build_calendar($month,$year);
+            ?>
+        </div>
     </div>
 </div>
 @endsection
