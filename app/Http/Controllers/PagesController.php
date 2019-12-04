@@ -18,5 +18,17 @@ class PagesController extends Controller
         return view('pages.test');
     }
 
+    public function cal() {
+        return view('pages.cal');
+    }
+
+    public function frontpage() {
+        return view('pages.front_book');
+    }
+
+    public function dashboard() {
+        return view('pages.dashbfront');
+    }
+
 
 }

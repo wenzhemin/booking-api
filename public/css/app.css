@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:200,600);.test {
   background-color: red;
   color: green;
+} 
+*{
+  margin: 0%;
+  padding: 0%;
 }
-
