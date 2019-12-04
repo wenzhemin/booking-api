@@ -21,11 +21,8 @@
         <!-- Side navigation -->
         <div class="topnav">
                 <a class="active" href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/test">Test Sass</a>
-                <a href="/frontpage">Frontpage - Dashboard</a>
                 <a href="/cal">Calendar</a>
-                <a href="/dashboard">Dashboard</a>
+                <a href="/system">Dashboard</a>
         </div>
         
        
