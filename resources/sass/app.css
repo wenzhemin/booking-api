@@ -124,6 +124,48 @@ Label the data
   color: #ec6271;
 }
 
+.wrapper {
+  margin-top: rem(56px);
+}
+
+.wrapper .sideMenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: rem(56px) auto auto;
+  width: rem(200px);
+  border: 1px solid red;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  z-index: 2000;
+}
+
+.wrapper .content {
+  width: 100%;
+  margin-left: rem(0px);
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+}
+
+@media (min-width: 992px) {
+  .wrapper .sideMenu {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .wrapper .content {
+    margin-left: rem(200px);
+  }
+  .wrapper.active .sideMenu {
+    width: rem(80px);
+  }
+  .wrapper.active .content {
+    margin-left: rem(80px);
+  }
+}
+
 /**DASHBOARD END**/
 /*****************/
 /*# sourceMappingURL=app.css.map */

@@ -118,5 +118,45 @@ body {
     @extend .text-mattGray;
 }
 
+.wrapper {
+    margin-top: rem($margin-top);
+    .sideMenu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: rem($margin-top) auto auto;
+        width: rem(200px);
+        border: 1px solid red;
+        transition: all ease $easeTime;
+        transform: translateX(-100%);
+        z-index: 2000;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: rem(0px);
+        transition: all ease $easeTime;
+    }
+}
+
+@media (min-width:992px) {
+    .wrapper {
+        .sideMenu {
+            transform: translateX(0);
+        }
+        .content {
+            margin-left: rem(200px);
+        }
+        &.active {
+            .sideMenu {
+                width: rem(80px);
+            }
+            .content {
+                margin-left: rem(80px);
+            }
+        }
+    }
+}
 /**DASHBOARD END**/
 /*****************/
