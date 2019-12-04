@@ -50,13 +50,13 @@
   top: 0;
   bottom: 0;
   left: 0;
-  margin: rem(56px) auto auto;
-  width: rem(200px);
+  /*margin: rem(56px) auto auto;
+  width: rem(200px);*/
   border: 1px solid red;
   -webkit-transition: all ease 0.25s;
   transition: all ease 0.25s;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  /*-webkit-transform: translateX(-100%);
+          transform: translateX(-100%);*/
   z-index: 2000;
 }
 

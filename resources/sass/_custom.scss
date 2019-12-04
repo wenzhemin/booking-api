@@ -125,8 +125,8 @@ body {
         top: 0;
         bottom: 0;
         left: 0;
-        margin: rem($margin-top) auto auto;
-        width: rem(200px);
+        //margin: rem($margin-top) auto auto;
+        //width: rem(200px);
         border: 1px solid red;
         transition: all ease $easeTime;
         transform: translateX(-100%);
