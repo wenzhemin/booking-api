@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  {{-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <a class="navbar-brand" href="#">Logo</a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> --}}
   
   <!--FRONTPAGE BANNER-->
   <div class="row banner bg-warning m-0">
