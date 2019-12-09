@@ -6,6 +6,17 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+$easeTime: 0.25s;
+$margin-top: 56px;
+
+
+$colors: (
+    "mattBlackLight": "#303337",
+    "mattBlackDark": "#212121",
+    "mattGray": "#878d8d",
+    "mattRed": "#ec6271"
+);
+
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;

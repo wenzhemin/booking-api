@@ -171,16 +171,23 @@ body {
 .nav-link {
     display: block;
     white-space: nowrap;
-        .icon{
-            margin-right: rem(4px);
-            font-size: rem {
-            vertical-align: middle;
-            height: rem(32px);
-            width: rem()32px;
-            border: 2px solid red;
-            @extend .text};
-
+    .icon{
+        margin-right: rem(4px);
+        font-size: rem (30px);
+        vertical-align: middle;
+        height: rem(32px);
+        width: rem()32px;
+        border: 2px solid red;
+        @extend .text-mattGray;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         }
+        .text {
+            font-size: rem(14px);
+            @extend .text-mattGray;
+
+    }
 }
 /**DASHBOARD END**/
 /*****************/
