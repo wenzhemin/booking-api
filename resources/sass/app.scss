@@ -1,11 +1,11 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Nunito:200,600);
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import 'variables';
 
-// Custom CSS
-@import "custom";
+// Custom sass
+@import 'custom';
 
-
-
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
