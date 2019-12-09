@@ -160,6 +160,16 @@ body {
         &.active {
             .sideMenu {
                 width: rem(80px);
+                .nav-link {
+                    text-align: center;
+                    .icon {
+                        margin-right: 0;
+                    }
+                    .text {
+                        display: none;
+                    }
+
+                }
             }
             .content {
                 margin-left: rem(80px);
@@ -182,11 +192,17 @@ body {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        }
-        .text {
-            font-size: rem(14px);
-            @extend .text-mattGray;
-
+    }
+    
+    .text {
+        font-size: rem(14px);
+        @extend .text-mattGray;
+    }
+    &:hover, &.Active {
+        @extend .bg-mattBlackDark;
+        .icon, .text {
+            @extend .text-mattRed;
+         }
     }
 }
 /**DASHBOARD END**/

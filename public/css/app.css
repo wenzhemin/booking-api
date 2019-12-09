@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
 
 #login-content {
   background-color: red;
@@ -128,6 +128,8 @@
 }
 
 .bg-mattBlackDark,
+.nav-link:hover,
+.nav-link.Active,
 body {
   background-color: #212121;
 }
@@ -151,7 +153,11 @@ body {
   background-color: #ec6271;
 }
 
-.text-mattRed {
+.text-mattRed,
+.nav-link:hover .icon,
+.nav-link:hover .text,
+.nav-link.Active .icon,
+.nav-link.Active .text {
   color: #ec6271;
 }
 
@@ -191,6 +197,18 @@ body {
 
   .wrapper.active .sideMenu {
     width: rem(80px);
+  }
+
+  .wrapper.active .sideMenu .nav-link {
+    text-align: center;
+  }
+
+  .wrapper.active .sideMenu .nav-link .icon {
+    margin-right: 0;
+  }
+
+  .wrapper.active .sideMenu .nav-link .text {
+    display: none;
   }
 
   .wrapper.active .content {

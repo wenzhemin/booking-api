@@ -13,6 +13,7 @@
         <title>{{config('app.name', 'LSAPP')}}</title>
     </head>
     <body>
+    <div id='app'></div>
     <!--NAVIGATION START-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler sideMenuToggler" type="button">
@@ -88,9 +89,10 @@
         
         
 
-       <!-- <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.slimscroll.min.js"></script>-->
-        <script src="../../resources/js/script.js"></script>
+        <script src="js/jquery.slimscroll.min.js"></script> 
+        <script src="{{asset('/resources/js/script.js')}}"></script>-->
     </body>
 </html>
+<script src="{{asset('js/app.js')}}"></script>
