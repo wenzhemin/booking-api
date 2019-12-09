@@ -16,3 +16,10 @@ Route::get('/cal', 'PagesController@cal');
 Route::get('/system', 'PagesController@dashboard');
 
 Route::resource('bookings', 'BookingsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
