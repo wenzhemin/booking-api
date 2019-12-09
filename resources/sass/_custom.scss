@@ -1,7 +1,6 @@
 // NAVIGATION
-#login-content {
-    background-color: red;
-
+#login-content, #register-content {
+    background-color: #{$dark-grey};
     display: grid;
     justify-items: center;
     align-content: center;
@@ -9,7 +8,18 @@
     height: 100vh;
     position: absolute;
     padding-bottom: 50px;
-
+    label {
+        font-size: 1.5rem;
+        color: #{$white};
+    }
+    input {
+        font-size: 1.75rem;
+        color: #{$white};
+        background-color: #{$black};
+    }
+    button {
+        font-size: 1.75rem;
+    }
 }
 
 // Styles for Calendar
