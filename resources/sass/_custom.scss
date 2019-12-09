@@ -158,5 +158,20 @@ body {
         }
     }
 }
+
+.nav-link {
+    display: block;
+    white-space: nowrap;
+        .icon{
+            margin-right: rem(4px);
+            font-size: rem {
+            vertical-align: middle;
+            height: rem(32px);
+            width: rem()32px;
+            border: 2px solid red;
+            @extend .text};
+
+        }
+}
 /**DASHBOARD END**/
 /*****************/
