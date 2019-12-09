@@ -27,6 +27,9 @@
                 <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/login') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('/login') }}">Login</a>
                 </li>
+                <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/register') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                </li>
             @endauth
         </ul>
     </div>
