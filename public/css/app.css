@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 #login-content,
-#register-content {
+#register-content,
+#reset-content,
+#email-reset-content {
   background-color: #1F1F1F;
   display: grid;
   justify-items: center;
@@ -13,20 +15,26 @@
 }
 
 #login-content label,
-#register-content label {
+#register-content label,
+#reset-content label,
+#email-reset-content label {
   font-size: 1.5rem;
   color: #fff;
 }
 
 #login-content input,
-#register-content input {
+#register-content input,
+#reset-content input,
+#email-reset-content input {
   font-size: 1.75rem;
   color: #fff;
   background-color: #111;
 }
 
 #login-content button,
-#register-content button {
+#register-content button,
+#reset-content button,
+#email-reset-content button {
   font-size: 1.75rem;
 }
 
