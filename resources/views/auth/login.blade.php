@@ -32,11 +32,9 @@
                     </div>
                     <div class="form-group row">
                         <div class="offset-md-4 col-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __(' Remember Me') }}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
                                 </label>
                             </div>
                         </div>
