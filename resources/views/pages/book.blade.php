@@ -4,6 +4,7 @@
 <?php
 if(isset($_GET['date'])){
     $date = $_GET['date'];
+    
 }
 
 // if(isset($_POST['submit'])){

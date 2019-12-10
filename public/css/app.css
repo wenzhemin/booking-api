@@ -3851,9 +3851,9 @@ input[type=button].btn-block {
   }
 }
 
-.fade:not(.show) {
+/*.fade:not(.show) {
   opacity: 0;
-}
+}*/
 
 .collapse:not(.show) {
   display: none;
@@ -6753,10 +6753,10 @@ a.close.disabled {
   overflow: hidden;
 }
 
-.modal-open .modal {
+/*.modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
-}
+}*/
 
 .modal {
   position: fixed;
