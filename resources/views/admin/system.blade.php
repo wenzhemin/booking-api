@@ -1,4 +1,4 @@
-@extends('dashboard.app')
+@extends('admin.app')
 
 <!--SIDEBAR NAVIGATION START-->
 <div class="wrapper d-flex">
