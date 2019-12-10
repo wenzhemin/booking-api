@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        echo "We should not access this here anymore!";
+        exit;
         return view('home');
     }
 }
