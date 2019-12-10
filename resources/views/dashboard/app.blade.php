@@ -42,49 +42,12 @@
         </div>
     </nav>
 
-    <!--SIDEBAR NAVIGATION START-->
-    <div class="wrapper d-flex">
-        <div class="sideMenu">
-            <div class="sidebar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">dashboard</i><span class="text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">person</i><span class="text">User Profile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">insert_chart</i><span class="text">Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">settings</i><span class="text">Settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">computer</i><span class="text">Demo</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link sideMenuToggler">
-                            <i class="material-icons icon">view_list</i><span class="text">Resize</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    
         <!--DASHBOARD CONTENT-->
         <div class="content">
                 @yield('content')
         </div>
-    </div>
+    
     <!--NAVIGATION END-->
         
         
@@ -92,7 +55,6 @@
         <!-- <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.slimscroll.min.js"></script> 
-        <script src="{{asset('/resources/js/script.js')}}"></script>-->
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
-<script src="{{asset('js/app.js')}}"></script>

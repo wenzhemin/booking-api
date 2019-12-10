@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 #login-content,
 #register-content,
@@ -143,8 +143,21 @@
 }
 
 /*****************/
-
 /*DASHBOARD STYLE*/
+#login-content,
+#register-content,
+#reset-content,
+#email-reset-content {
+  background-color: #1F1F1F;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding-bottom: 50px;
+}
+
 
 .bg-mattBlackLight {
   background-color: #303337;
