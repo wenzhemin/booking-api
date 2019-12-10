@@ -27,8 +27,8 @@
                 $("#slot").html(timeslot);
                 $("#timeslot").val(timeslot);
                 $("#myModal").modal("show");
-        
         })
         </script>
+
     </body>
 </html>
