@@ -42,8 +42,8 @@ function timeslots($duration, $cleanup, $start, $end) {
             break;
         }
 
-        //$slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
-        $slots[] = $intStart->format("H:iA");
+        // $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
+        $slots[] = $intStart->format("H:i");
     }
 
     return $slots;
@@ -83,6 +83,10 @@ function timeslots($duration, $cleanup, $start, $end) {
                         <div class="form-group">
                             <label for="">Timeslot</label>
                             <input required type="text" readonly name="time" id="timeslot" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Hours</label>
+                            <input required type="text" name="hours" id="hours" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Name</label>

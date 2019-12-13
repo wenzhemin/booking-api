@@ -4,16 +4,19 @@
 
 <?php
 function build_calendar($month, $year) {
-    
+    // $mysqli = new mysqli('127.0.0.1', 'root', 'root', 'bookingapi');
+    // $stmt = $mysqli->prepare("select * from bookings where MONTH(datetime) = ? AND YEAR(datetime) = ?");
+
+
     $mysqli = new mysqli('127.0.0.1', 'root', 'root', 'bookingapi');
-    $stmt = $mysqli->prepare("select * from bookings where MONTH(datetime) = ? AND YEAR(datetime) = ?");
+    $stmt = $mysqli->prepare("select * from bookings where MONTH(start_datetime) = ? AND YEAR(start_datetime) = ?");
     $stmt->bind_param('ss', $month, $year);
     $bookings = array();
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-                $bookings[] = $row['datetime'];
+                $bookings[] = $row['start_datetime'];
             }
             
             $stmt->close();
