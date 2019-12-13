@@ -15,7 +15,8 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('datetime');
+            $table->dateTime('start_datetime');
+            $table->dateTime('end_datetime');
             $table->string('name_of_guest');
             $table->string('phone_no');
             $table->string('email');
