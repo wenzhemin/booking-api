@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\system_dashboard;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;

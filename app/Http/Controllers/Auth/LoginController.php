@@ -34,7 +34,7 @@ class LoginController extends Controller
     {
         if (Gate::allows('accessAdminpanel')) {
             // do your margic here
-            return redirect('/dashboard/system');
+            return redirect('/admin/system');
             // return redirect()->route('dashboard');
         }
 
