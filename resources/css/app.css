@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+#login-content, #register-content, #reset-content, #email-reset-content {
+  background-color: #212529;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding-bottom: 50px; }
+  #login-content label, #register-content label, #reset-content label, #email-reset-content label {
+    font-size: 1.5rem;
+    color: #fff; }
+  #login-content input, #register-content input, #reset-content input, #email-reset-content input {
+    font-size: 1.75rem;
+    color: #fff;
+    background-color: #1F1F1F; }
+  #login-content button, #register-content button, #reset-content button, #email-reset-content button {
+    font-size: 1.75rem; }
+
+@media only screen and (max-width: 760px), (min-device-width: 802px) and (max-device-width: 1020px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block; }
+
+  .empty {
+    display: none; }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    color: whitesmoke; }
+
+  tr {
+    border: 1px solid #ccc; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; }
+
+    /*
+Label the data
+*/
+  td:nth-of-type(1):before {
+    content: "Sunday"; }
+
+  td:nth-of-type(2):before {
+    content: "Monday"; }
+
+  td:nth-of-type(3):before {
+    content: "Tuesday"; }
+
+  td:nth-of-type(4):before {
+    content: "Wednesday"; }
+
+  td:nth-of-type(5):before {
+    content: "Thursday"; }
+
+  td:nth-of-type(6):before {
+    content: "Friday"; }
+
+  td:nth-of-type(7):before {
+    content: "Saturday"; } }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    padding: 0;
+    margin: 0; } }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 802px) and (max-device-width: 1020px) {
+  body {
+    width: 495px; } }
+@media (min-width: 641px) {
+  table {
+    table-layout: fixed; }
+
+  td {
+    width: 33%; } }
+.row {
+  margin-top: 20px; }
+
+.today {
+  background: yellow; }
+
+#calendarlayout .header {
+  color: whitesmoke; }
+
+#calendardates {
+  color: whitesmoke; }
+
+/*****************/
+/*DASHBOARD STYLE*/
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 210px;
+  background-color: #333;
+  position: fixed;
+  height: 100%;
+  overflow: auto; }
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: grey;
+  padding: 16px;
+  text-decoration: none; }
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white; }
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none; }
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 210px;
+  padding: 1px 16px;
+  height: 100%; }
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative; }
+
+  .sidebar a {
+    float: left; }
+
+  div.content {
+    margin-left: 0;
+    margin-top: 0; } }
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none; } }
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  width: 100%;
+  height: 33vh;
+  margin-top: 5%;
+  border: black solid 1px; }
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+
+/* Do an horizontal flip when you move the mouse over the flip box container 
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}*/
+/* Position the front and back side */
+.flip-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; }
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem; }
+
+/**DASHBOARD END**/
+/*****************/
+
+/*# sourceMappingURL=app.css.map */
