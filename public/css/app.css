@@ -58,6 +58,7 @@
     position: absolute;
     top: -9999px;
     left: -9999px;
+    color: whitesmoke;
   }
 
   tr {
@@ -138,6 +139,14 @@
 
 .today {
   background: yellow;
+}
+
+#calendarlayout .header {
+  color: whitesmoke;
+}
+
+#calendardates {
+  color: whitesmoke;
 }
 
 /*****************/

@@ -21,7 +21,7 @@ if(isset($_GET['date'])){
 // }
 
 //Duration is the amount of time spend on each session (Bookable time)
-$duration = 20;
+$duration = 60;
 //Cleanup is the amount of time needed to prepare next sessions(to clean or prep something required to next customer)
 $cleanup = 0;
 //The opening hours for the business 
@@ -42,7 +42,8 @@ function timeslots($duration, $cleanup, $start, $end) {
             break;
         }
 
-        $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
+        //$slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
+        $slots[] = $intStart->format("H:iA");
     }
 
     return $slots;
@@ -50,16 +51,16 @@ function timeslots($duration, $cleanup, $start, $end) {
 
 ?>
 <h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($date)); ?></h1><hr>
-<div class="row">
-    <div class="col-md-12">
+<div class="row justify-content-center">
+    <div class="col-12">
     <?php echo isset($msg)?$msg:""; ?>
         <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
             foreach($timeslots as $ts){
         ?>
-            <div class="col-md-2">
-                <div class="form-group">
-                        <button class="btn btn-success book" data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></button>
-                </div>
+            <div class="offset-3 col-6">
+                
+                        <button class="btn btn-success btn-lg btn-block book" data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></button>
+                
             </div>
         <?php } ?>
     </div>
