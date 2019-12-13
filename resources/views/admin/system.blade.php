@@ -1,52 +1,109 @@
 @extends('admin.app')
 
-<!--SIDEBAR NAVIGATION START-->
-<div class="wrapper d-flex">
-        <div class="sideMenu">
-            <div class="sidebar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">dashboard</i><span class="text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">person</i><span class="text">User Profile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">insert_chart</i><span class="text">Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">settings</i><span class="text">Settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="material-icons icon">computer</i><span class="text">Demo</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link sideMenuToggler">
-                            <i class="material-icons icon">view_list</i><span class="text">Resize</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
 @section('content')
-    <main>
+    <!-- Page content -->
+    <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 my-3">
-                Nullam sodales sapien felis, sit amet rhoncus mi bibendum ac. Aliquam erat volutpat. Nullam elementum cursus quam, ac posuere ex blandit id. Cras ac bibendum erat, ut ultrices nisl.
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class="img-fluid" src="images/form100.png" alt="Formicon" style="width:150px;height:125px;">
+                                <div class="card-body">
+                                    <h4>Kontakt formular</h4>    
+                                    <p class="card-text">Kalenderen benyttes til at dine kunder kan booke en dato og tid til den service der udbydes af jer som firma</p>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Vælg Kontakt formular
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class="img-fluid" src="images/calendar100.png" alt="Calendaricon" style="width:150px;height:125px;">
+                                <div class="card-body">
+                                    <h4>Kalender</h4>    
+                                    <p class="card-text">Kalenderen benyttes til at dine kunder kan booke en dato og tid til den service der udbydes af jer som firma</p>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Vælg Kalender
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class="img-fluid" src="images/location500.png" alt="locationicon" style="width:150px;height:125px;">
+                                <div class="card-body">
+                                    <h4>Placering</h4>    
+                                    <p class="card-text">Kalenderen benyttes til at dine kunder kan booke en dato og tid til den service der udbydes af jer som firma</p>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Vælg Placering
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class="img-fluid" src="images/persons500.png" alt="personsicon" style="width:150px;height:125px;">
+                                <div class="card-body">
+                                    <h4>Placering</h4>    
+                                    <p class="card-text">Kalenderen benyttes til at dine kunder kan booke en dato og tid til den service der udbydes af jer som firma</p>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Vælg Antal Personer
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class="img-fluid" src="images/form100.png" alt="Formicon" style="width:150px;height:125px;">
+                                <div class="card-body">
+                                    <h4>Kontakt formular</h4>    
+                                    <p class="card-text">Kalenderen benyttes til at dine kunder kan booke en dato og tid til den service der udbydes af jer som firma</p>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Vælg Kontakt formular
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
-    </main>    
+    </div> 
 @endsection

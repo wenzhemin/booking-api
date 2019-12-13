@@ -46,7 +46,7 @@ function build_calendar($month, $year) {
     
     
     
-    $calendar = "<table class='table table-bordered'>";
+    $calendar = "<table id='calendardates' class='table table-bordered'>";
     $calendar .= "<center><h2>$monthName $year</h2>";
     $calendar.= "<a class='btn btn-xs btn-primary' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Previous Month</a> ";
     
@@ -78,7 +78,7 @@ function build_calendar($month, $year) {
 
      if ($dayOfWeek > 0) { 
          for($k=0;$k<$dayOfWeek;$k++){
-                $calendar .= "<td  class='empty'></td>"; 
+                $calendar .= "<td class='empty'></td>"; 
 
          }
      }
@@ -104,7 +104,7 @@ function build_calendar($month, $year) {
             $eventNum = 0;
             $today = $date==date('Y-m-d')? "today" : "";
          if($date<date('Y-m-d')){
-             $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>N/A</button>";
+             $calendar.="<td><h4>$currentDay</h4> <button id='bookknap' class='btn btn-danger btn-xs'>N/A</button>";
          }else{
              $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='/bookings?date=".$date."' class='btn btn-success btn-xs'>Book</a>";
          }
@@ -142,7 +142,7 @@ function build_calendar($month, $year) {
 
 }
 ?>
-<div class="container">
+<div id="calendarlayout" class="container">
     <div class="row">
         <div class="col-md-12">
             <?php

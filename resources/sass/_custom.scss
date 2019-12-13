@@ -40,6 +40,7 @@
         position: absolute;
         top: -9999px;
         left: -9999px;
+        color: whitesmoke;
     }
 
     tr {
@@ -118,102 +119,115 @@ Label the data
     background:yellow;
 }
 
+#calendarlayout .header {
+    color: whitesmoke;
+  }
+
+#calendardates {
+    color: whitesmoke;
+}
+
+
 
 /*****************/
 /*DASHBOARD STYLE*/
-
-@each $colorName, $colorValue in $colors {
-    .bg-#{$colorName} {
-        background-color: #{$colorValue};
-    }
-
-    .text-#{$colorName}{
-        color: #{$colorValue};
-    }
-}
-
-body {
-    @extend .bg-mattBlackDark;
-    @extend .text-mattGray;
-}
-
-.wrapper {
-    margin-top: rem($margin-top);
-    .sideMenu {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        //margin: rem($margin-top) auto auto;
-        //width: rem(200px);
-        border: 1px solid red;
-        transition: all ease $easeTime;
-        transform: translateX(-100%);
-        z-index: 2000;
-    }
-
-    .content {
-        width: 100%;
-        margin-left: rem(0px);
-        transition: all ease $easeTime;
-    }
-}
-
-@media (min-width:992px) {
-    .wrapper {
-        .sideMenu {
-            transform: translateX(0);
-        }
-        .content {
-            margin-left: rem(200px);
-        }
-        &.active {
-            .sideMenu {
-                width: rem(80px);
-                .nav-link {
-                    text-align: center;
-                    .icon {
-                        margin-right: 0;
-                    }
-                    .text {
-                        display: none;
-                    }
-
-                }
-            }
-            .content {
-                margin-left: rem(80px);
-            }
-        }
-    }
-}
-
-.nav-link {
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 210px;
+    background-color: #333;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
     display: block;
-    white-space: nowrap;
-    .icon{
-        margin-right: rem(4px);
-        font-size: rem (30px);
-        vertical-align: middle;
-        height: rem(32px);
-        width: rem()32px;
-        border: 2px solid red;
-        @extend .text-mattGray;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+    color: grey;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 210px;
+    padding: 1px 16px;
+    height: 100%;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-    
-    .text {
-        font-size: rem(14px);
-        @extend .text-mattGray;
+    .sidebar a {float: left;}
+    div.content {
+        margin-left: 0;
+        margin-top: 0;
     }
-    &:hover, &.Active {
-        @extend .bg-mattBlackDark;
-        .icon, .text {
-            @extend .text-mattRed;
-         }
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
     }
-}
+  }
+
+
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    width: 100%;
+    height: 33vh;
+    margin-top: 5%;
+    border: black solid 1px;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container 
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }*/
+  
+  /* Position the front and back side */
+  .flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
 /**DASHBOARD END**/
 /*****************/
