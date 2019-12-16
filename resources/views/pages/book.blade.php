@@ -50,31 +50,34 @@ function timeslots($duration, $cleanup, $start, $end) {
 }
 
 ?>
-<h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($date)); ?></h1><hr>
-<div class="row justify-content-center">
-    <div class="col-12">
-    <?php echo isset($msg)?$msg:""; ?>
-        <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
-            foreach($timeslots as $ts){
-        ?>
-            <div class="offset-3 col-6">
-                
-                        <button class="btn btn-success btn-lg btn-block book" data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></button>
-                
-            </div>
-        <?php } ?>
-    </div>
-</div>
+
 <!--MODAL-->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Booking: <span id="slot"></span></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+                <h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($date)); ?></h1><hr>
+                
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                    <?php echo isset($msg)?$msg:""; ?>
+                        <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
+                            foreach($timeslots as $ts){
+                        ?>
+                            <div class="offset-3 col-6">
+                                
+                                <button class="btn btn-success btn-lg btn-block book" data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></button>
+                                
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-12">
                     <form action="{{url('bookings')}}" method="post">
