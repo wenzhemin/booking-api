@@ -267,13 +267,31 @@ function build_calendar($month, $year) {
                             <label for="">Number of Guests</label>
                             <input required type="text" name="no_of_guests" class="form-control">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="">Location(ID for now)</label>
                             <input required type="text" name="location_id" class="form-control">
-                        </div>
+                        </div> --}}
                         <div class="form-group">
+                            <label class="mr-sm-2" for="locationSelect">Location</label>
+                            <select name="location_id" class="custom-select mr-sm-2 form-control" id="locationSelect" required>
+                                <option disabled value="" selected hidden>Choose a location</option>
+                                @foreach ($data['locations'] as $location)
+                                    <option value={{ $location->id }}>{{ $location->address }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        {{-- <div class="form-group">
                             <label for="">Service(ID for now)</label>
                             <input required type="text" name="service_id" class="form-control">
+                        </div> --}}
+                        <div class="form-group">
+                            <label class="mr-sm-2" for="serviceSelect">Service</label>
+                            <select name="service_id" class="custom-select mr-sm-2 form-control" id="serviceSelect" required>
+                                <option disabled value="" selected hidden>Choose a service</option>
+                                @foreach ($data['services'] as $service)
+                                    <option value={{ $service->id }}>{{ $service->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group pull-right">
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use App\Location;
+use App\Service;
 use DateTime;
 use Carbon\Carbon;
 
@@ -16,9 +18,16 @@ class BookingsController extends Controller
      */
     public function index()
     {
-        // $bookings = Booking::all();
-        // return view('bookings.index')->with('bookings', $bookings);
-        return view('pages.book');
+
+        $locations = Location::all();
+        $services = Service::all();
+
+        $data = [
+            'locations'  => $locations,
+            'services'   => $services
+        ];
+
+        return view('pages.cal')->with('data', $data);
     }
 
     /**
@@ -124,5 +133,12 @@ class BookingsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    // Custom functions
+    public function cal()
+    {
+        
     }
 }

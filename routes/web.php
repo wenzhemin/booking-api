@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/cal', 'PagesController@cal');
+Route::get('/cal', 'BookingsController@index');
 
 Route::resource('bookings', 'BookingsController');
 Auth::routes();
