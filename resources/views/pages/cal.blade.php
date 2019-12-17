@@ -57,35 +57,35 @@ function build_calendar($month, $year) {
     // $stmt = $mysqli->prepare("select * from bookings where MONTH(datetime) = ? AND YEAR(datetime) = ?");
 
 
-    $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
-    $stmt = $mysqli->prepare("select * from bookings where MONTH(date) = ? AND YEAR(date) = ?");
-    $stmt->bind_param('ss', $month, $year);
-    $bookings = array();
-    if($stmt->execute()){
-        $result = $stmt->get_result();
-        if($result->num_rows>0){
-            while($row = $result->fetch_assoc()){
-                $bookings[] = $row['date'];
-            }
-            
-            $stmt->close();
-        }
-    }
-
     // $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
-    // $stmt = $mysqli->prepare("select * from bookings where start_date = ?");
-    // $stmt->bind_param('s', $date);
+    // $stmt = $mysqli->prepare("select * from bookings where MONTH(date) = ? AND YEAR(date) = ?");
+    // $stmt->bind_param('ss', $month, $year);
     // $bookings = array();
     // if($stmt->execute()){
     //     $result = $stmt->get_result();
     //     if($result->num_rows>0){
     //         while($row = $result->fetch_assoc()){
-    //             $bookings[] = $row['timeslot'];
+    //             $bookings[] = $row['date'];
     //         }
             
     //         $stmt->close();
     //     }
     // }
+
+    $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
+    $stmt = $mysqli->prepare("select * from bookings where date = ?");
+    $stmt->bind_param('s', $date);
+    $bookings = array();
+    if($stmt->execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                $bookings[] = $row['timeslot'];
+            }
+            
+            $stmt->close();
+        }
+    }
     
      // Create array containing abbreviations of days of week.
      $daysOfWeek = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
