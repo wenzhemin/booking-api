@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Booking;
 use App\Location;
 use App\Service;
-use DateTime;
-use Carbon\Carbon;
+use App\Interval;
+// use DateTime;
+// use Carbon\Carbon;
 
 class BookingsController extends Controller
 {
@@ -21,10 +22,12 @@ class BookingsController extends Controller
 
         $locations = Location::all();
         $services = Service::all();
+        $intervals = Interval::all();
 
         $data = [
             'locations'  => $locations,
-            'services'   => $services
+            'services'   => $services,
+            'intervals'   => $intervals
         ];
 
         return view('pages.cal')->with('data', $data);
@@ -51,8 +54,8 @@ class BookingsController extends Controller
         //
         $this->validate($request, [
             'date' => 'required',
-            'time' => 'required',
-            'hours' => 'required',
+            'timeslot' => 'required',
+            'interval_id' => 'required',
             'name_of_guest' => 'required',
             'phone_no' => 'required',
             'email' => 'required',
@@ -66,17 +69,9 @@ class BookingsController extends Controller
         $booking = new Booking;
 
         // Convert datetime
-        $date = $request->input('date');
-        $time = $request->input('time');
-        $hours = $request->input('hours');
-        $datetime = $date." ".$time;
-        $start_datetime = new DateTime($datetime);
-        $end_datetime = Carbon::parse($start_datetime);
-        $end_datetime->addHours($hours);
-
-
-        $booking->start_datetime = $start_datetime;
-        $booking->end_datetime = $end_datetime;
+        $booking->date = $request->input('date');
+        $booking->timeslot = $request->input('timeslot');
+        $booking->interval_id = $request->input('interval_id');
         $booking->name_of_guest = $request->input('name_of_guest');
         $booking->phone_no = $request->input('phone_no');
         $booking->email = $request->input('email');

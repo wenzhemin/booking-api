@@ -58,19 +58,34 @@ function build_calendar($month, $year) {
 
 
     $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
-    $stmt = $mysqli->prepare("select * from bookings where MONTH(start_datetime) = ? AND YEAR(start_datetime) = ?");
+    $stmt = $mysqli->prepare("select * from bookings where MONTH(date) = ? AND YEAR(date) = ?");
     $stmt->bind_param('ss', $month, $year);
     $bookings = array();
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-                $bookings[] = $row['start_datetime'];
+                $bookings[] = $row['date'];
             }
             
             $stmt->close();
         }
     }
+
+    // $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
+    // $stmt = $mysqli->prepare("select * from bookings where start_date = ?");
+    // $stmt->bind_param('s', $date);
+    // $bookings = array();
+    // if($stmt->execute()){
+    //     $result = $stmt->get_result();
+    //     if($result->num_rows>0){
+    //         while($row = $result->fetch_assoc()){
+    //             $bookings[] = $row['timeslot'];
+    //         }
+            
+    //         $stmt->close();
+    //     }
+    // }
     
      // Create array containing abbreviations of days of week.
      $daysOfWeek = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
@@ -245,11 +260,20 @@ function build_calendar($month, $year) {
                         <input name="date" type="hidden" value="<?php echo $date;?>">
                         <div class="form-group">
                             <label for="">Timeslot</label>
-                            <input required type="text" readonly name="time" id="timeslot" class="form-control">
+                            <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="">Hours</label>
-                            <input required type="text" name="hours" id="hours" class="form-control">
+                            <input required type="text" name="interval" class="form-control">
+                        </div> --}}
+                        <div class="form-group">
+                            <label class="mr-sm-2" for="serviceSelect">Hours</label>
+                            <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
+                                <option disabled value="" selected hidden>Choose an interval</option>
+                                @foreach ($data['intervals'] as $interval)
+                                    <option value={{ $interval->id }}>{{ $interval->hour }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="">Name</label>
