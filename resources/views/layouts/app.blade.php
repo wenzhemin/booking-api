@@ -22,12 +22,20 @@
 
         {{-- Script for "book" page --}}
         <script>
-            $(".book").click(function(){
-                var timeslot=$(this).attr('data-timeslot');
-                $("#slot").html(timeslot);
-                $("#timeslot").val(timeslot);
+            $(".bookDate").click(function(){
                 $("#myModal").modal("show");
-        })
+
+                var dateslot=$(this).attr('data-dateslot');
+                $("#dateslot").html(dateslot);
+            })
+        </script>
+
+        <script>
+            $(".bookTime").click(function(){
+                var timeslot=$(this).attr('data-timeslot');
+                $("#timeslot").val(timeslot);
+
+            })
         </script>
 
     </body>

@@ -10,9 +10,9 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function cal() {
-        return view('pages.cal');
-    }
+    // public function cal() {
+    //     return view('pages.cal');
+    // }
 
     public function dashboard() {
         return view('dashboard.system');

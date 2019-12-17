@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use App\Location;
+use App\Service;
+use DateTime;
+use Carbon\Carbon;
 
 class BookingsController extends Controller
 {
@@ -14,9 +18,16 @@ class BookingsController extends Controller
      */
     public function index()
     {
-        // $bookings = Booking::all();
-        // return view('bookings.index')->with('bookings', $bookings);
-        return view('pages.book');
+
+        $locations = Location::all();
+        $services = Service::all();
+
+        $data = [
+            'locations'  => $locations,
+            'services'   => $services
+        ];
+
+        return view('pages.cal')->with('data', $data);
     }
 
     /**
@@ -40,6 +51,8 @@ class BookingsController extends Controller
         //
         $this->validate($request, [
             'date' => 'required',
+            'time' => 'required',
+            'hours' => 'required',
             'name_of_guest' => 'required',
             'phone_no' => 'required',
             'email' => 'required',
@@ -48,10 +61,22 @@ class BookingsController extends Controller
             'service_id' => 'required'
         ]);
 
-        $businessId = 5;
+        $businessId = 1;
         // Create Booking
         $booking = new Booking;
-        $booking->datetime = $request->input('date');
+
+        // Convert datetime
+        $date = $request->input('date');
+        $time = $request->input('time');
+        $hours = $request->input('hours');
+        $datetime = $date." ".$time;
+        $start_datetime = new DateTime($datetime);
+        $end_datetime = Carbon::parse($start_datetime);
+        $end_datetime->addHours($hours);
+
+
+        $booking->start_datetime = $start_datetime;
+        $booking->end_datetime = $end_datetime;
         $booking->name_of_guest = $request->input('name_of_guest');
         $booking->phone_no = $request->input('phone_no');
         $booking->email = $request->input('email');
@@ -61,7 +86,8 @@ class BookingsController extends Controller
         $booking->service_id = $request->input('service_id');
         $booking->save();
 
-        return redirect('/');
+
+        return view('pages.confirmation');
     }
 
     /**
@@ -107,5 +133,12 @@ class BookingsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    // Custom functions
+    public function cal()
+    {
+        
     }
 }

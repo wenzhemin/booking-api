@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/cal', 'PagesController@cal');
+Route::get('/cal', 'BookingsController@index');
 
 Route::resource('bookings', 'BookingsController');
 Auth::routes();
@@ -29,3 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     // Route::get('/system', 'PagesController@dashboard');
 // });
 Route::get('/system', 'Admin\DashboardController@dashboard')->name('system');
+
+
+// only for testing. 
+Route::get('/services', 'ServicesController@getAll');
