@@ -15,17 +15,21 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('start_datetime');
-            $table->dateTime('end_datetime');
+            $table->dateTime('date');
+            $table->string('timeslot');
             $table->string('name_of_guest');
             $table->string('phone_no');
             $table->string('email');
             $table->integer('no_of_guests');
+
             // foreign keys
+            $table->integer('interval_id')->unsigned();
             $table->integer('location_id')->unsigned();
             $table->integer('buniness_id')->unsigned();
             $table->integer('service_id')->unsigned();
+            
             // asign foreign keys
+            $table->foreign('interval_id')->references('id')->on('intervals');
             $table->foreign('location_id')->references('id')->on('locations');
             $table->foreign('buniness_id')->references('id')->on('businesses');
             $table->foreign('service_id')->references('id')->on('services');
