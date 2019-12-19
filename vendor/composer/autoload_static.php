@@ -420,7 +420,7 @@ class ComposerStaticInit2cd91967f3f941a57ac847cdbf78fbdd
         'App\\Http\\Controllers\\BookingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/BookingsController.php',
         'App\\Http\\Controllers\\BusinessesController' => __DIR__ . '/../..' . '/app/Http/Controllers/BusinessesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\IntervalsController' => __DIR__ . '/../..' . '/app/Http/Controllers/IntervalsController.php',
         'App\\Http\\Controllers\\LocationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocationsController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
         'App\\Http\\Controllers\\ServicesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServicesController.php',
