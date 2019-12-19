@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // future adminpanel routes also should belong to the group
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/system', function () { $user = \Auth::user();  });
+    Route::get('/admincalendar', function () { $user = \Auth::user();  });
 });
 
 

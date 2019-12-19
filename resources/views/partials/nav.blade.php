@@ -14,7 +14,7 @@
             @auth
                 @can('accessAdminpanel')
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/system') }}">Admin</a>
+                    <a class="nav-link" href="{{ url('/admin/system') }}">Admin</a>
                 </li>
                 @endcan
                 <li class="nav-item">
