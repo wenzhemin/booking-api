@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('home');
 Route::get('/bookinglayout', 'PagesController@bookinglayout');
 Route::get('/cal', 'BookingsController@index');
 
 Route::resource('bookings', 'BookingsController');
-Auth::routes();
-
 Auth::routes();
 
 
