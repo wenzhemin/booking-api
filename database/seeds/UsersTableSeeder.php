@@ -23,17 +23,22 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Linus Kinzi-Paludan',
                 'email' => 'skinzip@gmail.com',
-                'password' => Hash::make('fuckheads'),
+                'password' => Hash::make('changemetosomethingbetter'),
             ],
             [
                 'name' => 'Rebeca',
                 'email' => 'dummy@dummy.org',
-                'password' => Hash::make('fuckheads'),
+                'password' => Hash::make('changemetosomethingbetter'),
             ],
             [
                 'name' => 'Zhemin Wen',
                 'email' => 'zhem0004@edu.easj.dk',
-                'password' => Hash::make('fuckheads'),
+                'password' => Hash::make('changemetosomethingbetter'),
+            ],
+            [
+                'name' => 'Niclas Brink Vetter',
+                'email' => 'vetzmeister@gmail.com',
+                'password' => Hash::make('changemetosomethingbetter'),
             ]
         ]);
     }
