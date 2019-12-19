@@ -21,7 +21,7 @@ class DashboardController extends AdminController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard() {
+    public function index() {
         return view('admin.system');
     }
 }

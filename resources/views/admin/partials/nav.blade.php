@@ -7,21 +7,19 @@
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item ">
-            <a class="nav-link" href="#">Home </a>
+            <a class="nav-link" href="{{ route('home') }}">Home </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="{{ url('/cal') }}">Calendar</a>
         </li>
-        @if(Auth::check())
         <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-        </li>
-        @endif
-        <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
-        </li> 
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
     </ul>
 </div>

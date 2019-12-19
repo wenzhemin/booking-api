@@ -3,7 +3,7 @@
     <div class="topnav">
         <ul class="navbar-nav">
             <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('/') }}">Home</a>
+                <a class="nav-link" href="{{ url('home') }}">Home</a>
             </li>
             <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'cal') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/cal') }}">Calendar</a>
