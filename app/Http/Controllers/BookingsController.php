@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookingCompleted;
 use App\Booking;
 use App\Location;
 use App\Service;
@@ -81,6 +83,7 @@ class BookingsController extends Controller
         $booking->service_id = $request->input('service_id');
         $booking->save();
 
+        Mail::to($booking->email)->send(new BookingCompleted($booking));
 
         return view('pages.confirmation');
     }
