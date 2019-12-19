@@ -25,10 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // future adminpanel routes also should belong to the group
-// Route::group(['prefix' => '', 'middleware' => 'can:accessAdminpanel'], function () {
-//     // Route::get('/system', 'PagesController@dashboard');
-// });
-Route::get('/system', 'Admin\DashboardController@dashboard')->name('system');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/system', function () { $user = \Auth::user();  });
+});
 
 
 // only for testing. 
