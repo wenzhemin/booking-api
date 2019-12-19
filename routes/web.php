@@ -13,7 +13,6 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/bookinglayout', 'PagesController@bookinglayout');
-Route::get('/admincalendar', 'PagesController@adminbooking');
 Route::get('/cal', 'BookingsController@index');
 
 Route::resource('bookings', 'BookingsController');
@@ -23,9 +22,11 @@ Auth::routes();
 
 
 // future adminpanel routes also should belong to the group
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/system', function () { $user = \Auth::user();  });
-    Route::get('/admincalendar', function () { $user = \Auth::user();  });
+Route::group(['middleware' => 'auth'], function() {
+    // Route::get('/system', function () { $user = \Auth::user();  });
+    Route::get('/system', 'Admin\DashboardController@index')->name('dashboard');
+    Route::get('/admincalendar', 'PagesController@adminbooking');
+    // Route::get('/admincalendar', function () { $user = \Auth::user();  });
 });
 
 
