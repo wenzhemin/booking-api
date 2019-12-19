@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/bookinglayout', 'PagesController@bookinglayout');
 Route::get('/admincalendar', 'PagesController@adminbooking');
 Route::get('/cal', 'BookingsController@index');
 

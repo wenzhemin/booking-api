@@ -12,7 +12,10 @@ if (isset($_GET['year']) && isset($_GET['week'])) {
 $year = $dt->format('o');
 $week = $dt->format('W');
 ?>
-<div class="container">
+
+<!-- Page content -->
+<div class="content">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
         
@@ -188,7 +191,7 @@ $week = $dt->format('W');
         </div>
     </div>
 </div>
-
+</div>
     <script type="text/javascript"> 
         function enable_disable() {  
             $("#bookingform :input").prop("disabled", true); 
