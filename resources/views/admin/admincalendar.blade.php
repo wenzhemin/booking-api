@@ -1,17 +1,6 @@
 @extends('admin.app')
 
 @section('content')
-<?php
-
-$dt = new DateTime;
-if (isset($_GET['year']) && isset($_GET['week'])) {
-    $dt->setISODate($_GET['year'], $_GET['week']);
-} else {
-    $dt->setISODate($dt->format('o'), $dt->format('W'));
-}
-$year = $dt->format('o');
-$week = $dt->format('W');
-?>
 
 <!-- Page content -->
 <div class="content">
@@ -19,8 +8,8 @@ $week = $dt->format('W');
     <div class="row">
         <div class="col-lg-12">
         
-            <a class='btn btn-xs btn-primary justify-content-center' href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week-1).'&year='.$year; ?>">Last Week</a> <!--Previous week-->
-            <a class='btn btn-xs btn-primary justify-content-center' href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week+1).'&year='.$year; ?>">Next Week</a> <!--Next week-->
+            <a class='btn btn-xs btn-primary justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week - 1]) }}">Last Week</a> <!--Previous week-->
+            <a class='btn btn-xs btn-primary justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week + 1]) }}">Next Week</a> <!--Next week-->
 
     <table class="table table-striped table-hover table-dark table-bordered dashcalendar">
         <thead>

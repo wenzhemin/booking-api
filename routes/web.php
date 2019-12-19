@@ -23,9 +23,9 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
     // Route::get('/system', function () { $user = \Auth::user();  });
     Route::get('/system', 'Admin\DashboardController@index')->name('dashboard');
-    Route::get('/admincalendar', 'PagesController@adminbooking');
-    // Route::get('/admincalendar', function () { $user = \Auth::user();  });
-});
+    Route::get('/admincalendar/{year?}/{week?}', 'Admin\CalendarController@index')->name('admincalendar');
+    
+    });
 
 
 // only for testing. 
