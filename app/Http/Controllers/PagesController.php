@@ -18,5 +18,9 @@ class PagesController extends Controller
         return view('dashboard.system');
     }
 
+    public function adminbooking() {
+        return view('admin.admincalendar');
+    }
+
 
 }
