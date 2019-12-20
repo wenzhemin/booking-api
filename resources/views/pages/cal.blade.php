@@ -72,7 +72,7 @@ function build_calendar($month, $year) {
     //     }
     // }
 
-    $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
+    $mysqli = new mysqli('127.0.0.1', 'root', 'root', 'bookingapi');
     $stmt = $mysqli->prepare("select * from bookings where date = ?");
     $stmt->bind_param('s', $date);
     $bookings = array();
