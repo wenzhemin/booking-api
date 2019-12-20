@@ -11,24 +11,21 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('home');
+Route::get('/bookinglayout', 'PagesController@bookinglayout');
 Route::get('/cal', 'BookingsController@index');
 
 Route::resource('bookings', 'BookingsController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 // future adminpanel routes also should belong to the group
-// Route::group(['prefix' => '', 'middleware' => 'can:accessAdminpanel'], function () {
-//     // Route::get('/system', 'PagesController@dashboard');
-// });
-Route::get('/system', 'Admin\DashboardController@dashboard')->name('system');
+Route::group(['middleware' => 'auth'], function() {
+    // Route::get('/system', function () { $user = \Auth::user();  });
+    Route::get('/system', 'Admin\DashboardController@index')->name('dashboard');
+    Route::get('/admincalendar/{year?}/{week?}', 'Admin\CalendarController@index')->name('admincalendar');
+    
+    });
 
 
 // only for testing. 
