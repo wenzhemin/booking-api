@@ -81,7 +81,6 @@ class BookingsController extends Controller
         $booking->service_id = $request->input('service_id');
         $booking->save();
 
-
         return view('pages.confirmation');
     }
 

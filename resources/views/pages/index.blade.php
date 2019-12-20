@@ -2,9 +2,6 @@
 
 @section('content')
 
-   
-  
-  
 {{-- header  --}}
 <div class="row h-75 m-0" id="header"> 
    <div class="container my-auto">
