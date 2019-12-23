@@ -24,4 +24,8 @@ class DashboardController extends AdminController {
     public function index() {
         return view('admin.system');
     }
+
+    public function choices() {
+        return view('admin.choices');
+    }
 }
