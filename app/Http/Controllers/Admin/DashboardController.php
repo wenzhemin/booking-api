@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\User;
+use App\Booking;
 
 class DashboardController extends AdminController {
     /*
@@ -22,7 +23,11 @@ class DashboardController extends AdminController {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('admin.system');
+
+        $bookings = Booking::all();
+        $data['bookings'] = $bookings;
+
+        return view('admin.system')->with($data);
     }
 
     public function choices() {
