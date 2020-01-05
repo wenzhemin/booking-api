@@ -6,21 +6,23 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 dashboard-border">
+                <div class="col-lg-12 dashboard-border">
                     <h1>Newest bookings</h1>
                 </div>
-                @foreach ($bookings as $booking)
-                <div class='row no-gutters support-wrapper'>
-                    <div class='col-sm-6'>
-                        <p style="color: black"><strong>{{ $booking->service_id }}</strong></p>
-                        <p>{{ $booking->name_of_guest }}</p>
-                    </div>   
-                    <div class='col-sm'>
-                        <p><strong>Date</strong></p>
-                        <p>{{ $booking->date }}</p>
-                    </div>  
-                </div>  
-                @endforeach
+                <table class="table table-striped table-hover table-dark table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <th>Booked service</th>
+                        <th>Date</th>
+                    </tr>
+                    @foreach ($bookings as $booking)
+                    <tr>
+                        <td>{{ $booking->name_of_guest }}</td>
+                        <td>{{ $booking->service_id }}</td>
+                        <td>{{ $booking->date }}</td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>
