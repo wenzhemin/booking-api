@@ -38,3 +38,9 @@ Route::group(['middleware' => 'auth'], function() {
 
 // only for testing. 
 Route::get('/services', 'ServicesController@getAll');
+
+
+Route::get('test', function () {
+    event(new App\Events\BookingCompleted('Someone'));
+    return "Event has been sent!";
+});
