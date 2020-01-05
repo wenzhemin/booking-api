@@ -441,7 +441,6 @@ class ComposerStaticInit2cd91967f3f941a57ac847cdbf78fbdd
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Http\\Requests\\CreateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateProfileRequest.php',
         'App\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProfileRequest.php',
         'App\\Image' => __DIR__ . '/../..' . '/app/Image.php',
         'App\\Interval' => __DIR__ . '/../..' . '/app/Interval.php',

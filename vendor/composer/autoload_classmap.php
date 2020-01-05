@@ -36,7 +36,6 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-    'App\\Http\\Requests\\CreateProfileRequest' => $baseDir . '/app/Http/Requests/CreateProfileRequest.php',
     'App\\Http\\Requests\\UpdateProfileRequest' => $baseDir . '/app/Http/Requests/UpdateProfileRequest.php',
     'App\\Image' => $baseDir . '/app/Image.php',
     'App\\Interval' => $baseDir . '/app/Interval.php',
