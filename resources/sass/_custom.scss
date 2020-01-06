@@ -131,6 +131,7 @@ Label the data
 
 /*****************/
 /*DASHBOARD STYLE*/
+
 /* The side navigation menu */
 .sidebar {
     margin: 0;
@@ -140,28 +141,77 @@ Label the data
     position: fixed;
     height: 100%;
     overflow: auto;
-  }
   
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
-    color: grey;
-    padding: 16px;
-    text-decoration: none;
-  }
+    /* Sidebar links */
+    a {
+        display: block;
+        color: grey;
+        padding: 16px;
+        text-decoration: none;
   
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+        .fa, .ion, .glyphicon {
+            margin-right: 3px;
+        }
+
+        /* Active/current link */
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    }
   
   /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-  }
+    a:hover:not(.active) {
+        color: rgba(255,255,255,.75);
+        text-decoration: none;
+    }
+
+    // Sidebar user panel
+    .user-panel {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        overflow: hidden;
+        
+        .image img {
+            width: 100%;
+            max-width: 45px;
+            height: auto;
+        }
+        p {
+            color: #{$white};
+        }
+    }
+
+    // Sidebar menu
+    .sidebar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            a {
+                padding: 12px 5px 12px 15px;
+                display: block;
+                .fa, .glyphicon, .ion {
+                    width: 20px;
+                }
+            }
+            h4 {
+                padding: 10px 25px 10px 15px;
+                color: #{$white};
+            }
+        }
+    }
+}
+
+/* END The side navigation menu */
   
+
+
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
     margin-left: 100px;
@@ -229,5 +279,5 @@ Label the data
     padding-right: 1rem;
     padding-top: 1rem;
   }
-/**DASHBOARD END**/
+  /**DASHBOARD END**/
 /*****************/

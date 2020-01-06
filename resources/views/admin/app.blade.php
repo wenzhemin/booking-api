@@ -13,10 +13,10 @@
     </nav>
 
     <!-- The sidebar -->
-    <div class="sidebar">
+    <aside class="sidebar">
         <!-- Nav -->
         @include('admin.partials.sidebar')
-    </div>
+    </aside>
     <!--NAVIGATION END-->
     
     <!--DASHBOARD CONTENT-->
