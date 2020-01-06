@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Niclas Brink Vetter',
                 'email' => 'vetzmeister@gmail.com',
-                'password' => Hash::make('changemetosomethingbetter'),
+                'password' => Hash::make('vetter1234'),
             ]
         ]);
     }
