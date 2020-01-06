@@ -1,17 +1,17 @@
 {{-- Sidebar --}}
 <!-- Sidebar user panel -->
 <div class="user-panel">
-    <div class="image">
+    <div class=" pull-left image">
         <img src="{!! route('getuserimage', ['user_id' => Auth::user()->id, 'filename' => Auth::user()->image]) !!}"  class="rounded-circle z-depth-2" alt="User Image">
     </div>
     <div>
         <p>{{ Auth::user()->name }}</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <p><i class="fa fa-circle text-success"></i> Online</p>
     </div>
 </div>
 <ul class="sidebar-menu">
-    <li>
-        <h4>Main navigation</h4>
+    <li class="sidebar-title">
+        Main navigation
     <li>
         <a class="{{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}" href="{{ route('home') }}">
             <i class="fa fa-home"></i> <span>Booky</span>

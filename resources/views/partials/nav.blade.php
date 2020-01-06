@@ -3,7 +3,9 @@
     <div class="topnav">
         <ul class="navbar-nav">
             <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('/') }}">Home</a>
+                <a class="nav-link" href="{{ url('/') }}">
+                    <img src="{{ asset('../assets/img/circle-logo.png') }}" width="30" height="30" alt="Booky circle logo"> Home
+                </a>
             </li>
             <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'cal') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('/cal') }}">Calendar</a>

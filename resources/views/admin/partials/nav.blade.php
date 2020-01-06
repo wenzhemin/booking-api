@@ -1,5 +1,7 @@
 {{-- nav --}}
-<a class="navbar-brand" href="{{ route('home') }}">Booky</a>
+<a class="navbar-brand" href="{{ route('home') }}">
+  <img src="{{ asset('../assets/img/circle-logo.png') }}" width="40" height="40" alt="Booky circle logo"> Booky
+</a>
 <li class="dropdown dropdown-notifications">
     <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
       <i data-count="0" class="fa fa-bell"></i>

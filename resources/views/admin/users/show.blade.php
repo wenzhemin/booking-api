@@ -19,8 +19,8 @@
                                 <b>Updated</b> <a class="pull-right">{{ $user->updated_at }}</a>
                             </li>
                         </ul>
-                        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-primary btn-block"><b>Edit</b></a>
-                        <a href="{{ route('users.index') }}" class="btn btn-warning btn-block"><b>Go back</b></a>
+                        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-save btn-block"><b>Edit</b></a>
+                        <a href="{{ route('users.index') }}" class="btn btn-back btn-block"><b>Go back</b></a>
                     </div>
                 </div>
            </div>

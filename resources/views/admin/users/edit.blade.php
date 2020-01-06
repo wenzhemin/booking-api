@@ -36,8 +36,8 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{ route('users.index') }}" class="btn btn-warning"><b>Go back</b></a>
+                            <button type="submit" class="btn btn-save btn-block">Save</button>
+                            <a href="{{ route('users.index') }}" class="btn btn-back btn-block"><b>Go back</b></a>
                         </div>
                     {{ Form::close() }}
                 </div>

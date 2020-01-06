@@ -154,6 +154,10 @@
   color: #F0EDE5;
 }
 
+.calendar-title {
+  color: #F0EDE5;
+}
+
 .btn-book {
   background-color: #F26B5B;
   color: #F0EDE5;
@@ -164,8 +168,24 @@
   color: #F0EDE5;
 }
 
-.calendar-title {
+.btn-save {
+  background-color: #C0D725;
+  color: #363838;
+}
+
+.btn-save:hover {
+  background-color: #a2b61e;
   color: #F0EDE5;
+}
+
+.btn-back {
+  background-color: #017678;
+  color: #F0EDE5;
+}
+
+.btn-back:hover {
+  background-color: #02c4c7;
+  color: #363838;
 }
 
 /*****************/
@@ -174,6 +194,16 @@
 
 .dashboard {
   background-color: #002554;
+  color: #F0EDE5;
+}
+
+.dashboard a {
+  color: #F0EDE5;
+}
+
+.dashboard li,
+.dashboard .modal-content {
+  color: #363838;
 }
 
 /* The side navigation menu */
@@ -181,8 +211,8 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 210px;
-  background-color: #333;
+  width: 14rem;
+  background-color: #252a30;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -225,10 +255,16 @@
   width: 100%;
   max-width: 45px;
   height: auto;
+  margin-right: 0.5rem;
 }
 
 .sidebar .user-panel p {
-  color: #fff;
+  color: #F0EDE5;
+  font-size: 0.7rem;
+}
+
+.sidebar .user-panel .pull-left {
+  float: left !important;
 }
 
 .sidebar .sidebar-menu {
@@ -254,9 +290,14 @@
   width: 20px;
 }
 
-.sidebar .sidebar-menu li h4 {
+.sidebar .sidebar-menu li a:hover {
+  background-color: #1c2529;
+}
+
+.sidebar .sidebar-menu .sidebar-title {
+  background-color: #1a2226;
   padding: 10px 25px 10px 15px;
-  color: #fff;
+  color: #0F4C81;
 }
 
 /* END The side navigation menu */
@@ -333,8 +374,8 @@ div.content {
 /* Style the front side (fallback if image is missing) */
 
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+  background-color: #F26B5B;
+  color: #F0EDE5;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
