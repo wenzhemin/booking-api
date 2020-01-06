@@ -172,6 +172,10 @@
 
 /*DASHBOARD STYLE*/
 
+.dashboard {
+  background-color: #002554;
+}
+
 /* The side navigation menu */
 
 .sidebar {

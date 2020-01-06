@@ -4,7 +4,7 @@
         <!-- Head -->
         @include('admin.partials.head')
     </head>
-    <body>
+    <body class="dashboard">
     <div id='app'></div>
     <!--NAVIGATION START-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #333;">

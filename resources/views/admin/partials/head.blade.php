@@ -13,7 +13,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//js.pusher.com/3.1/pusher.min.js"></script>
 
-<script src="https://use.fontawesome.com/625025ab71.js"></script>
+<script src="https://kit.fontawesome.com/97e52115ec.js" crossorigin="anonymous"></script>
 {{-- Styles for test --}}
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 <title>{{config('app.name', 'LSAPP')}}</title>
