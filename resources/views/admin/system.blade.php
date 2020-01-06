@@ -15,12 +15,15 @@
                         <th>Booked service</th>
                         <th>Date</th>
                     </tr>
+                    <?php $count = 0; ?>
                     @foreach ($bookings as $booking)
+                    <?php if($count == 3) break; ?>
                     <tr>
                         <td>{{ $booking->name_of_guest }}</td>
                         <td>{{ $booking->service_id }}</td>
                         <td>{{ $booking->date }}</td>
                     </tr>
+                    <?php $count++; ?>
                     @endforeach
                 </table>
             </div>
