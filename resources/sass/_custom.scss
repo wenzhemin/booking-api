@@ -35,12 +35,13 @@
         display: none;
     }
 
+
     /* Hide table headers (but not display: none;, for accessibility) */
     th {
         position: absolute;
         top: -9999px;
         left: -9999px;
-        color: whitesmoke;
+        color: #{$alabaster};
     }
 
     tr {
@@ -116,15 +117,34 @@ Label the data
 }
 
 .today{
-    background:yellow;
+    background:#{$corral};
 }
 
-#calendarlayout .header {
-    color: whitesmoke;
-  }
+#calendarlayout {
+    background-color: #{$cerulean};
+    margin-top: 4.5rem;
+    
+    .header {
+        color: #{$alabaster};
+    }
+}
 
 #calendardates {
-    color: whitesmoke;
+    color: #{$alabaster};
+}
+
+.btn-book {
+    background-color: #{$corral};
+    color: #{$alabaster};
+}
+
+.btn-book:hover {
+    background-color: #{$dark-corral};
+    color: #{$alabaster};
+}
+
+.calendar-title {
+    color: #{$alabaster};
 }
 
 

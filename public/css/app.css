@@ -58,7 +58,7 @@
     position: absolute;
     top: -9999px;
     left: -9999px;
-    color: whitesmoke;
+    color: #F0EDE5;
   }
 
   tr {
@@ -138,15 +138,34 @@
 }
 
 .today {
-  background: yellow;
+  background: #F26B5B;
+}
+
+#calendarlayout {
+  background-color: #0F4C81;
+  margin-top: 4.5rem;
 }
 
 #calendarlayout .header {
-  color: whitesmoke;
+  color: #F0EDE5;
 }
 
 #calendardates {
-  color: whitesmoke;
+  color: #F0EDE5;
+}
+
+.btn-book {
+  background-color: #F26B5B;
+  color: #F0EDE5;
+}
+
+.btn-book:hover {
+  background-color: #BA3A31;
+  color: #F0EDE5;
+}
+
+.calendar-title {
+  color: #F0EDE5;
 }
 
 /*****************/
