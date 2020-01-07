@@ -4,7 +4,7 @@
         <!-- Head -->
         @include('admin.partials.head')
     </head>
-    <body>
+    <body class="dashboard">
     <div id='app'></div>
     <!--NAVIGATION START-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #333;">
@@ -13,10 +13,10 @@
     </nav>
 
     <!-- The sidebar -->
-    <div class="sidebar">
+    <aside class="sidebar">
         <!-- Nav -->
         @include('admin.partials.sidebar')
-    </div>
+    </aside>
     <!--NAVIGATION END-->
     
     <!--DASHBOARD CONTENT-->

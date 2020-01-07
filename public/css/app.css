@@ -58,7 +58,7 @@
     position: absolute;
     top: -9999px;
     left: -9999px;
-    color: whitesmoke;
+    color: #F0EDE5;
   }
 
   tr {
@@ -138,55 +138,169 @@
 }
 
 .today {
-  background: yellow;
+  background: #F26B5B;
+}
+
+#calendarlayout {
+  background-color: #0F4C81;
+  margin-top: 4.5rem;
 }
 
 #calendarlayout .header {
-  color: whitesmoke;
+  color: #F0EDE5;
 }
 
 #calendardates {
-  color: whitesmoke;
+  color: #F0EDE5;
+}
+
+.calendar-title {
+  color: #F0EDE5;
+}
+
+.btn-book {
+  background-color: #F26B5B;
+  color: #F0EDE5;
+}
+
+.btn-book:hover {
+  background-color: #BA3A31;
+  color: #F0EDE5;
+}
+
+.btn-save {
+  background-color: #C0D725;
+  color: #363838;
+}
+
+.btn-save:hover {
+  background-color: #a2b61e;
+  color: #F0EDE5;
+}
+
+.btn-back {
+  background-color: #017678;
+  color: #F0EDE5;
+}
+
+.btn-back:hover {
+  background-color: #02c4c7;
+  color: #363838;
 }
 
 /*****************/
 
 /*DASHBOARD STYLE*/
 
+.dashboard {
+  background-color: #002554;
+  color: #F0EDE5;
+}
+
+.dashboard a {
+  color: #F0EDE5;
+}
+
+.dashboard li,
+.dashboard .modal-content {
+  color: #363838;
+}
+
 /* The side navigation menu */
 
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 210px;
-  background-color: #333;
+  width: 14rem;
+  background-color: #252a30;
   position: fixed;
   height: 100%;
   overflow: auto;
+  /* Sidebar links */
+  /* Links on mouse-over */
 }
-
-/* Sidebar links */
 
 .sidebar a {
   display: block;
   color: grey;
   padding: 16px;
   text-decoration: none;
+  /* Active/current link */
 }
 
-/* Active/current link */
+.sidebar a .fa,
+.sidebar a .ion,
+.sidebar a .glyphicon {
+  margin-right: 3px;
+}
 
-.sidebar a.active {
+.sidebar a .active {
   background-color: #4CAF50;
   color: white;
 }
-
-/* Links on mouse-over */
 
 .sidebar a:hover:not(.active) {
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
 }
+
+.sidebar .user-panel {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sidebar .user-panel .image img {
+  width: 100%;
+  max-width: 45px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.sidebar .user-panel p {
+  color: #F0EDE5;
+  font-size: 0.7rem;
+}
+
+.sidebar .user-panel .pull-left {
+  float: left !important;
+}
+
+.sidebar .sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .sidebar-menu li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .sidebar-menu li a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+}
+
+.sidebar .sidebar-menu li a .fa,
+.sidebar .sidebar-menu li a .glyphicon,
+.sidebar .sidebar-menu li a .ion {
+  width: 20px;
+}
+
+.sidebar .sidebar-menu li a:hover {
+  background-color: #1c2529;
+}
+
+.sidebar .sidebar-menu .sidebar-title {
+  background-color: #1a2226;
+  padding: 10px 25px 10px 15px;
+  color: #0F4C81;
+}
+
+/* END The side navigation menu */
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 
@@ -260,8 +374,8 @@ div.content {
 /* Style the front side (fallback if image is missing) */
 
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+  background-color: #F26B5B;
+  color: #F0EDE5;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
