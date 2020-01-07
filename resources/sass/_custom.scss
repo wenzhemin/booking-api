@@ -46,12 +46,13 @@
         display: none;
     }
 
+
     /* Hide table headers (but not display: none;, for accessibility) */
     th {
         position: absolute;
         top: -9999px;
         left: -9999px;
-        color: whitesmoke;
+        color: #{$alabaster};
     }
 
     tr {
@@ -243,27 +244,85 @@ ul li {
 }
 
 .today {
-    background: yellow;
+    background:#{$corral};
 }
 
-#calendarlayout .header {
-    color: whitesmoke;
+#calendarlayout {
+    background-color: #{$cerulean};
+    margin-top: 4.5rem;
+
+    .header {
+        color: #{$alabaster};
+    }
 }
 
 #calendardates {
-    color: whitesmoke;
+    color: #{$alabaster};
 }
+
+.calendar-title {
+    color: #{$alabaster};
+}
+
+
+// Buttons
+.btn-book {
+    background-color: #{$corral};
+    color: #{$alabaster};
+}
+
+.btn-book:hover {
+    background-color: #{$dark-corral};
+    color: #{$alabaster};
+}
+
+.btn-save {
+    background-color: #{$pear};
+    color: #{$onyx-black};
+}
+
+.btn-save:hover {
+    background-color: #{$dark-pear};
+    color: #{$alabaster};
+}
+
+.btn-back {
+    background-color: #{$dusty-yellow};
+    color: #{$alabaster};
+}
+
+.btn-back:hover {
+    background-color: #{$hover-yellow};
+    color: #{$onyx-black};
+}
+
+
 
 
 
 /*****************/
 /*DASHBOARD STYLE*/
+
+.dashboard {
+    background-color: #{$dark-cerulean};
+    color: #{$alabaster};
+
+    a {
+        color: #{$alabaster};
+    }
+
+    li,
+    .modal-content {
+        color: #{$onyx-black};
+    }
+}
+
 /* The side navigation menu */
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 210px;
-    background-color: #333;
+    width: 14rem;
+    background-color: #{$dusty-black};
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -288,6 +347,100 @@ ul li {
     color: rgba(255, 255, 255, .75);
     text-decoration: none;
 }
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+
+    /* Sidebar links */
+    a {
+        display: block;
+        color: grey;
+        padding: 16px;
+        text-decoration: none;
+
+        .fa,
+        .ion,
+        .glyphicon {
+            margin-right: 3px;
+        }
+
+        /* Active/current link */
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    }
+
+    /* Links on mouse-over */
+    a:hover:not(.active) {
+        color: rgba(255, 255, 255, .75);
+        text-decoration: none;
+    }
+
+    // Sidebar user panel
+    .user-panel {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        overflow: hidden;
+
+        .image img {
+            width: 100%;
+            max-width: 45px;
+            height: auto;
+            margin-right: 0.5rem;
+        }
+
+        p {
+            color: #{$alabaster};
+            font-size: .7rem;
+        }
+
+        .pull-left {
+            float: left !important;
+        }
+    }
+
+    // Sidebar menu
+    .sidebar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+            a {
+                padding: 12px 5px 12px 15px;
+                display: block;
+
+                .fa,
+                .glyphicon,
+                .ion {
+                    width: 20px;
+                }
+
+            }
+
+            a:hover {
+                background-color: #{$accent-hover};
+            }
+
+        }
+
+        .sidebar-title {
+            background-color: #{$accent};
+            padding: 10px 25px 10px 15px;
+            color: #{$cerulean};
+        }
+    }
+}
+
+/* END The side navigation menu */
+
+
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
@@ -356,6 +509,19 @@ div.content {
 .flip-card-front {
     background-color: #bbb;
     color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+/**DASHBOARD END**/
+/*****************/
+
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #{$corral};
+    color: #{$alabaster};
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;

@@ -6,7 +6,7 @@
 
     @if(count($bookings) > 0)
         @foreach($bookings as $booking)
-            <div class="well">
+            <div class="card p-3 mt-3 mb-3">
                 <h3>{{$booking->name_of_guest}}</a></h3>
                 <small>Booked on {{$booking->datetime}}</small>
             </div>

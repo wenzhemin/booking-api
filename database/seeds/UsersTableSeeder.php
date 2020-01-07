@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Linus Kinzi-Paludan',
                 'email' => 'skinzip@gmail.com',
-                'password' => Hash::make('changemetosomethingbetter'),
+                'password' => Hash::make('bastards'),
             ],
             [
                 'name' => 'Rebeca',
@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Niclas Brink Vetter',
                 'email' => 'vetzmeister@gmail.com',
-                'password' => Hash::make('changemetosomethingbetter'),
+                'password' => Hash::make('vetter1234'),
             ]
         ]);
     }

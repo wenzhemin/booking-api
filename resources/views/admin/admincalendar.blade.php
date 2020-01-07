@@ -26,7 +26,7 @@
         <tbody>
             <tr>
                 <th scope="row">10:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -39,42 +39,42 @@
                 <th scope="row">11:00</th>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
             </tr>
 
             <tr>
                 <th scope="row">12:00</th>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
             </tr>
 
             <tr>
                 <th scope="row">13:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
             </tr>
 
             <tr>
                 <th scope="row">14:00</th>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -82,10 +82,10 @@
             <tr>
                 <th scope="row">15:00</th>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -95,16 +95,16 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
             </tr>
 
             <tr>
                 <th scope="row">17:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -115,8 +115,8 @@
                 <th scope="row">18:00</th>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked 12345678</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">TESTER 12345678</button></td><!-- Button trigger modal -->
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">TESTER</button></td><!-- Button trigger modal -->
                 <td></td>
                 <td></td>
                 <td></td>
@@ -131,7 +131,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Booking: 12345678</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Booking:</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>

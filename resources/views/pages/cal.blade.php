@@ -113,12 +113,12 @@ function build_calendar($month, $year) {
     
     
     $calendar = "<table id='calendardates' class='table table-bordered'>";
-    $calendar.= "<center><h2>$monthName $year</h2>";
-    $calendar.= "<a class='btn btn-xs btn-primary' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Previous Month</a> ";
+    $calendar.= "<center><h2 class='calendar-title'>$monthName $year</h2>";
+    $calendar.= "<a class='btn btn-xs btn-book' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Previous Month</a> ";
     
-    $calendar.= " <a class='btn btn-xs btn-primary' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a> ";
+    $calendar.= " <a class='btn btn-xs btn-book' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a> ";
     
-    $calendar.= "<a class='btn btn-xs btn-primary' href='?month=".date('m', mktime(0, 0, 0, $month+1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Next Month</a></center><br>";
+    $calendar.= "<a class='btn btn-xs btn-book' href='?month=".date('m', mktime(0, 0, 0, $month+1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Next Month</a></center><br>";
     
     
         
@@ -128,7 +128,7 @@ function build_calendar($month, $year) {
 
      foreach($daysOfWeek as $day) {
           $calendar .= "<th  class='header'>$day</th>";
-     } 
+     }
 
      // Create the rest of the calendar
 
@@ -317,7 +317,7 @@ function build_calendar($month, $year) {
                             </select>
                         </div>
                         <div class="form-group pull-right">
-                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                            <button type="submit" class="btn btn-book" name="submit">Book</button>
                         </div>
                     </form>
                     </div>

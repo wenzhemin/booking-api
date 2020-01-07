@@ -18,9 +18,4 @@ class PagesController extends Controller
         return view('dashboard.system');
     }
 
-    public function bookinglayout() {
-        return view('admin.system');
-    }
-
-
 }
