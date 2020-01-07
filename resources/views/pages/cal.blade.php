@@ -128,7 +128,7 @@ function build_calendar($month, $year) {
 
      foreach($daysOfWeek as $day) {
           $calendar .= "<th  class='header'>$day</th>";
-     } 
+     }
 
      // Create the rest of the calendar
 

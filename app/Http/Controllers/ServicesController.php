@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service;
+use Carbon\Carbon;
 
 class ServicesController extends Controller
 {
@@ -14,7 +15,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view('services.index')->with('services', $services);
     }
 
     /**
@@ -24,7 +26,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.create');
     }
 
     /**
@@ -36,6 +38,18 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name' => 'required',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        // Create Service
+        $service = new Service;
+        $service->name = $request->input('name');
+        $service->save();
+
+        return redirect('/services')->with('success', 'Serivce Created');
     }
 
     /**
@@ -46,7 +60,8 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-        //
+        $service = Service::find($id);
+        return view('services.show')->with('service', $service);
     }
 
     /**
@@ -57,7 +72,8 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Serivce::find($id);
+        return view('services.edit')->with('service', $service);
     }
 
     /**
@@ -69,7 +85,17 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        // Create Service
+        $service = Service::find($id);
+        $service->name = $request->input('name');
+        $service->save();
+
+        return redirect('/services')->with('success', 'Serivce Updated');
     }
 
     /**
@@ -80,6 +106,9 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::find($id);
+        $post->delete();
+
+        return redirect('/services')->with('success', 'Serivce Removed');
     }
 }
