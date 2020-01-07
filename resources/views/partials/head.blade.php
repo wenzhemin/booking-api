@@ -13,4 +13,11 @@
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 {{-- Styles for test --}}
 <link rel="stylesheet" href="{{asset('css/test.css')}}">
+
+{{-- animate  --}}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+
+
+{{-- font awesome  --}}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>{{config('app.name', 'LSAPP')}}</title>

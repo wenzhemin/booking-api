@@ -27,8 +27,8 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'Rebeca',
-                'email' => 'dummy@dummy.org',
-                'password' => Hash::make('changemetosomethingbetter'),
+                'email' => 'isusnavi2005@gmail.com',
+                'password' => Hash::make('qaz123///'),
             ],
             [
                 'name' => 'Zhemin Wen',

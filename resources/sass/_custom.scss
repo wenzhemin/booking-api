@@ -1,5 +1,8 @@
 // NAVIGATION
-#login-content, #register-content, #reset-content, #email-reset-content {
+#login-content,
+#register-content,
+#reset-content,
+#email-reset-content {
     background-color: #{$dark-grey};
     display: grid;
     justify-items: center;
@@ -8,15 +11,18 @@
     height: 100vh;
     position: absolute;
     padding-bottom: 50px;
+
     label {
         font-size: 1.5rem;
         color: #{$white};
     }
+
     input {
         font-size: 1.75rem;
         color: #{$white};
         background-color: #{$black};
     }
+
     button {
         font-size: 1.75rem;
     }
@@ -27,7 +33,12 @@
 (min-device-width: 802px) and (max-device-width: 1020px) {
 
     /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
         display: block;
     }
 
@@ -64,27 +75,142 @@ Label the data
     td:nth-of-type(1):before {
         content: "Sunday";
     }
+
     td:nth-of-type(2):before {
         content: "Monday";
     }
+
     td:nth-of-type(3):before {
         content: "Tuesday";
     }
+
     td:nth-of-type(4):before {
         content: "Wednesday";
     }
+
     td:nth-of-type(5):before {
         content: "Thursday";
     }
+
     td:nth-of-type(6):before {
         content: "Friday";
     }
+
     td:nth-of-type(7):before {
         content: "Saturday";
     }
 
 
 }
+
+// ********************************************************************
+// styling for index.blade.php 
+
+section {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#header {
+    background-color: antiquewhite;
+}
+
+#create,
+#connect {
+    background-color: white;
+}
+
+#existing-booking {
+    background-color: antiquewhite;
+}
+
+
+hr {
+    border-top: 0.15rem solid rgb(246, 105, 94) !important;
+}
+
+
+
+
+
+.cards {
+    padding-top: 4%;
+}
+
+
+
+#userEmail,
+#userName,
+#buttonSubmit {
+    width: 33%;
+}
+
+textarea {
+    border: solid 1px red;
+}
+
+
+ul li {
+    display: inline;
+}
+
+.fa-stack,
+.card-title,
+.customer-title {
+    color: rgb(246, 105, 94);
+}
+
+.title h1 {
+    font-family: monospace;
+
+}
+
+.typewriter h1 {
+    font-family: monospace;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 4s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 120%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: transparent
+    }
+}
+
+
+
+// ********************************************************************
+
+
+
 
 /* Smartphones (portrait and landscape) ----------- */
 
@@ -107,23 +233,24 @@ Label the data
     table {
         table-layout: fixed;
     }
+
     td {
         width: 33%;
     }
 }
 
-.row{
+.row {
     margin-top: 20px;
 }
 
-.today{
+.today {
     background:#{$corral};
 }
 
 #calendarlayout {
     background-color: #{$cerulean};
     margin-top: 4.5rem;
-    
+
     .header {
         color: #{$alabaster};
     }
@@ -183,8 +310,9 @@ Label the data
     a {
         color: #{$alabaster};
     }
-    
-    li, .modal-content {
+
+    li,
+    .modal-content {
         color: #{$onyx-black};
     }
 }
@@ -198,15 +326,17 @@ Label the data
     position: fixed;
     height: 100%;
     overflow: auto;
-  
+
     /* Sidebar links */
     a {
         display: block;
         color: grey;
         padding: 16px;
         text-decoration: none;
-  
-        .fa, .ion, .glyphicon {
+
+        .fa,
+        .ion,
+        .glyphicon {
             margin-right: 3px;
         }
 
@@ -216,10 +346,10 @@ Label the data
             color: white;
         }
     }
-  
-  /* Links on mouse-over */
+
+    /* Links on mouse-over */
     a:hover:not(.active) {
-        color: rgba(255,255,255,.75);
+        color: rgba(255, 255, 255, .75);
         text-decoration: none;
     }
 
@@ -229,13 +359,14 @@ Label the data
         width: 100%;
         padding: 10px;
         overflow: hidden;
-        
+
         .image img {
             width: 100%;
             max-width: 45px;
             height: auto;
             margin-right: 0.5rem;
         }
+
         p {
             color: #{$alabaster};
             font-size: .7rem;
@@ -261,7 +392,9 @@ Label the data
                 padding: 12px 5px 12px 15px;
                 display: block;
 
-                .fa, .glyphicon, .ion {
+                .fa,
+                .glyphicon,
+                .ion {
                     width: 20px;
                 }
 
@@ -282,75 +415,80 @@ Label the data
 }
 
 /* END The side navigation menu */
-  
 
 
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  div.content {
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
     margin-left: 100px;
     padding: 1px 16px;
     height: 100%;
-  }
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
     .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
+        width: 100%;
+        height: auto;
+        position: relative;
     }
-    .sidebar a {float: left;}
+
+    .sidebar a {
+        float: left;
+    }
+
     div.content {
         margin-left: 0;
         margin-top: 0;
     }
-  }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
     .sidebar a {
-      text-align: center;
-      float: none;
+        text-align: center;
+        float: none;
     }
-  }
+}
 
 
-  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     width: 100%;
     height: 33vh;
     margin-top: 5%;
     border: black solid 1px;
-  }
-  
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container 
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container 
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }*/
-  
-  /* Position the front and back side */
-  .flip-card-front {
+
+/* Position the front and back side */
+.flip-card-front {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
     background-color: #{$corral};
     color: #{$alabaster};
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
-  }
-  /**DASHBOARD END**/
+}
+
+/**DASHBOARD END**/
 /*****************/
