@@ -169,9 +169,9 @@
                 </div>
 
                 <div class="form-group form-inline">
-                    <input type="email" id="email" class="form-control mr-1" placeholder="Email address"> 
-                    <input type="text" id="name" class="form-control mr-1" placeholder="Full name"> 
-                    <button id="submit" class="btn btn-info" type="submit">Send</button>
+                    <input type="email" id="userEmail" class="form-control mr-1" placeholder="Email address"> 
+                    <input type="text" id="userName" class="form-control mr-1" placeholder="Full name"> 
+                    <button id="buttonSubmit" class="btn btn-info" type="submit">Send</button>
 
                 </div>
   

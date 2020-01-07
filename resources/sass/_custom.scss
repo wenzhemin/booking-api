@@ -139,9 +139,9 @@ hr {
 
 
 
-#email,
-#name,
-#submit {
+#userEmail,
+#userName,
+#buttonSubmit {
     width: 33%;
 }
 
@@ -326,30 +326,6 @@ ul li {
     position: fixed;
     height: 100%;
     overflow: auto;
-}
-
-/* Sidebar links */
-.sidebar a {
-    display: block;
-    color: grey;
-    padding: 16px;
-    text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-    color: rgba(255, 255, 255, .75);
-    text-decoration: none;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
 
     /* Sidebar links */
     a {
@@ -504,19 +480,6 @@ div.content {
     height: 100%;
     backface-visibility: hidden;
 }
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-}
-
-/**DASHBOARD END**/
-/*****************/
-
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
