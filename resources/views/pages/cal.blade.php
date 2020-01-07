@@ -72,7 +72,7 @@ function build_calendar($month, $year) {
     //     }
     // }
 
-    $mysqli = new mysqli('127.0.0.1', 'root', '', 'bookingapi');
+    $mysqli = new mysqli('127.0.0.1', 'root', 'root', 'bookingapi');
     $stmt = $mysqli->prepare("select * from bookings where date = ?");
     $stmt->bind_param('s', $date);
     $bookings = array();
@@ -128,7 +128,7 @@ function build_calendar($month, $year) {
 
      foreach($daysOfWeek as $day) {
           $calendar .= "<th  class='header'>$day</th>";
-     } 
+     }
 
      // Create the rest of the calendar
 
