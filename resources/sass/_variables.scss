@@ -2,7 +2,8 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Nunito',
+sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -10,8 +11,7 @@ $easeTime: 0.25s;
 $margin-top: 56px;
 
 
-$colors: (
-    "mattBlackLight": "#303337",
+$colors: ("mattBlackLight": "#303337",
     "mattBlackDark": "#212121",
     "mattGray": "#878d8d",
     "mattRed": "#ec6271"
@@ -23,7 +23,7 @@ $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
-$red: #e3342f;
+// $red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;

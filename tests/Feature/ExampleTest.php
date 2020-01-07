@@ -27,18 +27,25 @@ class ExampleTest extends TestCase
     public function cal_route_returning_something()
     {
         $response = $this->get('/cal');
-        // dd($response);
-        $response->assertStatus(200);         
+        dd($response);
+       
     }
 
 
-// several 
-    public function testBasicTest()
+// assertsee - to test if it contains a string
+    public function testBookingString()
     {
         $response = $this->get('/');
 
-        $response->assertSee('We make booking great again');
+        $response->assertSee('alegria');
     }
 
     
+    // assertSeeInOrder 
+    public function testStringsInOrder()
+    {
+        $response = $this->get('/');
+
+        $response->assertSeeInOrder(['booking', 'great', 'integrate']);
+    }
 }
