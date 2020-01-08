@@ -4,36 +4,63 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\User;
+use App\Booking;
+use Carbon\Carbon;
 
 class CalendarController extends AdminController {
     
     public function index($year = null, $week = null) {
 
-        \Log::info('=================================');
-        \Log::info('Year: '.$year);
-        \Log::info('Week: '.$week);
-
-        $dt = new \DateTime;
+        // set selected year and week or default to current year/week
+        $datetime = new \DateTime;
         if (!$week && !$year) {
-            \Log::info('Vi har IKKE data ');
-            $dt->setISODate($dt->format('o'), $dt->format('W'));
+            $datetime->setISODate($datetime->format('o'), $datetime->format('W'));
         } else {
-            \Log::info('Vi har data ');
-            $dt->setISODate($year, $week);
+            $datetime->setISODate($year, $week);
         }
 
-        $year = $dt->format('o');
-        $week = $dt->format('W');
+        $year = $datetime->format('o');
+        $week = $datetime->format('W');
 
-        $data['year'] = $year;
-        $data['week'] = $week;
-        $data['dt'] = $dt;
+
+        // get all bookings belonging to selected week
+        $bookings = Booking::whereBetween('date', [
+            Carbon::parse($datetime->format('Y-m-d'))->startOfWeek(),
+            Carbon::parse($datetime->format('Y-m-d'))->endOfWeek()
+        ])->orderBy('timeslot')->orderBy('date')->get();
+        
+        // set view variables
+        $data['bookings']   = $bookings;
+        $data['year']       = $year;
+        $data['week']       = $week;
+        $data['datetime']   = $datetime;
+        $data['timeslots']  = $this->timeslots();
+        $data['weekdates']  = $this->get_weekdates_array($datetime);
 
         return view('admin.admincalendar')->with($data);
     }
 
+    private function get_weekdates_array($datetime) {
+        $startDate = Carbon::parse($datetime->format('Y-m-d'))->startOfWeek();
+        $endDate = Carbon::parse($datetime->format('Y-m-d'))->endOfWeek();
+        //Init interval
+        $dateInterval = \DateInterval::createFromDateString('1 day');
+        //Init Date Period from start date to end date
+        //1 day is added to end date since date period ends before end date. See first comment: http://php.net/manual/en/class.dateperiod.php
+        $dateperiod = new \DatePeriod($startDate, $dateInterval, $endDate);
+        $weekdates = [];
+
+        foreach ($dateperiod as $displaydate) {
+          $weekdates[] = [
+                'day_name' => $displaydate->format('l'), 
+                'dis_date' => $displaydate->format('d M Y'),
+                'date' => $displaydate->format('Y-m-d')
+            ];
+        }
+        return $weekdates;
+    }
     
-    public function timeslots($duration, $cleanup, $start, $end) {
+    public function timeslots() {
         //Duration is the amount of time spend on each session (Bookable time)
         $duration = 60;
         //Cleanup is the amount of time needed to prepare next sessions(to clean or prep something required to next customer)

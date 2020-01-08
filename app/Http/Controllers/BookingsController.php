@@ -26,10 +26,30 @@ class BookingsController extends Controller
         $services = Service::all();
         $intervals = Interval::all();
 
+        // THIS :
+        // $mysqli = new mysqli(env('DB_HOST', '127.0.0.1'), env('DB_USERNAME', 'root'), env('DB_PASSWORD', 'root'), env('DB_DATABASE', 'bookingapi'));
+        // $stmt = $mysqli->prepare("select * from bookings where date = ?");
+        // $stmt->bind_param('s', $date);
+        // $bookings = array();
+        // if($stmt->execute()){
+        //     $result = $stmt->get_result();
+        //     if($result->num_rows > 0){
+        //         while($row = $result->fetch_assoc()){
+        //             $bookings[] = $row['timeslot'];
+        //         }
+        //         \Log::info($bookings);
+        //         $stmt->close();
+        //     }
+        // }
+
+        // HAS BEEN REPLACED WITH THIS:
+        $bookings = Booking::where('date', '=', date('Y-m-d'))->pluck('timeslot')->toArray();
+
         $data = [
             'locations'  => $locations,
             'services'   => $services,
-            'intervals'   => $intervals
+            'intervals'   => $intervals,
+            'bookings'   => $bookings
         ];
 
         return view('pages.cal')->with('data', $data);
