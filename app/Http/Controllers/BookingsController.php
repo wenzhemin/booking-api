@@ -79,7 +79,7 @@ class BookingsController extends Controller
         $booking->email = $request->input('email');
         $booking->no_of_guests = $request->input('no_of_guests');
         $booking->location_id = $request->input('location_id');
-        $booking->buniness_id = $businessId;
+        $booking->business_id = $businessId;
         $booking->service_id = $request->input('service_id');
         $booking->save();
 
