@@ -2,7 +2,9 @@
 <!-- Sidebar user panel -->
 <div class="user-panel">
     <div class=" pull-left image">
+        @if(Auth::user()->image != '')
         <img src="{!! route('getuserimage', ['user_id' => Auth::user()->id, 'filename' => Auth::user()->image]) !!}"  class="rounded-circle z-depth-2" alt="User Image">
+        @endif
     </div>
     <div>
         <p>{{ Auth::user()->name }}</p>
