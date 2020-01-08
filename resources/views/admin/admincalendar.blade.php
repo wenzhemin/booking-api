@@ -25,11 +25,7 @@
         </thead>
         <tbody>
             <tr>
-                <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
-                foreach($timeslots as $ts){
-            ?>                    
-                    <th data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></th>
-            <?php } ?>
+                <th scope="row">10:00</th>
                 <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
                 <td></td>
                 <td></td>
@@ -38,7 +34,84 @@
                 <td></td>
                 <td></td>
             </tr>
-            {{-- <tr>
+
+            <tr>
+                <th scope="row">11:00</th>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+            </tr>
+
+            <tr>
+                <th scope="row">12:00</th>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th scope="row">13:00</th>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+            </tr>
+
+            <tr>
+                <th scope="row">14:00</th>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th scope="row">15:00</th>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">16:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+            </tr>
+
+            <tr>
+                <th scope="row">17:00</th>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
                 <th scope="row">18:00</th>
                 <td></td>
                 <td></td>
@@ -47,7 +120,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr> --}}
+            </tr>
         </tbody>
     </table>
     </div>
