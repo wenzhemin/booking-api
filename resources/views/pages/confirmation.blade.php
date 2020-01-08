@@ -7,8 +7,8 @@
 <div class="row banner bg-warning m-0">
 
 <div class="bg-warning">
-    <h1>Cinfirmed</h1> 
-    <p>Your booking have been made successfully.</p> 
+    <h1>Confirmed</h1> 
+    <p>Your booking has been successfully made.</p> 
 </div>
 
 

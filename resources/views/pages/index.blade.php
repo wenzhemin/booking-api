@@ -168,7 +168,7 @@
                     <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
                 </div>
 
-                <div class="form-group form-inline">
+                <div class="form-group form-inline animated zoomIn">
                     <input type="email" id="userEmail" class="form-control mr-1" placeholder="Email address"> 
                     <input type="text" id="userName" class="form-control mr-1" placeholder="Full name"> 
                     <button id="buttonSubmit" class="btn btn-info" type="submit">Send</button>
