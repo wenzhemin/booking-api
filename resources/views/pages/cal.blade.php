@@ -254,7 +254,7 @@ function build_calendar($month, $year) {
                 
                 <div class="row">
                     <div class="col-md-12">
-                    <form action="{{url('bookings')}}" method="post">
+                    <form action="{{ url('bookings') }}" method="post">
                         @csrf
                         <input name="date" type="hidden" value="<?php echo $date;?>">
                         <div class="form-group">
@@ -290,10 +290,6 @@ function build_calendar($month, $year) {
                             <label for="">Number of Guests</label>
                             <input required type="text" name="no_of_guests" class="form-control">
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="">Location(ID for now)</label>
-                            <input required type="text" name="location_id" class="form-control">
-                        </div> --}}
                         <div class="form-group">
                             <label class="mr-sm-2" for="locationSelect">Location</label>
                             <select name="location_id" class="custom-select mr-sm-2 form-control" id="locationSelect" required>
@@ -303,10 +299,6 @@ function build_calendar($month, $year) {
                                 @endforeach
                             </select>
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="">Service(ID for now)</label>
-                            <input required type="text" name="service_id" class="form-control">
-                        </div> --}}
                         <div class="form-group">
                             <label class="mr-sm-2" for="serviceSelect">Service</label>
                             <select name="service_id" class="custom-select mr-sm-2 form-control" id="serviceSelect" required>
