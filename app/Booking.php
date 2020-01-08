@@ -20,4 +20,9 @@ class Booking extends Model
     {
         return $this->belongsTo('App\Service');
     }
+    
+    public function business()
+    {
+        return $this->belongsTo('App\Business');
+    }
 }
