@@ -21,7 +21,7 @@
                     <tr>
                         <td>{{ $booking->name_of_guest }}</td>
                         <td>{{ $booking->service_id }}</td>
-                        <td>{{ $booking->date }}</td>
+                        <td>{{ date('Y-m-d', strtotime($booking->date)) }}</td>
                     </tr>
                     <?php $count++; ?>
                     @endforeach
