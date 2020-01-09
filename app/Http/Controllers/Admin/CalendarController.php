@@ -45,8 +45,6 @@ class CalendarController extends AdminController {
         $endDate = Carbon::parse($datetime->format('Y-m-d'))->endOfWeek();
         //Init interval
         $dateInterval = \DateInterval::createFromDateString('1 day');
-        //Init Date Period from start date to end date
-        //1 day is added to end date since date period ends before end date. See first comment: http://php.net/manual/en/class.dateperiod.php
         $dateperiod = new \DatePeriod($startDate, $dateInterval, $endDate);
         $weekdates = [];
 
@@ -69,7 +67,6 @@ class CalendarController extends AdminController {
         $start = "09:00";
         $end = "17:00";
 
-
         $start = new \DateTime($start);
         $end = new \DateTime($end);
         $interval = new \DateInterval("PT".$duration."M");
@@ -82,8 +79,6 @@ class CalendarController extends AdminController {
             if($endPeriod>$end) {
                 break;
             }
-    
-            // $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
             $slots[] = $intStart->format("H:i");
         }
     

@@ -9,6 +9,7 @@ use App\Booking;
 use App\Location;
 use App\Service;
 use App\Interval;
+use App\Http\Requests\BookingRequest;
 // use DateTime;
 // use Carbon\Carbon;
 
