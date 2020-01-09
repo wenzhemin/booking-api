@@ -26,10 +26,30 @@ class BookingsController extends Controller
         $services = Service::all();
         $intervals = Interval::all();
 
+        // THIS :
+        // $mysqli = new mysqli(env('DB_HOST', '127.0.0.1'), env('DB_USERNAME', 'root'), env('DB_PASSWORD', 'root'), env('DB_DATABASE', 'bookingapi'));
+        // $stmt = $mysqli->prepare("select * from bookings where date = ?");
+        // $stmt->bind_param('s', $date);
+        // $bookings = array();
+        // if($stmt->execute()){
+        //     $result = $stmt->get_result();
+        //     if($result->num_rows > 0){
+        //         while($row = $result->fetch_assoc()){
+        //             $bookings[] = $row['timeslot'];
+        //         }
+        //         \Log::info($bookings);
+        //         $stmt->close();
+        //     }
+        // }
+
+        // HAS BEEN REPLACED WITH THIS:
+        $bookings = Booking::where('date', '=', date('Y-m-d'))->pluck('timeslot')->toArray();
+
         $data = [
             'locations'  => $locations,
             'services'   => $services,
-            'intervals'   => $intervals
+            'intervals'   => $intervals,
+            'bookings'   => $bookings
         ];
 
         return view('pages.cal')->with('data', $data);
@@ -51,21 +71,8 @@ class BookingsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
-        //
-        $this->validate($request, [
-            'date' => 'required',
-            'timeslot' => 'required',
-            'interval_id' => 'required',
-            'name_of_guest' => 'required',
-            'phone_no' => 'required',
-            'email' => 'required',
-            'no_of_guests' => 'required',
-            'location_id' => 'required',
-            'service_id' => 'required'
-        ]);
-
         $businessId = 1;
         // Create Booking
         $booking = new Booking;
@@ -79,7 +86,7 @@ class BookingsController extends Controller
         $booking->email = $request->input('email');
         $booking->no_of_guests = $request->input('no_of_guests');
         $booking->location_id = $request->input('location_id');
-        $booking->buniness_id = $businessId;
+        $booking->business_id = $businessId;
         $booking->service_id = $request->input('service_id');
         $booking->save();
 

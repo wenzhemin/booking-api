@@ -2,6 +2,10 @@
 
 @section('content')
 
+<?php
+    use Carbon\Carbon;
+?>
+
 <!-- Page content -->
 <div class="content">
 <div class="container-fluid">
@@ -15,102 +19,29 @@
         <thead>
             <tr>
                 <th scope="col">Time</th>
-                    <?php
-                    do {
-                        echo "<th>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
-                        $dt->modify('+1 day');
-                    } while ($week == $dt->format('W'));
-                    ?>
+                @foreach($weekdates as $weekdate)
+                    <th>{{ $weekdate['day_name'] }}<br>{{ $weekdate['dis_date'] }}</th>
+                @endforeach
             </tr>
         </thead>
         <tbody>
+            @foreach($timeslots as $timeslot)
             <tr>
-                <th scope="row">10:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th scope="row">{{ $timeslot }}</th>
+                @foreach($weekdates as $weekdate)
+                    <td>
+                        @foreach($bookings as $booking)
+                            @if($booking->timeslot == $timeslot)
+                                @if(Carbon::parse($booking->date)->eq(Carbon::parse($weekdate['date'])))
+                                    <button type="button" class="btn btn-danger btn-sm" style="margin-bottom:2px">{{ $booking->name_of_guest }}<br>{{ $booking->no_of_guests }} guests<br>{{ $booking->service->name }}<br>{{ $booking->interval->hour }} hours</button><br>
+                                @endif
+                            @endif
+                        @endforeach
+                    </td>
+                @endforeach
             </tr>
 
-            <tr>
-                <th scope="row">11:00</th>
-                <td></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">12:00</th>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th scope="row">13:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">14:00</th>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th scope="row">15:00</th>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">16:00</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">17:00</th>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
+            @endforeach
             <tr>
                 <th scope="row">18:00</th>
                 <td></td>
@@ -133,7 +64,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Booking:</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
