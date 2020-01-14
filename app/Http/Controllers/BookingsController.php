@@ -51,21 +51,8 @@ class BookingsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
-        //
-        $this->validate($request, [
-            'date' => 'required',
-            'timeslot' => 'required',
-            'interval_id' => 'required',
-            'name_of_guest' => 'required',
-            'phone_no' => 'required',
-            'email' => 'required',
-            'no_of_guests' => 'required',
-            'location_id' => 'required',
-            'service_id' => 'required'
-        ]);
-
         $businessId = 1;
         // Create Booking
         $booking = new Booking;
@@ -79,7 +66,7 @@ class BookingsController extends Controller
         $booking->email = $request->input('email');
         $booking->no_of_guests = $request->input('no_of_guests');
         $booking->location_id = $request->input('location_id');
-        $booking->buniness_id = $businessId;
+        $booking->business_id = $businessId;
         $booking->service_id = $request->input('service_id');
         $booking->save();
 

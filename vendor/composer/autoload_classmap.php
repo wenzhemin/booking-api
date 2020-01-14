@@ -49,6 +49,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Service' => $baseDir . '/app/Service.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'BookingsTableSeeder' => $baseDir . '/database/seeds/BookingsTableSeeder.php',
     'BusinessesTableSeeder' => $baseDir . '/database/seeds/BusinessesTableSeeder.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',

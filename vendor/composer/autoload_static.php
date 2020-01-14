@@ -467,6 +467,7 @@ class ComposerStaticInit2cd91967f3f941a57ac847cdbf78fbdd
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'BookingsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BookingsTableSeeder.php',
         'BusinessesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BusinessesTableSeeder.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',

@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             LocationsTableSeeder::class,
             IntervalsTableSeeder::class,
             BusinessesTableSeeder::class,
+            BookingsTableSeeder::class,
         ]);        
     }
 }

@@ -17,7 +17,7 @@ Route::get('/cal', 'BookingsController@index');
 Route::resource('bookings', 'BookingsController');
 Auth::routes();
 
-Route::get('image/users/{user_id}/{filename}', ['as' => 'getuserimage', 'uses' => 'ImageController@getUserImage']);
+Route::get('image/users/{user_id}/{filename?}', ['as' => 'getuserimage', 'uses' => 'ImageController@getUserImage']);
 Auth::routes(['register' => false]);
 
 
