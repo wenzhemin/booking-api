@@ -5,32 +5,37 @@
         @include('admin.partials.head')
     </head>
     <body class="dashboard">
-    <div id='app'></div>
-    <!--NAVIGATION START-->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #333;">
-        <!-- Nav -->
-        @include('admin.partials.nav')
-    </nav>
+        <div class="wrapper">
+            <!-- SIDEBAR -->
+            <div class="bg-dark" id="sidebar">
+                @include('admin.partials.sidebar')
+            </div>
 
-    <!-- The sidebar -->
-    <aside class="sidebar">
-        <!-- Nav -->
-        @include('admin.partials.sidebar')
-    </aside>
-    <!--NAVIGATION END-->
-    
-    <!--DASHBOARD CONTENT-->
-    <div class="content">
-            @yield('content')
-    </div>
-    
-    
-        
-        
+            <div id="page-content">
+                <!-- NAV-->
+                <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark">
+                    @include('admin.partials.nav')
+                </nav>
 
-        <!-- <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.slimscroll.min.js"></script> 
+                
+                <!--DASHBOARD CONTENT-->
+                <div class="content">
+                        @yield('content')
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #page-content').toggleClass('sidebar-collapse');
+            });
+        });
+        </script>
+
+        <script src="js/jquery.min.js"></script>
         <script src="{{asset('js/app.js')}}"></script>
+        <script src="{{asset('js/script.js')}}"></script>
     </body>
 </html>
