@@ -6,26 +6,41 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 dashboard-border">
+                <div class="col-lg-12">
                     <h1>Newest bookings</h1>
                 </div>
-                <table class="table table-striped table-hover table-dark table-bordered">
-                    <tr>
-                        <th>Name</th>
-                        <th>Booked service</th>
-                        <th>Date</th>
-                    </tr>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
                     <?php $count = 0; ?>
                     @foreach ($bookings as $booking)
                     <?php if($count == 3) break; ?>
-                    <tr>
-                        <td>{{ $booking->name_of_guest }}</td>
-                        <td>{{ $booking->service->name }}</td>
-                        <td>{{ date('Y-m-d', strtotime($booking->date)) }}</td>
-                    </tr>
+                    {{-- <div class="row no-gutters"> --}}
+                        <div class="col-lg-12">
+                            <div class="card dash-wrapper mt-1">
+                                <div class="card-body">
+                                    <table class="table">
+                                        <tr>
+                                            <th><h6>Name</h6></th>
+                                            <th><h6>Chosen raft</h6></th>
+                                            <th><h6>Date</h6></th>
+                                        </tr>
+                                        <tr>
+                                            <td><p class="card-text">{{ $booking->name_of_guest }}</p></td>
+                                            <td><p class="card-text">{{ $booking->service->name }}</p></td>
+                                            <td><p class="card-text">{{ date('Y-m-d', strtotime($booking->date)) }}</p></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    {{-- </div> --}}
                     <?php $count++; ?>
                     @endforeach
-                </table>
+                </div>
+                <div class="col-lg-6">
+
+                </div>
             </div>
         </div>
     </div>
