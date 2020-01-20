@@ -9,6 +9,7 @@ use App\Booking;
 use App\Location;
 use App\Service;
 use App\Interval;
+use App\Http\Requests\BookingRequest;
 // use DateTime;
 // use Carbon\Carbon;
 
@@ -19,6 +20,8 @@ class BookingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+  
+
     public function index()
     {
 
@@ -26,11 +29,40 @@ class BookingsController extends Controller
         $services = Service::all();
         $intervals = Interval::all();
 
+        // THIS :
+        // $mysqli = new mysqli(env('DB_HOST', '127.0.0.1'), env('DB_USERNAME', 'root'), env('DB_PASSWORD', 'root'), env('DB_DATABASE', 'bookingapi'));
+        // $stmt = $mysqli->prepare("select * from bookings where date = ?");
+        // $stmt->bind_param('s', $date);
+        // $bookings = array();
+        // if($stmt->execute()){
+        //     $result = $stmt->get_result();
+        //     if($result->num_rows > 0){
+        //         while($row = $result->fetch_assoc()){
+        //             $bookings[] = $row['timeslot'];
+        //         }
+        //         \Log::info($bookings);
+        //         $stmt->close();
+        //     }
+        // }
+
+        // HAS BEEN REPLACED WITH THIS:
+        // $bookings = Booking::where('date', '=', date('Y-m-d'))->pluck('timeslot')->toArray();
+        $bookings = Booking::all();
+
+
         $data = [
             'locations'  => $locations,
             'services'   => $services,
-            'intervals'   => $intervals
+            'intervals'   => $intervals,
+            'bookings'   => $bookings
         ];
+
+     // reeb try
+    //  $data['bookings'] = $bookings;
+    // $booking_dates = Booking::whereDate($date)->first();
+    // $default = Booking::where('id',1)
+    //        ->whereIn('id',['date','timeslot'])->get(); 
+
 
         return view('pages.cal')->with('data', $data);
     }
@@ -126,4 +158,5 @@ class BookingsController extends Controller
     {
         
     }
+     
 }

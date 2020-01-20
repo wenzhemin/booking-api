@@ -20,7 +20,7 @@
                     <?php if($count == 3) break; ?>
                     <tr>
                         <td>{{ $booking->name_of_guest }}</td>
-                        <td>{{ $booking->service_id }}</td>
+                        <td>{{ $booking->service->name }}</td>
                         <td>{{ date('Y-m-d', strtotime($booking->date)) }}</td>
                     </tr>
                     <?php $count++; ?>

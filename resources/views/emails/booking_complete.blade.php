@@ -11,12 +11,7 @@
         <p>The length of your booking: {{ $booking->interval->hour }} hour(s)</p>
         <p>The number of guests: {{ $booking->no_of_guests }}</p>
         <p>The address to pick up your booking: {{ $booking->location->address }}</p>
-
         <p>The raft you have booked: {{ $booking->service->name }}</p>
-
-        
-        
         <h3>{{ $booking->business->name }}</h3>
-        
     </body>
 </html>
