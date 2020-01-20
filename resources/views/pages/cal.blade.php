@@ -157,25 +157,19 @@ function build_calendar($month, $year) {
                         @foreach($timeslots as $timeslot)
                             <div class="offset-3 col-6">
                                 {{--  time slots  - I replaced bg-success with border --}}
-                                
                                 <button class="btn border btn-lg btn-block bookTime" data-timeslot="{{ $timeslot }}">{{ $timeslot }}</button>
-                                
                             </div>
                         @endforeach
-                        
-
 
                         {{-- reeb trying2 --}}
                         this is me
                         <form action="{{ url('bookings') }}" method="get">
                             <div class="form-group">
-                         <?php  
-                            foreach ($bookings as $booking){ 
-                        ?>
-                            <div class="offset-3 col-6">  
-                                <button class="btn border btn-lg btn-block bookTime" >{{ $booking->date }}>{{ $booking->timeslot }}</button>
-                            </div>
-                        <?php } ?>
+                            @foreach ($bookings as $booking)
+                                <div class="offset-3 col-6">  
+                                    <button class="btn border btn-lg btn-block bookTime" >{{ $booking->date }}>{{ $booking->timeslot }}</button>
+                                </div>
+                            @endforeach
                             </div>
                         </form>
                         {{-- end of reeb trying  --}}
