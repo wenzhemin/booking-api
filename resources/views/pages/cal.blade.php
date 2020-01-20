@@ -7,40 +7,6 @@
 
 $date = date('Y-m-d');
 
-//Duration is the amount of time spend on each session (Bookable time)
-$duration = 60;
-//Cleanup is the amount of time needed to prepare next sessions(to clean or prep something required to next customer)
-$cleanup = 0;
-//The opening hours for the business 
-$start = "09:00";
-$end = "17:00";
- 
- 
-
-
-function timeslots($duration, $cleanup, $start, $end) {
-    $start = new DateTime($start);
-    $end = new DateTime($end);
-    $interval = new DateInterval("PT".$duration."M");
-    $cleanupInterval = new DateInterval("PT".$cleanup."M");
-    $slots = array();
-
-
-    for($intStart = $start; $intStart<$end; $intStart->add($interval)->add($cleanupInterval)){
-        $endPeriod = clone $intStart;
-        $endPeriod->add($interval);
-        if($endPeriod>$end) {
-            break;
-        }
-
-        // $slots[] = $intStart->format("H:iA")."-".$endPeriod->format("H:iA");
-        $slots[] = $intStart->format("H:i");
-        
-    }
-
-    return $slots;
-}
-
 function build_calendar($month, $year) {
 
     // SQL Statement moved to BookingsController - result can be found in $bookings variable and used as such here.
@@ -186,19 +152,16 @@ function build_calendar($month, $year) {
             <div class="modal-body">                
                 <div class="row justify-content-center">
                     <div class="col-12">
-                    <?php echo isset($msg)?$msg:""; ?>
-                        <?php 
-                            $timeslots = timeslots($duration, $cleanup, $start, $end); 
-                            foreach($timeslots as $ts){
-                        ?>
+                        <?php echo isset($msg)?$msg:""; ?>
+
+                        @foreach($timeslots as $timeslot)
                             <div class="offset-3 col-6">
                                 {{--  time slots  - I replaced bg-success with border --}}
                                 
-                                <button class="btn border btn-lg btn-block bookTime" data-timeslot="<?php echo $ts;?>"><?php echo $ts;?></button>
+                                <button class="btn border btn-lg btn-block bookTime" data-timeslot="{{ $timeslot }}">{{ $timeslot }}</button>
                                 
                             </div>
-                        <?php } ?>
-
+                        @endforeach
                         
 
 
@@ -207,7 +170,7 @@ function build_calendar($month, $year) {
                         <form action="{{ url('bookings') }}" method="get">
                             <div class="form-group">
                          <?php  
-                            foreach ($data['bookings'] as $booking){ 
+                            foreach ($bookings as $booking){ 
                         ?>
                             <div class="offset-3 col-6">  
                                 <button class="btn border btn-lg btn-block bookTime" >{{ $booking->date }}>{{ $booking->timeslot }}</button>
@@ -232,7 +195,7 @@ function build_calendar($month, $year) {
                             <label class="mr-sm-2" for="serviceSelect">Hours</label>
                             <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
                                 <option disabled value="" selected hidden>Choose an interval</option>
-                                @foreach ($data['intervals'] as $interval)
+                                @foreach ($intervals as $interval)
                                     <option value={{ $interval->id }}>{{ $interval->hour }}</option>
                                 @endforeach
                             </select>
@@ -242,7 +205,7 @@ function build_calendar($month, $year) {
 
                         <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
                             <option disabled value="" selected hidden>I am tryin'</option>
-                            @foreach ($data['bookings'] as $booking)
+                            @foreach ($bookings as $booking)
                                 <option value={{ $booking->date }}>{{ $booking->timeslot }}</option>
                             @endforeach
                         </select>
@@ -271,7 +234,7 @@ function build_calendar($month, $year) {
                             <label class="mr-sm-2" for="locationSelect">Location</label>
                             <select name="location_id" class="custom-select mr-sm-2 form-control" id="locationSelect" required>
                                 <option disabled value="" selected hidden>Choose a location</option>
-                                @foreach ($data['locations'] as $location)
+                                @foreach ($locations as $location)
                                     <option value={{ $location->id }}>{{ $location->address }}</option>
                                 @endforeach
                             </select>
@@ -280,7 +243,7 @@ function build_calendar($month, $year) {
                             <label class="mr-sm-2" for="serviceSelect">Service</label>
                             <select name="service_id" class="custom-select mr-sm-2 form-control" id="serviceSelect" required>
                                 <option disabled value="" selected hidden>Choose a service</option>
-                                @foreach ($data['services'] as $service)
+                                @foreach ($services as $service)
                                     <option value={{ $service->id }}>{{ $service->name }}</option>
                                 @endforeach
                             </select>

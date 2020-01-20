@@ -49,13 +49,11 @@ class BookingsController extends Controller
         // $bookings = Booking::where('date', '=', date('Y-m-d'))->pluck('timeslot')->toArray();
         $bookings = Booking::all();
 
-
-        $data = [
-            'locations'  => $locations,
-            'services'   => $services,
-            'intervals'   => $intervals,
-            'bookings'   => $bookings
-        ];
+        $data['locations']  = $locations;
+        $data['services']  = $services;
+        $data['intervals']  = $intervals;
+        $data['bookings']  = $bookings;
+        $data['timeslots']  = $this->timeslots();
 
      // reeb try
     //  $data['bookings'] = $bookings;
@@ -64,7 +62,7 @@ class BookingsController extends Controller
     //        ->whereIn('id',['date','timeslot'])->get(); 
 
 
-        return view('pages.cal')->with('data', $data);
+        return view('pages.cal')->with($data);
     }
 
     /**
@@ -180,5 +178,34 @@ class BookingsController extends Controller
     {
         
     }
+
+    // Helper functions
+    public function timeslots() {
+        //Duration is the amount of time spend on each session (Bookable time)
+        $duration = 60;
+        //Cleanup is the amount of time needed to prepare next sessions(to clean or prep something required to next customer)
+        $cleanup = 0;
+        //The opening hours for the business 
+        $start = "09:00";
+        $end = "17:00";
+
+        $start = new \DateTime($start);
+        $end = new \DateTime($end);
+        $interval = new \DateInterval("PT".$duration."M");
+        $cleanupInterval = new \DateInterval("PT".$cleanup."M");
+        $slots = array();
+    
+        for($intStart = $start; $intStart<$end; $intStart->add($interval)->add($cleanupInterval)){
+            $endPeriod = clone $intStart;
+            $endPeriod->add($interval);
+            if($endPeriod>$end) {
+                break;
+            }
+            $slots[] = $intStart->format("H:i");
+        }
+    
+        return $slots;
+    }
+
      
 }
