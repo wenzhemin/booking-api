@@ -10,8 +10,7 @@ use App\Location;
 use App\Service;
 use App\Interval;
 use App\Http\Requests\BookingRequest;
-// use DateTime;
-// use Carbon\Carbon;
+use Carbon\Carbon;
 
 class BookingsController extends Controller
 {
@@ -22,45 +21,39 @@ class BookingsController extends Controller
      */
   
 
-    public function index()
+    public function index($year = null, $month = null)
     {
+        \Log::info('year : '.$year);
+        \Log::info('month : '.$month);
+        // set selected year and month or default to current year/month
+        $datetime = Carbon::now();
+        
+        if (!$month && !$year) {
+            $datetime->setISODate($datetime->format('o'), $datetime->format('W'));
+        } else {
+            // $datetime->setISODate($year, $month);
+            $inputdate = $year.'-'.$month.'-01';
+            $datetime = Carbon::createFromFormat('Y-m-d', $inputdate);
+        }
+
+        // get all bookings belonging to selected month and year
+        $bookings = Booking::whereYear('date', Carbon::parse($datetime->format('Y-m-d'))->year)
+            ->whereMonth('date', Carbon::parse($datetime->format('Y-m-d'))->month)
+            ->orderBy('date')->orderBy('timeslot')->get();
 
         $locations = Location::all();
         $services = Service::all();
         $intervals = Interval::all();
 
-        // THIS :
-        // $mysqli = new mysqli(env('DB_HOST', '127.0.0.1'), env('DB_USERNAME', 'root'), env('DB_PASSWORD', 'root'), env('DB_DATABASE', 'bookingapi'));
-        // $stmt = $mysqli->prepare("select * from bookings where date = ?");
-        // $stmt->bind_param('s', $date);
-        // $bookings = array();
-        // if($stmt->execute()){
-        //     $result = $stmt->get_result();
-        //     if($result->num_rows > 0){
-        //         while($row = $result->fetch_assoc()){
-        //             $bookings[] = $row['timeslot'];
-        //         }
-        //         \Log::info($bookings);
-        //         $stmt->close();
-        //     }
-        // }
-
-        // HAS BEEN REPLACED WITH THIS:
-        // $bookings = Booking::where('date', '=', date('Y-m-d'))->pluck('timeslot')->toArray();
-        $bookings = Booking::all();
-
+        // let's prep data for the view
         $data['locations']  = $locations;
         $data['services']  = $services;
         $data['intervals']  = $intervals;
         $data['bookings']  = $bookings;
         $data['timeslots']  = $this->timeslots();
-
-     // reeb try
-    //  $data['bookings'] = $bookings;
-    // $booking_dates = Booking::whereDate($date)->first();
-    // $default = Booking::where('id',1)
-    //        ->whereIn('id',['date','timeslot'])->get(); 
-
+        $data['date'] = date_format(date_create($datetime), 'Y-m-d');
+        $data['month'] = $datetime->month;
+        $data['year'] = $datetime->year;
 
         return view('pages.cal')->with($data);
     }

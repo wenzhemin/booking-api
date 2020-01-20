@@ -5,8 +5,6 @@
 
 <?php
 
-$date = date('Y-m-d');
-
 function build_calendar($month, $year) {
 
     // SQL Statement moved to BookingsController - result can be found in $bookings variable and used as such here.
@@ -31,18 +29,23 @@ function build_calendar($month, $year) {
     // month in question.
     $dayOfWeek = $dateComponents['wday'];
 
-    // Create the table tag opener and day headers
-    $datetoday = date('Y-m-d');
-
-
+    $current_month = date('m');
+    $current_year = date('Y');
+    $previous_month = date('m', mktime(0, 0, 0, $month-1, 1, $year));
+    $previous_year = date('Y', mktime(0, 0, 0, $month-1, 1, $year));
+    $next_month = date('m', mktime(0, 0, 0, $month+1, 1, $year));
+    $next_year = date('Y', mktime(0, 0, 0, $month+1, 1, $year));
 
     $calendar = "<table id='calendardates' class='table table-bordered'>";
     $calendar.= "<center><h2 class='calendar-title'>$monthName $year</h2>";
-    $calendar.= "<a class='btn btn-xs btn-book' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Previous Month</a> ";
 
-    $calendar.= " <a class='btn btn-xs btn-book' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a> ";
+    // $calendar.= "<a class='btn btn-xs btn-book' href='?month=".$previous_month."&year=".$previous_year."'>Previous Month</a> ";
+    // $calendar.= " <a class='btn btn-xs btn-book' href='?month=".$current_month."&year=".$current_year."'>Current Month</a> ";
+    // $calendar.= "<a class='btn btn-xs btn-book' href='?month=".$next_month."&year=".$next_year."'>Next Month</a></center><br>";
 
-    $calendar.= "<a class='btn btn-xs btn-book' href='?month=".date('m', mktime(0, 0, 0, $month+1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Next Month</a></center><br>";
+    $calendar.= "<a class='btn btn-xs btn-book' href='/cal/".$previous_year."/".$previous_month."'>Previous Month</a> ";
+    $calendar.= " <a class='btn btn-xs btn-book' href='/cal/".$current_year."/".$current_month."'>Current Month</a> ";
+    $calendar.= "<a class='btn btn-xs btn-book' href='/cal/".$next_year."/".$next_month."'>Next Month</a></center><br>";
 
 
 
@@ -125,18 +128,20 @@ function build_calendar($month, $year) {
 <div id="calendarlayout" class="container">
     <div class="row">
         <div class="col-md-12">
-            <?php
-                $dateComponents = getdate();
-                if(isset($_GET['month']) && isset($_GET['year'])){
-                    $month = $_GET['month']; 			     
-                    $year = $_GET['year'];
-                }else{
-                    $month = $dateComponents['mon']; 			     
-                    $year = $dateComponents['year'];
-                }
-                echo build_calendar($month,$year);
-            ?>
+            {{ build_calendar($month,$year) }}
         </div>
+    </div>
+</div> 
+
+<!-- just for dunmping the bookings for the selected month -->
+<div id="bookingsdump" class="container">
+    <div class="row">
+        Selected month and year : [{{ $date }}]
+        @foreach($bookings as $booking)
+            <div class="col-md-12">
+            {{ date_format(date_create($booking->date), 'Y-m-d') }} - {{ $booking->name_of_guest }} - {{ $booking->timeslot }} - {{ $booking->phone_no }} - {{ $booking->email }}
+            </div>
+        @endforeach
     </div>
 </div> 
 
@@ -152,27 +157,14 @@ function build_calendar($month, $year) {
             <div class="modal-body">                
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <?php echo isset($msg)?$msg:""; ?>
-
+                        {{ isset($msg) ? $msg : '' }}
                         @foreach($timeslots as $timeslot)
                             <div class="offset-3 col-6">
                                 {{--  time slots  - I replaced bg-success with border --}}
                                 <button class="btn border btn-lg btn-block bookTime" data-timeslot="{{ $timeslot }}">{{ $timeslot }}</button>
                             </div>
                         @endforeach
-
-                        {{-- reeb trying2 --}}
-                        this is me
-                        <form action="{{ url('bookings') }}" method="get">
-                            <div class="form-group">
-                            @foreach ($bookings as $booking)
-                                <div class="offset-3 col-6">  
-                                    <button class="btn border btn-lg btn-block bookTime" >{{ $booking->date }}>{{ $booking->timeslot }}</button>
-                                </div>
-                            @endforeach
-                            </div>
-                        </form>
-                        {{-- end of reeb trying  --}}
+                        <!-- insert Rebacas code here -->
                     </div>
                 </div>
                 
@@ -180,7 +172,7 @@ function build_calendar($month, $year) {
                     <div class="col-md-12">
                     <form action="{{ url('bookings') }}" method="post">
                         @csrf
-                        <input name="date" type="hidden" value="<?php echo $date;?>">
+                        <input name="date" type="hidden" value="{{ $date }}">
                         <div class="form-group">
                             <label for="">Timeslot</label>
                             <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">
@@ -197,12 +189,12 @@ function build_calendar($month, $year) {
 
                         {{-- test  --}}
 
-                        <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
+                        <!-- <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
                             <option disabled value="" selected hidden>I am tryin'</option>
                             @foreach ($bookings as $booking)
                                 <option value={{ $booking->date }}>{{ $booking->timeslot }}</option>
                             @endforeach
-                        </select>
+                        </select> -->
 
  
                         {{-- end test  --}}
