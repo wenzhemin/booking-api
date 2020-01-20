@@ -127,7 +127,26 @@ class BookingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $businessId = 1;
+        // Create Booking
+        $booking = Booking::find($id);
+
+        // Convert datetime
+        $booking->date = $request->input('date');
+        $booking->timeslot = $request->input('timeslot');
+        $booking->interval_id = $request->input('interval_id');
+        $booking->name_of_guest = $request->input('name_of_guest');
+        $booking->phone_no = $request->input('phone_no');
+        $booking->email = $request->input('email');
+        $booking->no_of_guests = $request->input('no_of_guests');
+        $booking->location_id = $request->input('location_id');
+        $booking->business_id = $businessId;
+        $booking->service_id = $request->input('service_id');
+        $booking->save();
+
+        Mail::to($booking->email)->send(new BookingCompleted($booking));
+
+        return view('pages.confirmation');
     }
 
     /**
@@ -138,7 +157,10 @@ class BookingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking->delete();
+
+        return view('pages.confirmation');
     }
 
 

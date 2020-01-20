@@ -33,7 +33,7 @@
                         @foreach($bookings as $booking)
                             @if($booking->timeslot == $timeslot)
                                 @if(Carbon::parse($booking->date)->eq(Carbon::parse($weekdate['date'])))
-                                    <button type="button" class="btn btn-danger btn-sm" style="margin-bottom:2px">{{ $booking->name_of_guest }}<br>{{ $booking->no_of_guests }} guests<br>{{ $booking->service->name }}<br>{{ $booking->interval->hour }} hours</button><br>
+                                    <button onclick="assignValuesToModal({{$booking}})" data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-danger btn-sm" style="margin-bottom:2px">{{ $booking->name_of_guest }}<br>{{ $booking->no_of_guests }} guests<br>{{ $booking->service->name }}<br>{{ $booking->interval->hour }} hours</button><br>
                                 @endif
                             @endif
                         @endforeach
@@ -46,8 +46,10 @@
                 <th scope="row">18:00</th>
                 <td></td>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">TESTER</button></td><!-- Button trigger modal -->
+                <td></td>
+                <td></td>
+                {{-- <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">TESTER</button></td><!-- Button trigger modal --> --}}
                 <td></td>
                 <td></td>
                 <td></td>
@@ -69,55 +71,124 @@
                 </div>
 
                 <div class="modal-body" id="bookingform">
+                <form action="" method="post" id="formUpdate">
+                    @csrf
+                    <input type="hidden" name="_method" value="PUT">
+                    <input name="id" id="id" type="hidden" value="">
                     <div data-role="fieldcontain">
-                        <label for="first_name">First Name:</label>
-                        <input type="text" name="first_name" id="first_name" value="" placeholder="First Name" disabled/>
+                        <label for="date">Booking Date:</label>
+                        <input type="text" name="date" id="date" value="" placeholder="" />
                     </div>
-
                     <div data-role="fieldcontain">
-                        <label for="last_name">Last Name:</label>
-                        <input type="text" name="last_name" id="last_name" value="" placeholder="Last Name" disabled/>
+                        <label for="date">Time-Slot:</label>
+                        <input type="text" name="timeslot" id="timeslot" value="" placeholder="" />
                     </div>
-
                     <div data-role="fieldcontain">
-                        <label for="user_name">User Name:</label>
-                        <input type="text" name="user_name" id="user_name" value="" placeholder="User Name" disabled/>
+                        <label for="name_of_guest">Name of Guest:</label>
+                        <input type="text" name="name_of_guest" id="name_of_guest" value="" placeholder="" />
                     </div>
-
                     <div data-role="fieldcontain">
-                        <label for="password">Password:</label>
-                        <input type="text" name="password" id="password" value="" placeholder="Password" disabled/>
+                        <label for="phone_no">Phone No.:</label>
+                        <input type="text" name="phone_no" id="phone_no" value="" placeholder="" />
                     </div>
-
                     <div data-role="fieldcontain">
-                        <label for="email">Email Address:</label>
-                        <input type="text" name="email" id="email" value="" placeholder="Email Address" disabled/>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="" placeholder="" />
                     </div>
+                    <div data-role="fieldcontain">
+                        <label for="no_of_guests">Number of Guests:</label>
+                        <input type="text" name="no_of_guests" id="no_of_guests" value="" placeholder="" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="interval_id">Interval:</label>
+                        {{-- <input type="text" name="interval_id" id="interval_id" value="" placeholder="" /> --}}
+                        <select name="interval_id" class="" id="interval_id" required>
+                            @foreach($intervals as $interval)
+                                <option value={{ $interval->id }}>{{ $interval->hour }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="location_id">Location:</label>
+                        {{-- <input type="text" name="location_id" id="location_id" value="" placeholder="" /> --}}
+                        <select name="location_id" class="" id="location_id" required>
+                            @foreach($locations as $location)
+                                <option value={{ $location->id }}>{{ $location->address }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="service_id">Service:</label>
+                        {{-- <input type="text" name="service_id" id="service_id" value="" placeholder="" /> --}}
+                        <select name="service_id" class="" id="service_id" required>
+                            @foreach($services as $service)
+                                <option value={{ $service->id }}>{{ $service->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                
                 </div>
 
                 <div class="modal-footer">
-                    <button onclick="enable_disable()" type="button"
-                        class="btn btn-primary" value="Disable(Save)"
+                    <button type="submit"
+                        class="btn btn-primary" 
                         id="myButton1"> Save
                     </button>
-                    <button onclick="disable_enable()" type="button"
-                        class="btn btn-primary" value="Enable(Edit)"
-                        id="myButton1"> Edit
+                </form>
+                <form action="" method="post" id="formDelete">
+                    @csrf
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit"
+                        class="btn btn-primary"
+                        id="delete-button"> Delete
                     </button>
+                </form>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                
             </div>
         </div>
         </div>
     </div>
 </div>
 </div>
-    <script type="text/javascript"> 
+    {{-- <script type="text/javascript"> 
         function enable_disable() {  
             $("#bookingform :input").prop("disabled", true); 
         }
         function disable_enable() {  
             $("#bookingform :input").prop("disabled", false); 
         }  
+    </script> --}}
+    <script type="text/javascript">
+        function assignValuesToModal(booking) {
+            var urlUpdate = '/bookings/' + booking.id;
+            $('#formUpdate').attr('action', urlUpdate);
+            $('#id').val(booking.id);
+            var bookingDate = booking.date;
+            var bookingDateFomatted = bookingDate.substring(0, 10)
+            $('#date').val(bookingDateFomatted);
+            $('#timeslot').val(booking.timeslot);
+            $('#name_of_guest').val(booking.name_of_guest);
+            $('#phone_no').val(booking.phone_no);
+            $('#email').val(booking.email);
+            $('#no_of_guests').val(booking.no_of_guests);
+            $('#interval_id').val(booking.interval_id);
+            $('#location_id').val(booking.location_id);
+            $('#service_id').val(booking.service_id);
+            
+        }
+    </script>
+    <script type="text/javascript">
+        $("#delete-button").click(function(){
+            if(confirm("Are you sure you want to delete this booking?")){
+                var deleteId = $('#id').val();
+                var urlDelete = '/bookings/' + deleteId;
+                $('#formDelete').attr('action', urlDelete);
+            }
+            else{
+                return false;
+            }
+        });
     </script>
 @endsection

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Admin\AdminController;
 use App\User;
 use App\Booking;
+use App\Location;
+use App\Service;
+use App\Interval;
 use Carbon\Carbon;
 
 class CalendarController extends AdminController {
@@ -28,6 +31,11 @@ class CalendarController extends AdminController {
             Carbon::parse($datetime->format('Y-m-d'))->startOfWeek(),
             Carbon::parse($datetime->format('Y-m-d'))->endOfWeek()
         ])->orderBy('timeslot')->orderBy('date')->get();
+
+        // get all locations, services and intervals. 
+        $locations = Location::all();
+        $services = Service::all();
+        $intervals = Interval::all();
         
         // set view variables
         $data['bookings']   = $bookings;
@@ -36,6 +44,9 @@ class CalendarController extends AdminController {
         $data['datetime']   = $datetime;
         $data['timeslots']  = $this->timeslots();
         $data['weekdates']  = $this->get_weekdates_array($datetime);
+        $data['locations']   = $locations;
+        $data['services']   = $services;
+        $data['intervals']   = $intervals;
 
         return view('admin.admincalendar')->with($data);
     }
