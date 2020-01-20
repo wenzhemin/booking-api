@@ -55,7 +55,7 @@ function build_calendar($month, $year) {
     $numberDays = date('t',$firstDayOfMonth);
 
     // Retrieve some information about the first day of the
-    // month in question.
+    // month in question?
     $dateComponents = getdate($firstDayOfMonth);
 
     // What is the name of the month in question?

@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Zhemin Wen',
                 'email' => 'zhem0004@edu.easj.dk',
-                'password' => Hash::make('changemetosomethingbetter'),
+                'password' => Hash::make('Password123'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
         ],
