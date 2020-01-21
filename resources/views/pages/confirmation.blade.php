@@ -4,6 +4,21 @@
 
 
 <!--FRONTPAGE BANNER-->
+<<<<<<< HEAD
+<div class="row banner bg-warning m-0">
+
+<div class="bg-warning">
+    <h1>Confirmed</h1> 
+    <p>Your booking has been successfully made.</p> 
+</div>
+
+
+    
+</div>
+
+<div>
+    <p><a href="/">Go to Home</a></p>
+=======
 <div id="confirmation">
     <div class="text-center">
         <img src="{{ asset('../assets/img/circle-logo.png') }}" width="200" height="200" alt="Booky circle logo">
@@ -18,6 +33,7 @@
         <a class="btn btn-back btn-sm" href="{{ url('/') }}" role="button">Continue to homepage</a>
         </p>
     </div>
+>>>>>>> d3e78a107affc37946c4d853afee5c1613f2d05b
 </div>
   
 

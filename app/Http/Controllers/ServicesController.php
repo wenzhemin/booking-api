@@ -107,7 +107,7 @@ class ServicesController extends Controller
     public function destroy($id)
     {
         $service = Service::find($id);
-        $post->delete();
+        $service->delete();
 
         return redirect('/services')->with('success', 'Serivce Removed');
     }

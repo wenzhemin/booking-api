@@ -1,4 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);#login-content,
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+body {
+  background-color: #F26B5B;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*FARVE PÅ ICONER*/
+
+i.fab {
+  color: #F0EDE5;
+}
+
+#login-content,
 #register-content,
 #reset-content,
 #email-reset-content {
@@ -468,4 +483,81 @@ div.content {
 /**DASHBOARD END**/
 
 /*****************/
+
+/*NEW NAVBAR STYLE*/
+
+.navigation {
+  background: #0f4c81;
+  margin-top: 1rem;
+  margin-bottom: 2rem !important;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.navigation .navbar-brand {
+  height: auto;
+}
+
+.navigation .navbar-toggler {
+  border: 2px solid #F0EDE5 !important;
+}
+
+.navigation .navbar ul li a {
+  color: #F0EDE5 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 7px !important;
+}
+
+.navigation .navbar ul li a:hover {
+  color: #363838 !important;
+}
+
+.fa-bars {
+  color: #F0EDE5;
+  size: 18px;
+}
+
+.navigation a img {
+  width: 100%;
+  height: auto;
+}
+
+/*NEW NAVBAR STYLE END*/
+
+/*NEW FOOTER STYLE*/
+
+.footernav {
+  background: #0f4c81;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem !important;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.footernav .footer-copyright {
+  color: #F0EDE5;
+  font-size: 12px;
+}
+
+.footernav .footmenu h6 a {
+  color: #F0EDE5;
+}
+
+.footernav .footer-copyright a {
+  color: #F0EDE5;
+  text-decoration: none;
+}
+
+.footernav .footer-copyright a:hover {
+  color: #363838;
+}
+
+/*NEW FOOTER STYLE END*/
 
