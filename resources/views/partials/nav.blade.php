@@ -36,7 +36,7 @@
         
         <nav class="navbar navbar-expand-md justify-content-center navigation">
             <a class="navbar-brand mr-0" href="#">
-                <img src="images/LogoBooking-03.png" width="130" alt="">
+                <img src="{{ asset('../assets/img/LogoBooking-03.png') }}" width="130" alt="Booky circle logo">
             </a>
             <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
                 <i class="fas fa-bars"></i>
@@ -44,9 +44,7 @@
             <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/') }}">
-                            <img src="{{ asset('../assets/img/circle-logo.png') }}" width="30" height="30" alt="Booky circle logo"> Home
-                        </a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'cal') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/cal') }}">Calendar</a>
