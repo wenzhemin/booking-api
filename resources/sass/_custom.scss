@@ -3,7 +3,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    body a {
+        color: #F0EDE5 !important;
+    }
 }
+
 
 
 /*FARVE PÅ ICONER*/
@@ -118,7 +123,7 @@ Label the data
 
 // ********************************************************************
 // styling for index.blade.php 
-
+/*
 section {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -131,7 +136,7 @@ section {
 #create,
 #connect {
     background-color: white;
-}
+}*/
 
 #existing-booking {
     background-color: antiquewhite;
@@ -170,12 +175,11 @@ ul li {
 }
 
 .title h1 {
-    font-family: monospace;
+    color: #F0EDE5;
 
 }
 
-.typewriter h1 {
-    font-family: monospace;
+.typewriter h2 {
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
     /* border-right: .15em solid orange; The typwriter cursor */
@@ -473,10 +477,11 @@ div.content {
     .navbar-toggler { 
         border: 2px solid #F0EDE5 !important;
     }
-    .navbar ul li a {
+    .navbar-nav .nav-link {
         color: #F0EDE5 !important;
         font-size: 1.3rem !important;
         letter-spacing: 7px !important;
+        justify-content: center;
     }            
     
     .navbar ul li a:hover {
@@ -496,6 +501,84 @@ div.content {
 
 /*NEW NAVBAR STYLE END*/
 
+/*NEW BANNER STYLE*/
+.container-fluid {
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
+
+    .banner {
+        background: #0f4c81;
+        padding: 1rem;
+        box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+        /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                            inset 6px 6px 20px rgba(0, 0, 0,0.05);
+        box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+                    0px 0px 15px 6px rgba(0,0,0,0.4);   */
+    }
+
+    .jumbotronbanner {
+        margin-bottom: 0px !important;
+        color: #F0EDE5;
+        background-image: url(../../public/assets/img/plannersmokey.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/*NEW BANNER STYLE* END/
+
+/*NEW 4 STEPS STYLE*/
+.stepsection {
+    background: #0f4c81;
+    padding: 1rem;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+
+    /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                        inset 6px 6px 20px rgba(0, 0, 0,0.05);
+    box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+                0px 0px 15px 6px rgba(0,0,0,0.4);   */
+
+    .teamtext {
+        color: #F0EDE5;
+    }
+
+    .frontside {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+
+    .frontside .stepcard {
+        min-height: 280px;
+        background-color: #F0EDE5;
+    }
+
+    .frontside .stepcard .card-title {
+        color: #C0D725 !important;
+    }
+
+    .frontside .stepcard .i {
+        color: #363838;
+        size: 5rem;
+    }
+    .frontside .stepcard .card-body img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .stepcard .frontside {
+        border: none !important;
+    }
+}
+
+
+
+/*NEW 4 STEPS STYLE END*/
+
 /*NEW FOOTER STYLE*/
 .footernav {
     background: #0f4c81;
@@ -514,7 +597,7 @@ div.content {
         font-size: 12px;
     }
 
-    .footmenu h6 a {
+    .footmenu h4 a {
         color: #F0EDE5;
     }
 

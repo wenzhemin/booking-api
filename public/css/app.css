@@ -7,6 +7,10 @@ body {
   box-sizing: border-box;
 }
 
+body body a {
+  color: #F0EDE5 !important;
+}
+
 /*FARVE PÅ ICONER*/
 
 i.fab {
@@ -121,19 +125,20 @@ i.fab {
   }
 }
 
+/*
 section {
-  padding-top: 5%;
-  padding-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #header {
-  background-color: antiquewhite;
+    background-color: antiquewhite;
 }
 
 #create,
 #connect {
-  background-color: white;
-}
+    background-color: white;
+}*/
 
 #existing-booking {
   background-color: antiquewhite;
@@ -168,11 +173,10 @@ ul li {
 }
 
 .title h1 {
-  font-family: monospace;
+  color: #F0EDE5;
 }
 
-.typewriter h1 {
-  font-family: monospace;
+.typewriter h2 {
   overflow: hidden;
   /* Ensures the content is not revealed until the animation */
   /* border-right: .15em solid orange; The typwriter cursor */
@@ -505,10 +509,12 @@ div.content {
   border: 2px solid #F0EDE5 !important;
 }
 
-.navigation .navbar ul li a {
+.navigation .navbar-nav .nav-link {
   color: #F0EDE5 !important;
   font-size: 1.3rem !important;
   letter-spacing: 7px !important;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .navigation .navbar ul li a:hover {
@@ -526,6 +532,84 @@ div.content {
 }
 
 /*NEW NAVBAR STYLE END*/
+
+/*NEW BANNER STYLE*/
+
+.container-fluid {
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.container-fluid .banner {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.container-fluid .jumbotronbanner {
+  margin-bottom: 0px !important;
+  color: #F0EDE5;
+  background-image: url(/images/plannersmokey.jpeg?358068b247283688243ad933dbe8c730);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*NEW BANNER STYLE* END/
+
+/*NEW 4 STEPS STYLE*/
+
+.stepsection {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.stepsection .teamtext {
+  color: #F0EDE5;
+}
+
+.stepsection .frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.stepsection .frontside .stepcard {
+  min-height: 280px;
+  background-color: #F0EDE5;
+}
+
+.stepsection .frontside .stepcard .card-title {
+  color: #C0D725 !important;
+}
+
+.stepsection .frontside .stepcard .i {
+  color: #363838;
+  size: 5rem;
+}
+
+.stepsection .frontside .stepcard .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.stepsection .stepcard .frontside {
+  border: none !important;
+}
+
+/*NEW 4 STEPS STYLE END*/
 
 /*NEW FOOTER STYLE*/
 
@@ -546,7 +630,7 @@ div.content {
   font-size: 12px;
 }
 
-.footernav .footmenu h6 a {
+.footernav .footmenu h4 a {
   color: #F0EDE5;
 }
 

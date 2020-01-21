@@ -8,19 +8,19 @@
                         <div class="container">
                             <div class="row footmenu pt-3 mb-2 text-center d-flex justify-content-center">
                                 <div class="col-md-2 mb-3">
-                                    <h6 class="title font-bold"><a href="#!">About</a></h6>
+                                    <h4 class="title font-bold"><a href="#!">About</a></h4>
                                 </div>
 
                                 <div class="col-md-2 mb-3">
-                                    <h6 class="title font-bold"><a href="#!">FAQ</a></h6>
+                                    <h4 class="title font-bold"><a href="#!">FAQ</a></h4>
                                 </div>
 
                                 <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == '/login') ? 'active' : '' }}">
-                                    <h6 class="title font-bold"><a href="{{ url('/login') }}">Log In</a></h6>
+                                    <h4 class="title font-bold"><a href="{{ url('/login') }}">Log In</a></h4>
                                 </div>
 
                                 <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == '/register') ? 'active' : '' }}">
-                                    <h6 class="title font-bold"><a href="{{ url('/register') }}">Register</a></h6>
+                                    <h4 class="title font-bold"><a href="{{ url('/register') }}">Register</a></h4>
                                 </div>
 
                             </div>

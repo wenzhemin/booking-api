@@ -27,19 +27,11 @@ background-color: #4CAF50;
 color: white;
 }
 
-.topnav-right {
-float: right;
-}
 
 .navbar {
 border-radius: 0;
 margin-bottom: 0;
 } 
-
-.jumbotron {
-height: 80vh;
-background-color: #840705;
-}
 
 .bulletpoints1 {
 height: 50vh;

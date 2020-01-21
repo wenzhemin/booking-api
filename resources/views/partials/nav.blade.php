@@ -36,7 +36,7 @@
         
         <nav class="navbar navbar-expand-md justify-content-center navigation">
             <a class="navbar-brand mr-0" href="#">
-                <img src="{{ asset('../assets/img/LogoBooking-03.png') }}" width="130" alt="Booky circle logo">
+                <img src="{{ asset('../assets/img/LogoBooking-03.png') }}" width="530" alt="Booky circle logo">
             </a>
             <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
                 <i class="fas fa-bars"></i>
