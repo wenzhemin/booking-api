@@ -1,3 +1,9 @@
+body {
+    background-color: #{$cerulean};
+    margin: 0;
+    padding: 0;
+}
+
 // NAVIGATION
 #login-content,
 #register-content,
@@ -441,3 +447,38 @@ div.content {
 }
 /**DASHBOARD END**/
 /*****************/
+
+
+/*NEW NAVBAR STYLE*/
+.navigation {
+    background: #0f4c81;
+    border-radius: 100px !important;
+    margin-top: 1rem;
+    margin-bottom: 2rem !important;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+    /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                        inset 6px 6px 20px rgba(0, 0, 0,0.05);
+    box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+                0px 0px 15px 6px rgba(0,0,0,0.4);   */
+                
+    .navbar-toggler { 
+        border: 2px solid #F0EDE5 !important;
+    }
+    .navbar ul li a {
+        color: #F0EDE5 !important;
+        font-size: 1.3rem !important;
+        letter-spacing: 7px !important;
+    }            
+    
+    .navbar ul li a:hover {
+        color: #363838 !important;
+    }
+}
+
+.fa-bars {
+    color: #F0EDE5;
+    size: 18px;
+}
+
+
+/*NEW NAVBAR STYLE END*/
