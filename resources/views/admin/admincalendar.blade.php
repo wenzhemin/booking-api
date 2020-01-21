@@ -12,9 +12,9 @@
     <div class="row">
         <div class="col-lg-12">
         
-            <a class='btn btn-xs btn-primary justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week - 1]) }}">Last Week</a> <!--Previous week-->
-            <a class='btn btn-xs btn-primary justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week + 1]) }}">Next Week</a> <!--Next week-->
-
+            <a class='btn btn-xs btn-back justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week - 1]) }}">Last Week</a> <!--Previous week-->
+            <a class='btn btn-xs btn-book justify-content-center' href="{{ route('admincalendar', ['year' => $year, 'week' => $week + 1]) }}">Next Week</a> <!--Next week-->
+            <br>
     <table class="table table-striped table-hover table-dark table-bordered dashcalendar">
         <thead>
             <tr>
