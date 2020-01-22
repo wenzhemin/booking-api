@@ -42,12 +42,18 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-                <ul class="navbar-nav mx-auto text-center">
+                <ul class="navbar-nav mx-auto text-center navstyle">
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/') }}">Home</a></h4>
                     </li>
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'cal') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/cal') }}">Calendar</a>
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/cal') }}">Calendar</a></h4>
+                    </li>
+                    <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'about') ? 'active' : '' }}">
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/about') }}">About</a></h4>
+                    </li>
+                    <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == 'faq') ? 'active' : '' }}">
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/faq') }}">FAQ</a></h4>
                     </li>
                 @if(Auth::check())
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/system') ? 'active' : '' }}">
@@ -61,12 +67,12 @@
                     </li>
                 </ul>
                 @else
-                <ul class="nav navbar-nav text-center">
+                <ul class="nav navbar-nav text-center navstyle">
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/login') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/login') }}">Login</a></h4>
                     </li>
                     <li class="nav-item {{ (Route::getFacadeRoot()->current()->uri() == '/register') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                        <h4 class="title font-bold"><a class="nav-link" href="{{ url('/register') }}">Register</a></h4>
                     </li>
                 @endif
                 </ul>
