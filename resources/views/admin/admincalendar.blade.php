@@ -33,27 +33,14 @@
                         @foreach($bookings as $booking)
                             @if($booking->timeslot == $timeslot)
                                 @if(Carbon::parse($booking->date)->eq(Carbon::parse($weekdate['date'])))
-                                    <button onclick="assignValuesToModal({{$booking}})" data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-danger btn-sm" style="margin-bottom:2px">{{ $booking->name_of_guest }}<br>{{ $booking->no_of_guests }} guests<br>{{ $booking->service->name }}<br>{{ $booking->interval->hour }} hours</button><br>
+                                    <button onclick="assignValuesToModal({{$booking}})" data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-danger btn-sm" style="margin-bottom:2px">{{ $booking->name_of_guest }}</button><br>
                                 @endif
                             @endif
                         @endforeach
                     </td>
                 @endforeach
             </tr>
-
             @endforeach
-            <tr>
-                <th scope="row">18:00</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                {{-- <td><button type="button" class="btn btn-danger btn-sm">Booked</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">TESTER</button></td><!-- Button trigger modal --> --}}
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </tbody>
     </table>
     </div>

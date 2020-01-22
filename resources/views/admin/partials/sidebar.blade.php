@@ -1,6 +1,6 @@
 {{-- Sidebar --}}
 <a class="navbar-brand" href="{{ route('home') }}">
-    <img src="{{ asset('../assets/img/circle-logo.png') }}" width="40" height="40" alt="Booky circle logo"> Booky
+    <img class="ml-3" src="{{ asset('../assets/img/circle-logo.png') }}" width="40" height="40" alt="Booky circle logo"> Booky
 </a>
 <div class="user-panel">
     <div class=" pull-left image">
