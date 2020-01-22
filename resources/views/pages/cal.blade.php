@@ -120,7 +120,11 @@ function build_calendar($month, $year) {
 
 }
 ?>
-<div id="calendarlayout" class="container">
+<div class="container-fluid">
+  <div class="container-fluid publicCalendar">
+
+
+<div id="calendarlayout" class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             {{ build_calendar($month,$year) }}
@@ -167,7 +171,7 @@ function build_calendar($month, $year) {
                     <div class="col-md-12">
                     <form action="{{ url('bookings') }}" method="post">
                         @csrf
-                        <input name="date" type="hidden" value="{{ $date }}">
+                        <input id="date" name="date" type="hidden" value="">
                         <div class="form-group">
                             <label for="">Timeslot</label>
                             <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">
@@ -238,5 +242,8 @@ function build_calendar($month, $year) {
             </div>
         </div>
     </div>
+</div>
+
+</div>
 </div>
 @endsection

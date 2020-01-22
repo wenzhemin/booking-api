@@ -753,16 +753,132 @@ div.content {
   color: #F0EDE5;
 }
 
-.calendar-title {
+.stepsection .frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.stepsection .frontside .stepcard {
+  min-height: 280px;
+  background-color: #F0EDE5;
+  border-radius: 1.5em;
+  border: none !important;
+}
+
+.stepsection .frontside .stepcard .card-title {
+  color: #C0D725 !important;
+}
+
+.stepsection .frontside .stepcard .i {
+  color: #363838;
+  size: 5rem;
+}
+
+.stepsection .frontside .stepcard .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/*NEW 4 STEPS STYLE END*/
+
+/*FAQ SECTION STYLE*/
+
+.sectionFAQ {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+/*FAQ SECTION STYLE END*/
+
+/*CALENDAR PUBLIC STYLE*/
+
+.publicCalendar {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+/*CALENDAR PUBLIC STYLE END*/
+
+/*ABOUT SECTION STYLE*/
+
+.teamsection {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.teamsection .teamtext {
   color: #F0EDE5;
+}
+
+.teamsection .card {
+  background-color: #F0EDE5;
+}
+
+.card .frontside {
+  border: none !important;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: 0.25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 20px;
 }
 
 /*****************/
 
 /* CONFIRMATION PAGE */
 
-#confirmation {
-  margin-top: 5rem;
+.frontside .card,
+.backside .card {
+  min-height: 312px;
+  border-radius: 1.5em;
 }
 
 /* VENDOR_EXTENSIONS
