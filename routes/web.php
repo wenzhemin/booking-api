@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@index')->name('home');
 Route::get('/cal/{year?}/{month?}', 'BookingsController@index');
+Route::get('/about' , 'PagesController@about');
+Route::get('/faq', 'PagesController@faq');
 
 Route::resource('bookings', 'BookingsController');
 Auth::routes();

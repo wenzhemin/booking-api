@@ -17,4 +17,12 @@ class PagesController extends Controller
     public function dashboard() {
         return view('dashboard.system');
     }
+
+    public function about() {
+        return view('pages.about');
+    }  
+    
+    public function faq() {
+        return view('pages.FAQ');
+    } 
 }
