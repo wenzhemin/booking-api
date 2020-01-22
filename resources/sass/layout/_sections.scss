@@ -6,8 +6,20 @@
 }
 
 /*ABOUT SECTION STYLE*/
-
 .teamsection {
+    @extend %section;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+    
+    .teamtext {
+        color: #{$alabaster};
+    }
+
+    .card {
+        background-color: #{$alabaster};
+    }
+}
+// BOOKING CALENDAR SECTION
+.publicCalendar {
     @extend %section;
     box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 }
