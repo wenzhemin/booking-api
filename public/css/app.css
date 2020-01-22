@@ -626,22 +626,6 @@ div.content {
 
 .sectionFAQ {
   background: #0f4c81;
-  border-radius: 100px;
-  padding: 1rem;
-  box-shadow: 0px 0px 10px 4px #212529, 0px 0px 10px 4px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
-/*FAQ SECTION STYLE END*/
-
-/*ABOUT SECTION STYLE*/
-
-.teamsection {
-  background: #0f4c81;
-  border-radius: 100px;
   padding: 1rem;
   box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
   /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
@@ -650,8 +634,43 @@ div.content {
               0px 0px 15px 6px rgba(0,0,0,0.4);   */
 }
 
+/*FAQ SECTION STYLE END*/
+
+/*CALENDAR PUBLIC STYLE*/
+
+.publicCalendar {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+/*CALENDAR PUBLIC STYLE END*/
+
+/*ABOUT SECTION STYLE*/
+
+.teamsection {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.teamsection .teamtext {
+  color: #F0EDE5;
+}
+
+.teamsection .card {
+  background-color: #F0EDE5;
+}
+
 .card .frontside {
-  border-radius: 20% !important;
   border: none !important;
 }
 
@@ -716,7 +735,7 @@ div.content {
 .frontside .card,
 .backside .card {
   min-height: 312px;
-  border-radius: 20%;
+  border-radius: 1.5em;
 }
 
 .backside .card a {

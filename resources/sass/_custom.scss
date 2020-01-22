@@ -590,10 +590,8 @@ div.content {
 /*FAQ SECTION STYLE*/
 .sectionFAQ {
     background: #0f4c81;
-    border-radius: 100px;
     padding: 1rem;
-    box-shadow: 0px 0px 10px 4px #212529,
-     0px 0px 10px 4px #212529;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
     /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
                         inset 6px 6px 20px rgba(0, 0, 0,0.05);
     box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
@@ -601,11 +599,21 @@ div.content {
 }
 /*FAQ SECTION STYLE END*/
 
-/*ABOUT SECTION STYLE*/
+/*CALENDAR PUBLIC STYLE*/
+.publicCalendar {
+    background: #0f4c81;
+    padding: 1rem;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+    /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                        inset 6px 6px 20px rgba(0, 0, 0,0.05);
+    box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+                0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+/*CALENDAR PUBLIC STYLE END*/
 
+/*ABOUT SECTION STYLE*/
 .teamsection {
     background: #0f4c81;
-    border-radius: 100px;
     padding: 1rem;
     box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 
@@ -613,10 +621,18 @@ div.content {
                         inset 6px 6px 20px rgba(0, 0, 0,0.05);
     box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
                 0px 0px 15px 6px rgba(0,0,0,0.4);   */
+                
+    .teamtext {
+        color: #{$alabaster};
+    }
+
+    .card {
+        background-color: #{$alabaster};
+    }
 }
 .card .frontside {
-    border-radius: 20% !important;
     border: none !important;
+    
 }
 
 .image-flip:hover .backside,
@@ -690,7 +706,7 @@ div.content {
 .frontside .card,
 .backside .card {
     min-height: 312px;
-    border-radius: 20%;
+    border-radius: 1.5em;
 }
 
 .backside .card a {
@@ -712,7 +728,6 @@ div.content {
 .list-inline-item i.fab {
     color: #363838;
 }
-
 /*ABOUT SECTION STYLE END*/
 
 /*NEW FOOTER STYLE*/
@@ -746,5 +761,4 @@ div.content {
         color: #363838;
     }
 }
-
 /*NEW FOOTER STYLE END*/

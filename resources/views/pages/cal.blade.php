@@ -125,7 +125,11 @@ function build_calendar($month, $year) {
 
 }
 ?>
-<div id="calendarlayout" class="container">
+<div class="container-fluid">
+  <div class="container-fluid publicCalendar">
+
+
+<div id="calendarlayout" class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             {{ build_calendar($month,$year) }}
@@ -243,5 +247,8 @@ function build_calendar($month, $year) {
             </div>
         </div>
     </div>
+</div>
+
+</div>
 </div>
 @endsection
