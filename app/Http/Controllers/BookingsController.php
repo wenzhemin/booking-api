@@ -19,8 +19,7 @@ class BookingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
-
+    
     public function index($year = null, $month = null)
     {
         \Log::info('year : '.$year);

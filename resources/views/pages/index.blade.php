@@ -27,7 +27,7 @@
       <div class="container my-auto h"> 
         <div class="title typewriter">     
           <h2 class="display-4 text-center">WE CUSTOMIZE BOOKINGS!</h2>
-          <p class="lead w-50 mx-auto text-center">We create bookings experiences for every business. <br> Check out how easy you can begin, getting reservations for your clients</p>  
+          <p class="lead w-75 mx-auto text-center">We create bookings experiences for every business. <br> Check out how easy you can begin, getting reservations for your clients</p>  
         </div>
       </div>   
     </div>

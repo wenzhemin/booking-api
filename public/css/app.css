@@ -186,8 +186,8 @@ ul li {
   /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em;
   /* Adjust as needed */
-  -webkit-animation: typing 4s steps(30, end), blink-caret 0.5s step-end infinite;
-          animation: typing 4s steps(30, end), blink-caret 0.5s step-end infinite;
+  -webkit-animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
+          animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
 }
 
 /* The typing effect */
@@ -509,16 +509,20 @@ div.content {
   border: 2px solid #F0EDE5 !important;
 }
 
-.navigation .navbar-nav .nav-link {
+.navigation .navstyle .nav-link {
   color: #F0EDE5 !important;
   font-size: 1.3rem !important;
   letter-spacing: 7px !important;
   -webkit-box-pack: center;
           justify-content: center;
+  margin: 1em;
+  padding: 1em;
 }
 
-.navigation .navbar ul li a:hover {
-  color: #363838 !important;
+.navigation .navstyle .nav-link:hover {
+  color: #F0EDE5 !important;
+  background-color: #002554;
+  border-radius: 5px;
 }
 
 .fa-bars {
@@ -588,6 +592,8 @@ div.content {
 .stepsection .frontside .stepcard {
   min-height: 280px;
   background-color: #F0EDE5;
+  border-radius: 1.5em;
+  border: none !important;
 }
 
 .stepsection .frontside .stepcard .card-title {
@@ -605,11 +611,126 @@ div.content {
   border-radius: 50%;
 }
 
-.stepsection .stepcard .frontside {
+/*NEW 4 STEPS STYLE END*/
+
+/*FAQ SECTION STYLE*/
+
+.sectionFAQ {
+  background: #0f4c81;
+  border-radius: 100px;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 4px #212529, 0px 0px 10px 4px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+/*FAQ SECTION STYLE END*/
+
+/*ABOUT SECTION STYLE*/
+
+.teamsection {
+  background: #0f4c81;
+  border-radius: 100px;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.card .frontside {
+  border-radius: 20% !important;
   border: none !important;
 }
 
-/*NEW 4 STEPS STYLE END*/
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: 0.25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.frontside,
+.backside {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+  min-height: 312px;
+  border-radius: 20%;
+}
+
+.backside .card a {
+  font-size: 18px;
+  color: #C0D725 !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+  color: #C0D725 !important;
+}
+
+.frontside .card .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.list-inline-item i.fab {
+  color: #363838;
+}
+
+/*ABOUT SECTION STYLE END*/
 
 /*NEW FOOTER STYLE*/
 
