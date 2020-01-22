@@ -1,0 +1,35 @@
+/*****************/
+/* BASIC */
+body {
+    background-color: #{$corral};
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    a {
+        color: #{$alabaster} !important;
+    }
+}
+
+h1 {
+    color: #{$alabaster};
+}
+
+ul li {
+    display: inline;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 802px) and (max-device-width: 1020px) {
+    body {
+        width: 495px;
+    }
+}

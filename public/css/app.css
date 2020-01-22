@@ -1,5 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+/* HELPERS
+========================================================================== */
+
+.teamsection,
+.sectionFAQ {
+  background: #0f4c81;
+  border-radius: 100px;
+  padding: 1rem;
+}
+
+/* BASE
+========================================================================== */
+
+/*****************/
+
+/* BASIC */
+
 body {
   background-color: #F26B5B;
   margin: 0;
@@ -7,231 +24,16 @@ body {
   box-sizing: border-box;
 }
 
-body body a {
+body a {
   color: #F0EDE5 !important;
 }
 
-/*FARVE PÅ ICONER*/
-
-i.fab {
+h1 {
   color: #F0EDE5;
-}
-
-#login-content,
-#register-content,
-#reset-content,
-#email-reset-content {
-  background-color: #212529;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  padding-bottom: 50px;
-}
-
-#login-content label,
-#register-content label,
-#reset-content label,
-#email-reset-content label {
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-#login-content input,
-#register-content input,
-#reset-content input,
-#email-reset-content input {
-  font-size: 1.75rem;
-  color: #fff;
-  background-color: #1F1F1F;
-}
-
-#login-content button,
-#register-content button,
-#reset-content button,
-#email-reset-content button {
-  font-size: 1.75rem;
-}
-
-@media only screen and (max-width: 760px), (min-device-width: 802px) and (max-device-width: 1020px) {
-  /* Force table to not be like tables anymore */
-
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-
-  .empty {
-    display: none;
-  }
-
-  /* Hide table headers (but not display: none;, for accessibility) */
-
-  th {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    color: #F0EDE5;
-  }
-
-  tr {
-    border: 1px solid #ccc;
-  }
-
-  td {
-    /* Behave  like a "row" */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%;
-  }
-
-  /*
-  Label the data
-  */
-
-  td:nth-of-type(1):before {
-    content: "Sunday";
-  }
-
-  td:nth-of-type(2):before {
-    content: "Monday";
-  }
-
-  td:nth-of-type(3):before {
-    content: "Tuesday";
-  }
-
-  td:nth-of-type(4):before {
-    content: "Wednesday";
-  }
-
-  td:nth-of-type(5):before {
-    content: "Thursday";
-  }
-
-  td:nth-of-type(6):before {
-    content: "Friday";
-  }
-
-  td:nth-of-type(7):before {
-    content: "Saturday";
-  }
-}
-
-/*
-section {
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-#header {
-    background-color: antiquewhite;
-}
-
-#create,
-#connect {
-    background-color: white;
-}*/
-
-#existing-booking {
-  background-color: antiquewhite;
-}
-
-hr {
-  border-top: 0.15rem solid #f6695e !important;
-}
-
-.cards {
-  padding-top: 4%;
-}
-
-#userEmail,
-#userName,
-#buttonSubmit {
-  width: 33%;
-}
-
-textarea {
-  border: solid 1px red;
 }
 
 ul li {
   display: inline;
-}
-
-.fa-stack,
-.card-title,
-.customer-title {
-  color: #f6695e;
-}
-
-.title h1 {
-  color: #F0EDE5;
-}
-
-.typewriter h2 {
-  overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  /* border-right: .15em solid orange; The typwriter cursor */
-  white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em;
-  /* Adjust as needed */
-  -webkit-animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
-          animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
-}
-
-/* The typing effect */
-
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 120%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 120%;
-  }
-}
-
-/* The typewriter cursor effect */
-
-@-webkit-keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: transparent;
-  }
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -251,39 +53,29 @@ ul li {
   }
 }
 
-@media (min-width: 641px) {
-  table {
-    table-layout: fixed;
-  }
+/* COMPONENTS
+========================================================================== */
 
-  td {
-    width: 33%;
-  }
+/* BANNER */
+
+.container-fluid {
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
 }
 
-.row {
-  margin-top: 20px;
+.container-fluid .banner {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 }
 
-.today {
-  background: #F26B5B;
-}
-
-#calendarlayout {
-  background-color: #0F4C81;
-  margin-top: 4.5rem;
-}
-
-#calendarlayout .header {
+.container-fluid .jumbotronbanner {
+  margin-bottom: 0px !important;
   color: #F0EDE5;
-}
-
-#calendardates {
-  color: #F0EDE5;
-}
-
-.calendar-title {
-  color: #F0EDE5;
+  background-image: url(/images/plannersmokey.jpeg?358068b247283688243ad933dbe8c730);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .btn-book {
@@ -316,352 +108,8 @@ ul li {
   color: #363838;
 }
 
-/*****************/
-
-/* CONFIRMATION PAGE */
-
-#confirmation {
-  margin-top: 5rem;
-}
-
-/*****************/
-
-/*DASHBOARD STYLE*/
-
-.dashboard {
-  background-color: #002554;
-  color: #F0EDE5;
-}
-
-.dashboard a {
-  color: #F0EDE5;
-}
-
-.dashboard li,
-.dashboard .modal-content {
-  color: #363838;
-}
-
-.dashboard .modal-header,
-.dashboard .modal-footer {
-  background-color: #0F4C81;
-  color: #F0EDE5;
-}
-
-.dashboard .close {
-  color: #F0EDE5;
-}
-
-/*****************/
-
-/* SIDEBAR */
-
-div.content {
-  padding: 1px 16px;
-}
-
-.wrapper {
-  display: -webkit-box;
-  display: flex;
-  width: 100%;
-}
-
-#sidebar {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-#sidebar.sidebar-collapse {
-  margin-left: -250px;
-}
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-#page-content {
-  width: calc(100% - 250px);
-  min-height: 100vh;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#page-content.sidebar-collapse {
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  #sidebar {
-    margin-left: -250px;
-  }
-
-  #sidebar.sidebar-collapse {
-    margin-left: 0;
-  }
-
-  #page-content {
-    width: 100%;
-  }
-
-  #page-content.sidebar-collapse {
-    width: calc(100% - 250px);
-  }
-
-  #sidebarCollapse span {
-    display: none;
-  }
-}
-
-.user-panel {
-  position: relative;
-  width: 100%;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.user-panel .image img {
-  width: 100%;
-  max-width: 45px;
-  height: auto;
-  margin-right: 0.5rem;
-}
-
-.user-panel p {
-  color: #F0EDE5;
-  font-size: 0.7rem;
-}
-
-.user-panel .pull-left {
-  float: left !important;
-}
-
-/*****************/
-
-/* Dashboard */
-
-.dash-wrapper {
-  background-color: #0F4C81 !important;
-  border-radius: 6px;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
-}
-
-.dash-wrapper:hover {
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
-
-.dash-wrapper:not(hover) {
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
-
-.dash-wrapper table,
-.dash-wrapper tr,
-.dash-wrapper th,
-.dash-wrapper td {
-  border: none;
-  color: #F0EDE5;
-}
-
-/*****************/
-
-/* ADMIN NAV */
-
-.admin-nav .container-fluid {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/*****************/
-
-/* BOOKING CHOICES */
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-
-.card {
-  border: black solid 1px;
-  background-color: #F26B5B;
-}
-
-/* This container is needed to position the front and back side */
-
-.card-body {
-  text-align: center;
-}
-
-/**DASHBOARD END**/
-
-/*****************/
-
-/*NEW NAVBAR STYLE*/
-
-.navigation {
-  background: #0f4c81;
-  margin-top: 1rem;
-  margin-bottom: 2rem !important;
-  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
-.navigation .navbar-brand {
-  height: auto;
-}
-
-.navigation .navbar-toggler {
-  border: 2px solid #F0EDE5 !important;
-}
-
-.navigation .navstyle .nav-link {
-  color: #F0EDE5 !important;
-  font-size: 1.3rem !important;
-  letter-spacing: 7px !important;
-  -webkit-box-pack: center;
-          justify-content: center;
-  margin: 1em;
-  padding: 1em;
-}
-
-.navigation .navstyle .nav-link:hover {
-  color: #F0EDE5 !important;
-  background-color: #002554;
-  border-radius: 5px;
-}
-
-.fa-bars {
-  color: #F0EDE5;
-  size: 18px;
-}
-
-.navigation a img {
-  width: 100%;
-  height: auto;
-}
-
-/*NEW NAVBAR STYLE END*/
-
-/*NEW BANNER STYLE*/
-
-.container-fluid {
-  margin-top: 1.5rem;
-  margin-bottom: 0.9rem;
-}
-
-.container-fluid .banner {
-  background: #0f4c81;
-  padding: 1rem;
-  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
-.container-fluid .jumbotronbanner {
-  margin-bottom: 0px !important;
-  color: #F0EDE5;
-  background-image: url(/images/plannersmokey.jpeg?358068b247283688243ad933dbe8c730);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/*NEW BANNER STYLE* END/
-
-/*NEW 4 STEPS STYLE*/
-
-.stepsection {
-  background: #0f4c81;
-  padding: 1rem;
-  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
-.stepsection .teamtext {
-  color: #F0EDE5;
-}
-
-.stepsection .frontside {
-  position: relative;
-  -webkit-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  z-index: 2;
-  margin-bottom: 20px;
-}
-
-.stepsection .frontside .stepcard {
-  min-height: 280px;
-  background-color: #F0EDE5;
-  border-radius: 1.5em;
-  border: none !important;
-}
-
-.stepsection .frontside .stepcard .card-title {
-  color: #C0D725 !important;
-}
-
-.stepsection .frontside .stepcard .i {
-  color: #363838;
-  size: 5rem;
-}
-
-.stepsection .frontside .stepcard .card-body img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-}
-
-/*NEW 4 STEPS STYLE END*/
-
-/*FAQ SECTION STYLE*/
-
-.sectionFAQ {
-  background: #0f4c81;
-  border-radius: 100px;
-  padding: 1rem;
-  box-shadow: 0px 0px 10px 4px #212529, 0px 0px 10px 4px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
-/*FAQ SECTION STYLE END*/
-
-/*ABOUT SECTION STYLE*/
-
-.teamsection {
-  background: #0f4c81;
-  border-radius: 100px;
-  padding: 1rem;
-  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
-}
-
 .card .frontside {
-  border-radius: 20% !important;
+  border-radius: 20%;
   border: none !important;
 }
 
@@ -749,9 +197,265 @@ div.content {
   color: #363838;
 }
 
-/*ABOUT SECTION STYLE END*/
+/* 4 STEPS STYLE */
 
-/*NEW FOOTER STYLE*/
+.stepsection {
+  background: #0f4c81;
+  padding: 1rem;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+}
+
+.stepsection .teamtext {
+  color: #F0EDE5;
+}
+
+.stepsection .frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.stepsection .frontside .stepcard {
+  min-height: 280px;
+  background-color: #F0EDE5;
+  border-radius: 1.5em;
+  border: none !important;
+}
+
+.stepsection .frontside .stepcard .card-title {
+  color: #C0D725 !important;
+}
+
+.stepsection .frontside .stepcard .i {
+  color: #363838;
+  size: 5rem;
+}
+
+.stepsection .frontside .stepcard .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+@media (min-width: 641px) {
+  table {
+    table-layout: fixed;
+  }
+
+  td {
+    width: 33%;
+  }
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 802px) and (max-device-width: 1020px) {
+  /* Force table to not be like tables anymore */
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: grid;
+  }
+
+  .empty {
+    display: none;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    color: #F0EDE5;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  /* Label each td in the booking calendar with the right weekday, when the screen is less than desktop */
+
+  td:nth-of-type(1):before {
+    content: "Sunday";
+  }
+
+  td:nth-of-type(2):before {
+    content: "Monday";
+  }
+
+  td:nth-of-type(3):before {
+    content: "Tuesday";
+  }
+
+  td:nth-of-type(4):before {
+    content: "Wednesday";
+  }
+
+  td:nth-of-type(5):before {
+    content: "Thursday";
+  }
+
+  td:nth-of-type(6):before {
+    content: "Friday";
+  }
+
+  td:nth-of-type(7):before {
+    content: "Saturday";
+  }
+
+  .dashboard {
+    /* Label each td in the admin calendar with the right weekday, when the screen is less than desktop */
+  }
+
+  .dashboard td:nth-of-type(1):before {
+    content: "Monday";
+  }
+
+  .dashboard td:nth-of-type(2):before {
+    content: "Tuesday";
+  }
+
+  .dashboard td:nth-of-type(3):before {
+    content: "Wednesday";
+  }
+
+  .dashboard td:nth-of-type(4):before {
+    content: "Thursday";
+  }
+
+  .dashboard td:nth-of-type(5):before {
+    content: "Friday";
+  }
+
+  .dashboard td:nth-of-type(6):before {
+    content: "Saturday";
+  }
+
+  .dashboard td:nth-of-type(7):before {
+    content: "Sunday";
+  }
+
+  .dashboard .user-table {
+    /* Label each td in the admin calendar with the right weekday, when the screen is less than desktop */
+  }
+
+  .dashboard .user-table td:nth-of-type(1):before {
+    content: "#:";
+  }
+
+  .dashboard .user-table td:nth-of-type(2):before {
+    content: "Name:";
+  }
+
+  .dashboard .user-table td:nth-of-type(3):before {
+    content: "Email:";
+  }
+
+  .dashboard .user-table td:nth-of-type(4):before {
+    content: "Created at:";
+  }
+
+  .dashboard .user-table td:nth-of-type(5):before {
+    content: "Updated at:";
+  }
+
+  .dashboard .user-table td:nth-of-type(6):before {
+    content: "Edit:";
+  }
+}
+
+.typewriter h2 {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
+  -webkit-animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
+          animation: typing 4s steps(3, end), blink-caret 0.5s step-end infinite;
+}
+
+/* The typing effect */
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 120%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 120%;
+  }
+}
+
+/* The typewriter cursor effect */
+
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* LAYOUT
+========================================================================== */
+
+/* ADMIN NAV */
+
+.admin-nav .container-fluid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#userEmail,
+#userName,
+#buttonSubmit {
+  width: 33%;
+}
+
+textarea {
+  border: solid 1px red;
+}
+
+/* FOOTER */
 
 .footernav {
   background: #0f4c81;
@@ -783,5 +487,309 @@ div.content {
   color: #363838;
 }
 
-/*NEW FOOTER STYLE END*/
+/* MAIN NAVIGATION */
+
+.navigation {
+  background: #0f4c81;
+  margin-top: 1rem;
+  margin-bottom: 2rem !important;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
+                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
+  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
+              0px 0px 15px 6px rgba(0,0,0,0.4);   */
+}
+
+.navigation .navbar-brand {
+  height: auto;
+}
+
+.navigation .navbar-toggler {
+  border: 2px solid #F0EDE5 !important;
+}
+
+.navigation .navstyle .nav-link {
+  color: #F0EDE5 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 7px !important;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin: 1em;
+  padding: 1em;
+}
+
+.navigation .navstyle .nav-link:hover {
+  color: #F0EDE5 !important;
+  background-color: #002554;
+  border-radius: 5px;
+}
+
+.fa-bars {
+  color: #F0EDE5;
+  size: 18px;
+}
+
+.navigation a img {
+  width: 100%;
+  height: auto;
+}
+
+/*FAQ SECTION STYLE*/
+
+.sectionFAQ {
+  box-shadow: 0px 0px 10px 4px #212529, 0px 0px 10px 4px #212529;
+}
+
+/*ABOUT SECTION STYLE*/
+
+.teamsection {
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+}
+
+/*****************/
+
+/* SIDEBAR */
+
+div.content {
+  padding: 1px 16px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#sidebar.sidebar-collapse {
+  margin-left: -250px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#page-content {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#page-content.sidebar-collapse {
+  width: 100%;
+}
+
+.user-panel {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.user-panel .image img {
+  width: 100%;
+  max-width: 45px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.user-panel p {
+  color: #F0EDE5;
+  font-size: 0.7rem;
+}
+
+.user-panel .pull-left {
+  float: left !important;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+
+  #sidebar.sidebar-collapse {
+    margin-left: 0;
+  }
+
+  #page-content {
+    width: 100%;
+  }
+
+  #page-content.sidebar-collapse {
+    width: calc(100% - 250px);
+  }
+
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+/* PAGES
+========================================================================== */
+
+/*****************/
+
+/* Dashboard */
+
+.dash-wrapper {
+  background-color: #0F4C81 !important;
+  border-radius: 6px;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+}
+
+.dash-wrapper:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.dash-wrapper:not(hover) {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.dash-wrapper table,
+.dash-wrapper tr,
+.dash-wrapper th,
+.dash-wrapper td {
+  border: none;
+  color: #F0EDE5;
+}
+
+.dashboard {
+  background-color: #002554;
+  color: #F0EDE5;
+}
+
+.dashboard a {
+  color: #F0EDE5;
+}
+
+.dashboard li,
+.dashboard .modal-content {
+  color: #363838;
+}
+
+.dashboard .modal-header,
+.dashboard .modal-footer {
+  background-color: #0F4C81;
+  color: #F0EDE5;
+}
+
+.dashboard .close {
+  color: #F0EDE5;
+}
+
+#login-content,
+#register-content,
+#reset-content,
+#email-reset-content {
+  background-color: #212529;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding-bottom: 50px;
+}
+
+#login-content label,
+#register-content label,
+#reset-content label,
+#email-reset-content label {
+  font-size: 1.5rem;
+  color: #F0EDE5;
+}
+
+#login-content input,
+#register-content input,
+#reset-content input,
+#email-reset-content input {
+  font-size: 1.75rem;
+  color: #F0EDE5;
+  background-color: #363838;
+}
+
+#login-content button,
+#register-content button,
+#reset-content button,
+#email-reset-content button {
+  font-size: 1.75rem;
+}
+
+#calendarlayout {
+  background-color: #0F4C81;
+  margin-top: 4.5rem;
+}
+
+#calendarlayout .header {
+  color: #F0EDE5;
+}
+
+.today {
+  background: #F26B5B;
+}
+
+#calendardates {
+  color: #F0EDE5;
+}
+
+.calendar-title {
+  color: #F0EDE5;
+}
+
+/*****************/
+
+/* CONFIRMATION PAGE */
+
+#confirmation {
+  margin-top: 5rem;
+}
+
+/* VENDOR_EXTENSIONS
+========================================================================== */
+
+.card {
+  border: black solid 1px;
+  background-color: #F26B5B;
+}
+
+/* This container is needed to position the front and back side */
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  color: #f6695e;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+/* FARVE PÅ ICONER */
+
+i .fab {
+  color: #F0EDE5;
+}
 

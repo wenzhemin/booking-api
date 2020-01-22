@@ -1,0 +1,19 @@
+// CARDS
+.card {
+    border: black solid 1px;
+    background-color: #{$corral};
+}
+
+/* This container is needed to position the front and back side */
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    color: rgb(246, 105, 94);
+}
+
+// GRID
+.row {
+    margin-top: 20px;
+}

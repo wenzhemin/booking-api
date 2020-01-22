@@ -1,8 +1,42 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
+/* HELPERS
+========================================================================== */
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/placeholders';
 
-// Custom sass
-@import 'custom';
+/* BASE
+========================================================================== */
+@import 'base/basic';
+
+/* COMPONENTS
+========================================================================== */
+@import 'components/banner';
+@import 'components/buttons';
+@import 'components/flipcards';
+@import 'components/stepcards';
+@import 'components/tables';
+@import 'components/typewriter-animation';
+
+/* LAYOUT
+========================================================================== */
+@import 'layout/admin-navigation';
+@import 'layout/contactform';
+@import 'layout/footer';
+@import 'layout/main-navigation';
+@import 'layout/sections';
+@import 'layout/sidebar';
+
+/* PAGES
+========================================================================== */
+@import 'pages/admin-dashboard';
+@import 'pages/auth';
+@import 'pages/booking-calendar';
+@import 'pages/confirmation';
+
+/* VENDOR_EXTENSIONS
+========================================================================== */
+@import 'vendor-extensions/bootstrap';
+@import 'vendor-extensions/fontawesome';

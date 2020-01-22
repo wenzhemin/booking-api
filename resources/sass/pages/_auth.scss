@@ -1,0 +1,29 @@
+// AUTH (login, register, reset)
+#login-content,
+#register-content,
+#reset-content,
+#email-reset-content {
+    background-color: #{$dark-grey};
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    padding-bottom: 50px;
+
+    label {
+        font-size: 1.5rem;
+        color: #{$alabaster};
+    }
+
+    input {
+        font-size: 1.75rem;
+        color: #{$alabaster};
+        background-color: #{$onyx-black};
+    }
+
+    button {
+        font-size: 1.75rem;
+    }
+}

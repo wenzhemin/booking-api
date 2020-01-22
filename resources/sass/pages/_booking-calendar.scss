@@ -1,0 +1,20 @@
+// BOOKING CALENDAR
+#calendarlayout {
+    background-color: #{$cerulean};
+    margin-top: 4.5rem;
+
+    .header {
+        color: #{$alabaster};
+    }
+}
+.today {
+    background:#{$corral};
+}
+
+#calendardates {
+    color: #{$alabaster};
+}
+
+.calendar-title {
+    color: #{$alabaster};
+}

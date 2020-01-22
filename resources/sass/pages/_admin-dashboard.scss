@@ -1,0 +1,45 @@
+/*****************/
+/* Dashboard */
+.dash-wrapper {
+    background-color: #{$cerulean} !important;
+    @include rounded-corner(6px);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        transition: 500ms;
+    }
+    &:not(hover) {
+        transition: 500ms;
+    }
+    table, tr, th, td {
+        border: none;
+        color: #{$alabaster};
+    }
+}
+
+.dashboard {
+    background-color: #{$dark-cerulean};
+    color: #{$alabaster};
+
+    a {
+        color: #{$alabaster};
+    }
+
+    li,
+    .modal-content {
+        color: #{$onyx-black};
+
+    }
+
+    .modal-header, .modal-footer {
+        background-color: #{$cerulean};
+        color: #{$alabaster};
+    }
+
+    .close {
+        color: #{$alabaster};
+    }
+}

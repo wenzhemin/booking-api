@@ -17,7 +17,7 @@
                 <table class="table table-striped table-hover table-dark table-bordered dashcalendar">
                     <thead>
                         <tr>
-                            <th scope="col">Time</th>
+                            <th>Time</th>
                             @foreach($weekdates as $weekdate)
                                 <th>{{ $weekdate['day_name'] }}<br>{{ $weekdate['dis_date'] }}</th>
                             @endforeach

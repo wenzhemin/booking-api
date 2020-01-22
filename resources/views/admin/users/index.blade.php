@@ -14,7 +14,7 @@
                                 {{ session('user_updated') }}
                             </div>                    
                         @endif
-                            <table class="table table-striped table-hover table-dark table-bordered">
+                            <table class="table table-striped table-hover table-dark table-bordered user-table">
                                 <tr>
                                     <th style="width: 5px">#</th>
                                     <th style="width: 20%">Name</th>

@@ -1,0 +1,39 @@
+/* 4 STEPS STYLE */
+.stepsection {
+    background: #0f4c81;
+    padding: 1rem;
+    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+
+    .teamtext {
+        color: #F0EDE5;
+    }
+
+    .frontside {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+
+    .frontside .stepcard {
+        min-height: 280px;
+        background-color: #F0EDE5;
+        @include rounded-corner(1.5em);
+        border: none !important;
+    }
+
+    .frontside .stepcard .card-title {
+        color: #C0D725 !important;
+    }
+
+    .frontside .stepcard .i {
+        color: #363838;
+        size: 5rem;
+    }
+    .frontside .stepcard .card-body img {
+        width: 120px;
+        height: 120px;
+        @include rounded-corner(50%);
+    }
+}

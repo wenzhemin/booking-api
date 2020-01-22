@@ -1,0 +1,20 @@
+/* BANNER */
+.container-fluid {
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
+
+    .banner {
+        background: #0f4c81;
+        padding: 1rem;
+        box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+    }
+
+    .jumbotronbanner {
+        margin-bottom: 0px !important;
+        color: #F0EDE5;
+        background-image: url(../../public/assets/img/plannersmokey.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
