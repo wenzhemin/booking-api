@@ -35,13 +35,13 @@
     }
 
     tr {
-        border: 1px solid #ccc;
+        border: 1px solid #{$alabaster};
     }
 
     td {
         /* Behave  like a "row" */
         border: none;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #{$alabaster};
         position: relative;
         padding-left: 50%;
     }

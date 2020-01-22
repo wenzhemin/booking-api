@@ -1,34 +1,5 @@
-// Body
-$body-bg: #f8fafc;
-
 // Typography
-$font-family-sans-serif: 'Nunito',
-sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
-
-$easeTime: 0.25s;
-$margin-top: 56px;
-
-
-$colors: ("mattBlackLight": "#303337",
-    "mattBlackDark": "#212121",
-    "mattGray": "#878d8d",
-    "mattRed": "#ec6271"
-);
-
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-// $red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$font-family-sans-serif: 'Nunito', sans-serif;
 
 // Dashboard colours
 $dark-grey: #212529;
@@ -53,3 +24,10 @@ $dark-pear: rgb(162, 182, 30);
 // Buttons
 $dusty-yellow: #017678;
 $hover-yellow: #02c4c7;
+
+// Box shadow
+$section-shadows: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+$faq-shadows: 0px 0px 10px 4px #212529, 0px 0px 10px 4px #212529;
+$new-booking-shadows: 3px 3px 7px rgba(0, 0, 0, 0.1);
+$hover-new-booking-shadows: 3px 3px 10px rgba(0, 0, 0, 0.3);
+$banner-shadows: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;

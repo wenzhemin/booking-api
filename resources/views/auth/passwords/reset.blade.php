@@ -1,20 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="reset-content">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+<div class="container-fluid">
+    <div id="reset-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
                     <div class="card-body">
                         <form method="POST" action="{{ route('password.update') }}">
                             @csrf
-
                             <input type="hidden" name="token" value="{{ $token }}">
-
                             <div class="form-group row">
                                 <div class="offset-md-4 col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -26,7 +24,6 @@
                             <div class="form-group row">
                                 <div class="offset-md-4 col-md-6">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="{{ __('Password') }}" name="password" required autocomplete="new-password">
-
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

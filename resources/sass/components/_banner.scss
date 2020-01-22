@@ -4,17 +4,13 @@
     margin-bottom: 0.9rem;
 
     .banner {
-        background: #0f4c81;
+        background: #{$cerulean};
         padding: 1rem;
-        box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
+        @include box-shadow($banner-shadows);
     }
 
     .jumbotronbanner {
-        margin-bottom: 0px !important;
-        color: #F0EDE5;
+        @extend %jumbotronbanner;
         background-image: url(../../public/assets/img/plannersmokey.jpeg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }

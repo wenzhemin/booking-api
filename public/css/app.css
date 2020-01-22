@@ -3,11 +3,25 @@
 /* HELPERS
 ========================================================================== */
 
+#login-content,
+#register-content,
+#reset-content,
+#email-reset-content,
 .publicCalendar,
 .teamsection,
-.sectionFAQ {
-  background: #0f4c81;
+.sectionFAQ,
+.navigation,
+.footernav {
+  background: #0F4C81;
   padding: 1rem;
+}
+
+.container-fluid .jumbotronbanner {
+  margin-bottom: 0px !important;
+  color: #F0EDE5;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* BASE
@@ -36,15 +50,6 @@ ul li {
   display: inline;
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  body {
-    padding: 0;
-    margin: 0;
-  }
-}
-
 /* iPads (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 802px) and (max-device-width: 1020px) {
@@ -64,18 +69,13 @@ ul li {
 }
 
 .container-fluid .banner {
-  background: #0f4c81;
+  background: #0F4C81;
   padding: 1rem;
   box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 }
 
 .container-fluid .jumbotronbanner {
-  margin-bottom: 0px !important;
-  color: #F0EDE5;
   background-image: url(/images/plannersmokey.jpeg?358068b247283688243ad933dbe8c730);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .btn-book {
@@ -200,7 +200,7 @@ ul li {
 /* 4 STEPS STYLE */
 
 .stepsection {
-  background: #0f4c81;
+  background: #0F4C81;
   padding: 1rem;
   box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 }
@@ -275,13 +275,13 @@ ul li {
   }
 
   tr {
-    border: 1px solid #ccc;
+    border: 1px solid #F0EDE5;
   }
 
   td {
     /* Behave  like a "row" */
     border: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #F0EDE5;
     position: relative;
     padding-left: 50%;
   }
@@ -452,21 +452,15 @@ ul li {
 }
 
 textarea {
-  border: solid 1px red;
+  border: solid 1px #F26B5B;
 }
 
 /* FOOTER */
 
 .footernav {
-  background: #0f4c81;
-  padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem !important;
   box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
 }
 
 .footernav .footer-copyright {
@@ -490,14 +484,9 @@ textarea {
 /* MAIN NAVIGATION */
 
 .navigation {
-  background: #0f4c81;
   margin-top: 1rem;
   margin-bottom: 2rem !important;
   box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-  /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                      inset 6px 6px 20px rgba(0, 0, 0,0.05);
-  box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-              0px 0px 15px 6px rgba(0,0,0,0.4);   */
 }
 
 .navigation .navbar-brand {
@@ -714,14 +703,7 @@ div.content {
 #register-content,
 #reset-content,
 #email-reset-content {
-  background-color: #212529;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  padding-bottom: 50px;
+  box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
 }
 
 #login-content label,
@@ -737,8 +719,6 @@ div.content {
 #reset-content input,
 #email-reset-content input {
   font-size: 1.75rem;
-  color: #F0EDE5;
-  background-color: #363838;
 }
 
 #login-content button,
@@ -746,6 +726,16 @@ div.content {
 #reset-content button,
 #email-reset-content button {
   font-size: 1.75rem;
+  background-color: #C0D725;
+  color: #363838;
+}
+
+#login-content button:hover,
+#register-content button:hover,
+#reset-content button:hover,
+#email-reset-content button:hover {
+  background-color: #a2b61e;
+  color: #F0EDE5;
 }
 
 #calendarlayout {
@@ -792,7 +782,7 @@ div.content {
 }
 
 .card-title {
-  color: #f6695e;
+  color: #F26B5B;
 }
 
 .row {

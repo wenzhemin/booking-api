@@ -1,4 +1,12 @@
 %section {
-    background: #0f4c81;
+    background: #{$cerulean};
     padding: 1rem;
+}
+
+%jumbotronbanner {
+    margin-bottom: 0px !important;
+    color: #{$alabaster};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

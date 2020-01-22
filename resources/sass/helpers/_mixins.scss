@@ -1,5 +1,27 @@
+// Border radius
 @mixin rounded-corner($arc) {
     -moz-border-radius: $arc;
     -webkit-border-radius: $arc;
     border-radius: $arc;  
+}
+
+// Box shadow
+@mixin box-shadow($shadows) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+// Flipcard transformation
+@mixin rotate($rotate) {
+    -webkit-transform: $rotate;
+    -moz-transform: $rotate;
+    -o-transform: $rotate;
+    -ms-transform: $rotate;
+    transform: $rotate;
+}
+
+@mixin transform ($transform) {
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
 }

@@ -3,12 +3,12 @@
 .dash-wrapper {
     background-color: #{$cerulean} !important;
     @include rounded-corner(6px);
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    @include box-shadow($new-booking-shadows);
     animation: fadeIn 2s;
 
     &:hover {
         transform: translateY(-4px);
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        @include box-shadow($hover-new-booking-shadows);
         transition: 500ms;
     }
     &:not(hover) {

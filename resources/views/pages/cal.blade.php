@@ -121,129 +121,126 @@ function build_calendar($month, $year) {
 }
 ?>
 <div class="container-fluid">
-  <div class="container-fluid publicCalendar">
-
-
-<div id="calendarlayout" class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            {{ build_calendar($month,$year) }}
-        </div>
-    </div>
-</div> 
-
-<!-- just for dunmping the bookings for the selected month -->
-<div id="bookingsdump" class="container">
-    <div class="row">
-        Selected month and year : [{{ $date }}]
-        @foreach($bookings as $booking)
-            <div class="col-md-12">
-            {{ date_format(date_create($booking->date), 'Y-m-d') }} - {{ $booking->name_of_guest }} - {{ $booking->timeslot }} - {{ $booking->phone_no }} - {{ $booking->email }}
-            </div>
-        @endforeach
-    </div>
-</div> 
-
-<!--MODAL-->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Book for Date: <span id="dateslot"></span></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">                
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        {{ isset($msg) ? $msg : '' }}
-                        @foreach($timeslots as $timeslot)
-                            <div class="offset-3 col-6">
-                                {{--  time slots  - I replaced bg-success with border --}}
-                                <button class="btn border btn-lg btn-block bookTime" data-timeslot="{{ $timeslot }}">{{ $timeslot }}</button>
-                            </div>
-                        @endforeach
-                        <!-- insert Rebacas code here -->
-                    </div>
+    <div class="container-fluid publicCalendar">
+        <div id="calendarlayout" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    {{ build_calendar($month,$year) }}
                 </div>
-                
-                <div class="row">
+            </div>
+        </div> 
+
+        <!-- just for dunmping the bookings for the selected month -->
+        <div id="bookingsdump" class="container">
+            <div class="row">
+                Selected month and year : [{{ $date }}]
+                @foreach($bookings as $booking)
                     <div class="col-md-12">
-                    <form action="{{ url('bookings') }}" method="post">
-                        @csrf
-                        <input id="date" name="date" type="hidden" value="">
-                        <div class="form-group">
-                            <label for="">Timeslot</label>
-                            <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">
-                        </div> 
-                        <div class="form-group">
-                            <label class="mr-sm-2" for="serviceSelect">Hours</label>
-                            <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
-                                <option disabled value="" selected hidden>Choose an interval</option>
-                                @foreach ($intervals as $interval)
-                                    <option value={{ $interval->id }}>{{ $interval->hour }}</option>
+                    {{ date_format(date_create($booking->date), 'Y-m-d') }} - {{ $booking->name_of_guest }} - {{ $booking->timeslot }} - {{ $booking->phone_no }} - {{ $booking->email }}
+                    </div>
+                @endforeach
+            </div>
+        </div> 
+
+        <!--MODAL-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Book for Date: <span id="dateslot"></span></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">                
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                {{ isset($msg) ? $msg : '' }}
+                                @foreach($timeslots as $timeslot)
+                                    <div class="offset-3 col-6">
+                                        {{--  time slots  - I replaced bg-success with border --}}
+                                        <button class="btn border btn-lg btn-block bookTime" data-timeslot="{{ $timeslot }}">{{ $timeslot }}</button>
+                                    </div>
                                 @endforeach
-                            </select>
+                                <!-- insert Rebacas code here -->
+                            </div>
                         </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                            <form action="{{ url('bookings') }}" method="post">
+                                @csrf
+                                <input id="date" name="date" type="hidden" value="">
+                                <div class="form-group">
+                                    <label for="">Timeslot</label>
+                                    <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">
+                                </div> 
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="serviceSelect">Hours</label>
+                                    <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
+                                        <option disabled value="" selected hidden>Choose an interval</option>
+                                        @foreach ($intervals as $interval)
+                                            <option value={{ $interval->id }}>{{ $interval->hour }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                        {{-- test  --}}
+                                {{-- test  --}}
 
-                        <!-- <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
-                            <option disabled value="" selected hidden>I am tryin'</option>
-                            @foreach ($bookings as $booking)
-                                <option value={{ $booking->date }}>{{ $booking->timeslot }}</option>
-                            @endforeach
-                        </select> -->
+                                <!-- <select name="interval_id" class="custom-select mr-sm-2 form-control" id="intervalSelect" required>
+                                    <option disabled value="" selected hidden>I am tryin'</option>
+                                    @foreach ($bookings as $booking)
+                                        <option value={{ $booking->date }}>{{ $booking->timeslot }}</option>
+                                    @endforeach
+                                </select> -->
 
- 
-                        {{-- end test  --}}
+        
+                                {{-- end test  --}}
 
 
-                        <div class="form-group">
-                            <label for="">Name</label>
-                            <input required type="text" name="name_of_guest" class="form-control">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input required type="text" name="name_of_guest" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone</label>
+                                    <input required type="text" name="phone_no" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input required type="email" name="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Number of Guests</label>
+                                    <input required type="text" name="no_of_guests" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="locationSelect">Location</label>
+                                    <select name="location_id" class="custom-select mr-sm-2 form-control" id="locationSelect" required>
+                                        <option disabled value="" selected hidden>Choose a location</option>
+                                        @foreach ($locations as $location)
+                                            <option value={{ $location->id }}>{{ $location->address }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="serviceSelect">Service</label>
+                                    <select name="service_id" class="custom-select mr-sm-2 form-control" id="serviceSelect" required>
+                                        <option disabled value="" selected hidden>Choose a service</option>
+                                        @foreach ($services as $service)
+                                            <option value={{ $service->id }}>{{ $service->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group pull-right">
+                                    <button type="submit" class="btn btn-book" name="submit">Book</button>
+                                </div>
+                            </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="">Phone</label>
-                            <input required type="text" name="phone_no" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input required type="email" name="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Number of Guests</label>
-                            <input required type="text" name="no_of_guests" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="mr-sm-2" for="locationSelect">Location</label>
-                            <select name="location_id" class="custom-select mr-sm-2 form-control" id="locationSelect" required>
-                                <option disabled value="" selected hidden>Choose a location</option>
-                                @foreach ($locations as $location)
-                                    <option value={{ $location->id }}>{{ $location->address }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="mr-sm-2" for="serviceSelect">Service</label>
-                            <select name="service_id" class="custom-select mr-sm-2 form-control" id="serviceSelect" required>
-                                <option disabled value="" selected hidden>Choose a service</option>
-                                @foreach ($services as $service)
-                                    <option value={{ $service->id }}>{{ $service->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group pull-right">
-                            <button type="submit" class="btn btn-book" name="submit">Book</button>
-                        </div>
-                    </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-</div>
 </div>
 @endsection

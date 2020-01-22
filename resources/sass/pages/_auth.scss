@@ -3,14 +3,8 @@
 #register-content,
 #reset-content,
 #email-reset-content {
-    background-color: #{$dark-grey};
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    padding-bottom: 50px;
+    @extend %section;
+    @include box-shadow($section-shadows);
 
     label {
         font-size: 1.5rem;
@@ -19,11 +13,16 @@
 
     input {
         font-size: 1.75rem;
-        color: #{$alabaster};
-        background-color: #{$onyx-black};
     }
 
     button {
         font-size: 1.75rem;
+        background-color: #{$pear};
+        color: #{$onyx-black};
+
+        &:hover {
+            background-color: #{$dark-pear};
+            color: #{$alabaster};
+        }
     }
 }

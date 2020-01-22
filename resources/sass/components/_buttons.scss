@@ -2,29 +2,29 @@
 .btn-book {
     background-color: #{$corral};
     color: #{$alabaster};
-}
-
-.btn-book:hover {
-    background-color: #{$dark-corral};
-    color: #{$alabaster};
+    
+    &:hover {
+        background-color: #{$dark-corral};
+        color: #{$alabaster};
+    }
 }
 
 .btn-save {
     background-color: #{$pear};
     color: #{$onyx-black};
-}
-
-.btn-save:hover {
-    background-color: #{$dark-pear};
-    color: #{$alabaster};
+    
+    &:hover {
+        background-color: #{$dark-pear};
+        color: #{$alabaster};
+    }
 }
 
 .btn-back {
     background-color: #{$dusty-yellow};
     color: #{$alabaster};
-}
-
-.btn-back:hover {
-    background-color: #{$hover-yellow};
-    color: #{$onyx-black};
+    
+    &:hover {
+        background-color: #{$hover-yellow};
+        color: #{$onyx-black};
+    }
 }

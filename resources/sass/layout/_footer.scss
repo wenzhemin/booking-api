@@ -1,31 +1,26 @@
 /* FOOTER */
 .footernav {
-    background: #0f4c81;
-    padding: 1rem;
+    @extend %section;
     margin-top: 1rem;
     margin-bottom: 2rem !important;
-    box-shadow: 5px 10px 10px 0px #212529, 0px 0px 0px 0px #212529;
-
-    /*box-shadow: inset 0px 0px 10px 10px rgba(230, 230, 230,0.9),
-                        inset 6px 6px 20px rgba(0, 0, 0,0.05);
-    box-shadow: 0px 0px 20px 10px rgba(230,230,230,1),
-                0px 0px 15px 6px rgba(0,0,0,0.4);   */
+    @include box-shadow ($section-shadows);
     
     .footer-copyright {
-        color: #F0EDE5;
+        color: #{$alabaster};
         font-size: 12px;
     }
 
     .footmenu h4 a {
-        color: #F0EDE5;
+        color: #{$alabaster};
     }
 
     .footer-copyright a {
-        color: #F0EDE5;
+        color: #{$alabaster};
         text-decoration: none; 
+        
+        &:hover {
+            color: #{$onyx-black};
+        }
     }
 
-    .footer-copyright a:hover {
-        color: #363838;
-    }
 }
