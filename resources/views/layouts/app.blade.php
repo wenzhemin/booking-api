@@ -27,6 +27,7 @@
 
                 var dateslot=$(this).attr('data-dateslot');
                 $("#dateslot").html(dateslot);
+                $("#date").val(dateslot);
             })
         </script>
 

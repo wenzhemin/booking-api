@@ -176,7 +176,7 @@ function build_calendar($month, $year) {
                     <div class="col-md-12">
                     <form action="{{ url('bookings') }}" method="post">
                         @csrf
-                        <input name="date" type="hidden" value="{{ $date }}">
+                        <input id="date" name="date" type="hidden" value="">
                         <div class="form-group">
                             <label for="">Timeslot</label>
                             <input required type="text" readonly name="timeslot" id="timeslot" class="form-control">

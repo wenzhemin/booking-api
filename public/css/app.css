@@ -342,6 +342,16 @@ ul li {
   color: #363838;
 }
 
+.dashboard .modal-header,
+.dashboard .modal-footer {
+  background-color: #0F4C81;
+  color: #F0EDE5;
+}
+
+.dashboard .close {
+  color: #F0EDE5;
+}
+
 /*****************/
 
 /* SIDEBAR */
