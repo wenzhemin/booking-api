@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminController;
 use App\User;
 use App\Booking;
@@ -49,6 +50,55 @@ class CalendarController extends AdminController {
         $data['intervals']   = $intervals;
 
         return view('admin.admincalendar')->with($data);
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        dd('update');
+        $businessId = 1;
+        // Create Booking
+        $booking = Booking::find($id);
+
+        // Convert datetime
+        $booking->date = $request->input('date');
+        $booking->timeslot = $request->input('timeslot');
+        $booking->interval_id = $request->input('interval_id');
+        $booking->name_of_guest = $request->input('name_of_guest');
+        $booking->phone_no = $request->input('phone_no');
+        $booking->email = $request->input('email');
+        $booking->no_of_guests = $request->input('no_of_guests');
+        $booking->location_id = $request->input('location_id');
+        $booking->business_id = $businessId;
+        $booking->service_id = $request->input('service_id');
+        $booking->save();
+
+        Mail::to($booking->email)->send(new BookingCompleted($booking));
+
+        return view('pages.confirmation');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        dd('delete');
+
+        $booking = Booking::find($id);
+        $booking->delete();
+
+        return view('pages.confirmation');
     }
 
     private function get_weekdates_array($datetime) {

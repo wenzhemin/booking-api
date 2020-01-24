@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/choices', 'Admin\DashboardController@choices')->name('choices');
     Route::get('/admincalendar/{year?}/{week?}', 'Admin\CalendarController@index')->name('admincalendar');
     
+    Route::resource('/admincalendar', 'Admin\CalendarController');
     Route::resource('/users', 'Admin\UserController');
 
     Route::post('image/add', ['as' => 'image.addimage', 'uses' => 'ImageController@add']);

@@ -140,7 +140,7 @@
 
     <script type="text/javascript">
         function assignValuesToModal(booking) {
-            var urlUpdate = '/bookings/' + booking.id;
+            var urlUpdate = '/admincalendar/' + booking.id;
             $('#formUpdate').attr('action', urlUpdate);
             $('#id').val(booking.id);
             var bookingDate = booking.date;
@@ -161,7 +161,7 @@
         $("#delete-button").click(function(){
             if(confirm("Are you sure you want to delete this booking?")){
                 var deleteId = $('#id').val();
-                var urlDelete = '/bookings/' + deleteId;
+                var urlDelete = '/admincalendar/' + deleteId;
                 $('#formDelete').attr('action', urlDelete);
             }
             else{
