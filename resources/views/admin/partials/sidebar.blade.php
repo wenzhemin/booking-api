@@ -34,7 +34,7 @@
         <i class="fa fa-user"></i> <span>Users</span>
     </a>
 
-    <a class="nav-link" href="{{ route('logout') }} list-group-item list-group-item-action bg-dark" onclick="event.preventDefdivt(); document.getElementById('logout-form').submit();">
+    <a class="nav-link" href="{{ route('logout') }} list-group-item list-group-item-action bg-dark" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <i class="fa fa-sign-out"></i> <span>Log ud</span>
     </a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
