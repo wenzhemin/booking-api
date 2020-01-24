@@ -27,19 +27,19 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard/system';
+    protected $redirectTo = 'system';
     protected $redirectAfterLogout = '/'; // was '/login';
 
     protected function authenticated(Request $request, $user)
     {
-        if (Gate::allows('accessAdminpanel')) {
-            // do your margic here
-            return redirect('/admin/system');
-            // return redirect()->route('dashboard');
-        }
+        // if (Gate::allows('accessAdminpanel')) {
+        //     // do your margic here
+        //     return redirect('system');
+        //     // return redirect()->route('dashboard');
+        // }
 
         // return redirect('/dashboard/system');
-        return redirect('/');
+        return redirect('/system');
     }
 
     /**

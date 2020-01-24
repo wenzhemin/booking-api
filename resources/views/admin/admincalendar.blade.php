@@ -61,7 +61,10 @@
                                     <form action="" method="post" id="formUpdate">
                                         @csrf
                                         <input type="hidden" name="_method" value="PUT">
-                                        <input name="id" id="id" type="hidden" value="">
+                                        <input type="hidden" name="id" value="" id="id">
+                                        <input type="hidden" name="year" value="{{ $year }}">
+                                        <input type="hidden" name="week" value="{{ $week }}">
+                                        
                                         <div class="form-group" data-role="fieldcontain">
                                             <label for="date">Booking Date:</label>
                                             <input class="form-control" type="text" name="date" id="date" value="" placeholder="" />

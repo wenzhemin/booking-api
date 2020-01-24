@@ -62,7 +62,7 @@ class CalendarController extends AdminController {
      */
     public function update(Request $request, $id)
     {
-        dd('update');
+
         $businessId = 1;
         // Create Booking
         $booking = Booking::find($id);
@@ -80,9 +80,10 @@ class CalendarController extends AdminController {
         $booking->service_id = $request->input('service_id');
         $booking->save();
 
-        Mail::to($booking->email)->send(new BookingCompleted($booking));
+        // Mail::to($booking->email)->send(new BookingCompleted($booking));
 
-        return view('pages.confirmation');
+        // return view('pages.confirmation');
+        return redirect()->route('admincalendar', ['year' => $request->input('year'),'week' => $request->input('week')]);
     }
 
     /**
@@ -91,14 +92,18 @@ class CalendarController extends AdminController {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        dd('delete');
+        // dd('delete'.$id);
+
+        if ( is_null($booking) ) {
+            return redirect()->route('admincalendar', ['year' => $request->input('year'),'week' => $request->input('week')]);
+          }
 
         $booking = Booking::find($id);
         $booking->delete();
 
-        return view('pages.confirmation');
+        return redirect()->route('admincalendar', ['year' => $request->input('year'),'week' => $request->input('week')]);
     }
 
     private function get_weekdates_array($datetime) {
