@@ -16,7 +16,6 @@
         <a class="btn btn-back btn-sm" href="{{ url('/') }}" role="button">Continue to homepage</a>
         </p>
     </div>
->>>>>>> d3e78a107affc37946c4d853afee5c1613f2d05b
 </div>
   
 

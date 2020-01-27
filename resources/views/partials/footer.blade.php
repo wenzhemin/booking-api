@@ -7,12 +7,15 @@
                     <footer class="page-footer center-on-small-only pt-0">
                         <div class="container">
                             <div class="row footmenu pt-3 mb-2 text-center d-flex justify-content-center">
-                                <div class="col-md-2 mb-3">
-                                    <h4 class="font-bold"><a href="#!">About</a></h4>
+                                <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == '/') ? 'active' : '' }}">
+                                    <h4 class="font-bold"><a href="{{ url('/') }}">Home</a></h4>
+                                </div>
+                                <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == 'about') ? 'active' : '' }}">
+                                    <h4 class="font-bold"><a href="{{ url('/about') }}">About</a></h4>
                                 </div>
 
-                                <div class="col-md-2 mb-3">
-                                    <h4 class="font-bold"><a href="#!">FAQ</a></h4>
+                                <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == 'faq') ? 'active' : '' }}">
+                                    <h4 class="font-bold"><a href="{{ url('/faq') }}">FAQ</a></h4>
                                 </div>
 
                                 <div class="col-md-2 mb-3 {{ (Route::getFacadeRoot()->current()->uri() == '/login') ? 'active' : '' }}">

@@ -12,5 +12,6 @@
     .jumbotronbanner {
         @extend %jumbotronbanner;
         background-image: url(../../public/assets/img/plannersmokey.jpeg);
+        height: 70vh;
     }
 }
